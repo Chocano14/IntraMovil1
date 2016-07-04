@@ -17,7 +17,6 @@ import com.example.hgmovil.intramovil.sqlite.Intranet.Dia;
 import com.example.hgmovil.intramovil.sqlite.Intranet.Docente;
 import com.example.hgmovil.intramovil.sqlite.Intranet.Horario;
 import com.example.hgmovil.intramovil.sqlite.Intranet.Horario_seccion;
-//import com.example.hgmovil.intramovil.sqlite.Intranet.Horarios_has_sala;
 import com.example.hgmovil.intramovil.sqlite.Intranet.Jefecarrera;
 import com.example.hgmovil.intramovil.sqlite.Intranet.Material;
 import com.example.hgmovil.intramovil.sqlite.Intranet.Nota;
