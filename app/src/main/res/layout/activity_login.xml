@@ -7,19 +7,64 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.example.hgmovil.intramovil.LoginActivity">
+    tools:context="com.example.hgmovil.intramovil.LoginActivity"
+    android:background="#fefefe"
+    android:id="@+id/login">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Insertar"
-        android:id="@+id/btn"
-        android:layout_centerVertical="true"
+        android:text="Iniciar sesiòn"
+        android:id="@+id/btnIniciar"
+        android:textColor="#ffffff"
+        android:background="#ff0000"
+        android:layout_marginBottom="37dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true" />
+
+    <EditText
+        android:id="@+id/txtRut"
+        android:layout_height="wrap_content"
+        android:layout_width="fill_parent"
+        android:hint="Rut"
+        android:inputType="text"
+        android:layout_above="@+id/txtContra"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="20dp" />
+
+    <EditText android:id="@+id/txtContra"
+        android:layout_height="wrap_content"
+        android:layout_width="fill_parent"
+        android:hint="Contraseña"
+        android:inputType="textPassword"
+        android:layout_marginBottom="29dp"
+        android:layout_above="@+id/btnIniciar"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <ImageView
+        android:layout_width="190dp"
+        android:layout_height="190dp"
+        android:id="@+id/imageView"
+
+        android:layout_marginTop="28dp"
+        android:layout_below="@+id/textView2"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Bienvenidos"
+        android:id="@+id/textView2"
+        android:textColor="#ff0000"
+        android:textSize="40dp"
+        android:visibility="visible"
+        android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:onClick="onClick" />
+        android:layout_marginTop="32dp" />
+
+
 </RelativeLayout>
