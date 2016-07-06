@@ -17,8 +17,8 @@
         android:layout_height="wrap_content"
         android:text="Iniciar sesiòn"
         android:id="@+id/btnIniciar"
-        android:textColor="#ffffff"
-        android:background="#22ff00"
+        android:textColor="#00ff00"
+        android:background="#000000"
         android:layout_marginBottom="37dp"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true" />
