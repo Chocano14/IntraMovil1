@@ -126,7 +126,10 @@ public class Intranet
     }
     public static class Alumno implements ColumnasAlumno
     {
-
+        public static String generarIdAlumno()
+        {
+            return "Alum" + UUID.randomUUID().toString();
+        }
     }
     public static class Alumno_has_alarma implements ColumnasAlumno_has_alarma
     {

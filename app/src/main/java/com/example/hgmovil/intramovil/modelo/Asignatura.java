@@ -6,12 +6,36 @@ package com.example.hgmovil.intramovil.modelo;
 public class Asignatura
 {
     public int ID;
-    public char NOMBRE;
+    public String NOMBRE;
     public int HORAS;
-    public Asignatura(int id, char nombre,int horas)
+    public Asignatura(int id, String nombre,int horas)
     {
         this.ID= id;
         this.NOMBRE=nombre;
         this.HORAS=horas;
+    }
+
+    public int getID() {
+        return ID;
+    }
+
+    public void setID(int ID) {
+        this.ID = ID;
+    }
+
+    public String getNOMBRE() {
+        return NOMBRE;
+    }
+
+    public void setNOMBRE(String NOMBRE) {
+        this.NOMBRE = NOMBRE;
+    }
+
+    public int getHORAS() {
+        return HORAS;
+    }
+
+    public void setHORAS(int HORAS) {
+        this.HORAS = HORAS;
     }
 }

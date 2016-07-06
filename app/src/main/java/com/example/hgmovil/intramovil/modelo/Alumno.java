@@ -5,14 +5,15 @@ package com.example.hgmovil.intramovil.modelo;
  */
 public class Alumno
 {
-    public char Rut ;
-    public char Nombre ;
-    public char Contraseña ;
-    public char Correo ;
+    public String Rut ;
+    public String Nombre ;
+    public String Contraseña ;
+    public String Correo ;
     public int CarerraID ;
 
-    public Alumno(char rut, char nombre, char contraseña, char correo, int carreraID)
+    public Alumno(String rut, String nombre, String contraseña, String correo, int carreraID)
     {
+
         this.Rut= rut;
         this.Nombre=nombre;
         this.Contraseña=contraseña;
@@ -20,5 +21,43 @@ public class Alumno
         this.CarerraID=carreraID;
     }
 
+    public String getRut() {
+        return Rut;
+    }
 
+    public void setRut(String rut) {
+        Rut = rut;
+    }
+
+    public String getNombre() {
+        return Nombre;
+    }
+
+    public void setNombre(String nombre) {
+        Nombre = nombre;
+    }
+
+    public String getContraseña() {
+        return Contraseña;
+    }
+
+    public void setContraseña(String contraseña) {
+        Contraseña = contraseña;
+    }
+
+    public String getCorreo() {
+        return Correo;
+    }
+
+    public void setCorreo(String correo) {
+        Correo = correo;
+    }
+
+    public int getCarerraID() {
+        return CarerraID;
+    }
+
+    public void setCarerraID(int carerraID) {
+        CarerraID = carerraID;
+    }
 }

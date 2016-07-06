@@ -1,6 +1,8 @@
 package com.example.hgmovil.intramovil.sqlite;
 import android.content.Context;
+import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
+import android.database.sqlite.SQLiteException;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.os.Build;
 import android.provider.BaseColumns;
@@ -23,236 +25,178 @@ import com.example.hgmovil.intramovil.sqlite.Intranet.Nota;
 import com.example.hgmovil.intramovil.sqlite.Intranet.Pago;
 import com.example.hgmovil.intramovil.sqlite.Intranet.Sala;
 import com.example.hgmovil.intramovil.sqlite.Intranet.Seccion;
+
+import java.io.IOException;
+
 /**
  * Created by pablo on 02-07-2016.
  */
 
 public class BDIntraMovil extends SQLiteOpenHelper
 {
-    private static final String NOMBRE_BASE_DATOS = "Intra.db";
 
-    private static final int VERSION_ACTUAL = 1;
+    //private static final String DB_NAME = "tesisbd.sqlite";
+    private static final int DB_SCHEME_VERSION = 1;
+    private static String DB_PATH = "/data/data/com.example.hgmovil.intramovil/databases/";
+    private static String DB_NAME = "Intra";
+    protected SQLiteDatabase db;
+    private final Context context;
 
-    private final Context contexto;
+    public BDIntraMovil(Context context) {
 
-    interface Tablas {
-        String ALARMA = "alarma";
-        String ALUMNO = "alumno";
-        String ALUMNO_HAS_ALARMA = "alumno_has_alarma";
-        String ALUMNO_HAS_SECCION = "alumno_has_seccion";
-        String ASIGNATURA = "asignatura";
-        String ASISTENCIA = "asistencia";
-        String CARRERA = "carrera";
-        String CARRERA_ASIGNATURA = "carrera_asignatura";
-        String CARRERA_JEFECARRERA = "carrera_jefecarra";
-        String DIA = "dia";
-        String DOCENTE = "docente";
-        String HORARIO = "horario";
-        String HORARIO_SECCION = "horario_seccion";
-        //String HORARIOS_HAS_SALA = "horarios_has_sala";
-        String JEFECARRERA = "jefecarrera";
-        String MATERIAL = "material";
-        String NOTA = "nota";
-        String PAGO = "pago";
-        String SALA = "sala";
-        String SECCION = "seccion";
-    }
-    interface Referencias {
-
-
-        String ALUMNO_RUT = String.format("REFERENCES %s(%s)",
-                Tablas.ALUMNO , Alumno.RUT);
-
-        String ALARMA_ID = String.format("REFERENCES %s(%s)",
-                Tablas.ALARMA, Alarma.ID);
-
-        String ALUMNO_HAS_SECCION_ID = String.format("REFERENCES %s(%s)",
-                Tablas.ALUMNO_HAS_SECCION, Alumno_has_seccion.ID);
-
-        String CARRERA_ID = String.format("REFERENCES %s(%s)",
-                Tablas.CARRERA, Carrera.ID);
-
-        String JEFECARRERA_ID = String.format("REFERENCES %s(%s)",
-                Tablas.JEFECARRERA , Jefecarrera.ID);
-
-        String ASIGNATURA_ID  = String.format("REFERENCES %s(%s)",
-                Tablas.ASIGNATURA ,Asignatura.ID);
-
-        String SECCION_ID = String.format("REFERENCES %s(%s)",
-                Tablas.SECCION ,Seccion.ID);
-
-        String DOCENTE_ID  = String.format("REFERENCES %s(%s)",
-                Tablas.DOCENTE  ,Docente.ID);
-
-        String SALA_ID  = String.format("REFERENCES %s(%s)",
-                Tablas.SALA  , Sala.ID);
-
-        String DIA_ID   = String.format("REFERENCES %s(%s)",
-                Tablas.DIA   , Dia.ID);
-
-        String HORARIO_ID   = String.format("REFERENCES %s(%s)",
-                Tablas.HORARIO   , Dia.ID);
-
-    }
-    public BDIntraMovil(Context contexto) {
-        super(contexto, NOMBRE_BASE_DATOS, null, VERSION_ACTUAL);
-        this.contexto = contexto;
-    }
-    @Override
-    public void onOpen(SQLiteDatabase db)
-    {
-        super.onOpen(db);
-        if (!db.isReadOnly()) {
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
-                db.setForeignKeyConstraintsEnabled(true);
-            } else {
-                db.execSQL("PRAGMA foreign_keys=ON");
-            }
+        super(context, DB_NAME, null, DB_SCHEME_VERSION);
+        this.context = context;
+        try {
+            createDataBase();
+        } catch (IOException e) {
+            e.printStackTrace();
         }
     }
+
+
     @Override
-    public void onCreate(SQLiteDatabase db)
-    {
-        db.execSQL(String.format("CREATE TABLE %s (%s TEXT PRIMARY KEY NOT NULL," +
-                        "%s TEXT UNIQUE NOT NULL,%s TEXT NOT NULL,%s TEXT NOT NULL, %s TEXT NOT NULL, " +
-                        "%s INTEGER NOT NULL %s)",
-                Tablas.ALUMNO, BaseColumns._ID,
-                Alumno.RUT, Alumno.NOMBRE, Alumno.CONTRASEÑA, Alumno.CORREO,
-                Alumno.CARRERA_ID, Referencias.CARRERA_ID));
+    public void onCreate(SQLiteDatabase db) {
 
-        db.execSQL(String.format("CREATE TABLE %s (%s INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL," +
-                        "%s INTEGER NOT NULL,%s INTEGER NOT NULL %s, " +
-                        "%s INTEGER NOT NULL %s)",
-                Tablas.ALUMNO_HAS_ALARMA, BaseColumns._ID,
-                Alumno_has_alarma.ID, Alumno_has_alarma.ALARMA_ID, Referencias.ALARMA_ID,
-                Alumno_has_alarma.ALUMNO_RUT, Referencias.ALUMNO_RUT));
 
-        db.execSQL(String.format("CREATE TABLE %s (%s INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL," +
-                        "%s INTEGER NOT NULL, %s TEXT NOT NULL,%s DATETIME NOT NULL)",
-                Tablas.ALARMA, BaseColumns._ID,
-                Alarma.ID, Alarma.ASUNTO, Alarma.DIA_HORA));
-
-        db.execSQL(String.format("CREATE TABLE %s (%s INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL," +
-                        "%s INTEGER NOT NULL, %s TEXT NOT NULL,%s INTEGER NOT NULL)",
-                Tablas.CARRERA, BaseColumns._ID,
-                Carrera.ID, Carrera.NOMBRE, Carrera.MONTOANUAL));
-
-        db.execSQL(String.format("CREATE TABLE %s (%s INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL," +
-                        "%s INTEGER NOT NULL,%s INTEGER NOT NULL %s, " +
-                        "%s INTEGER NOT NULL %s)",
-                Tablas.CARRERA_JEFECARRERA, BaseColumns._ID,
-                Carrera_jefecarrera.ID, Carrera_jefecarrera.CARRERA_ID, Referencias.CARRERA_ID,
-                Carrera_jefecarrera.JEFECARRERA_ID, Referencias.JEFECARRERA_ID));
-
-        db.execSQL(String.format("CREATE TABLE %s (%s INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL," +
-                        "%s INTEGER NOT NULL, %s TEXT NOT NULL,%s TEXT NOT NULL)",
-                Tablas.JEFECARRERA, BaseColumns._ID,
-                Jefecarrera.ID, Jefecarrera.NOMBRE, Jefecarrera.CORREO));
-
-        db.execSQL(String.format("CREATE TABLE %s (%s INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL," +
-                        "%s INTEGER NOT NULL,%s INTEGER NOT NULL %s, " +
-                        "%s INTEGER NOT NULL %s)",
-                Tablas.CARRERA_ASIGNATURA, BaseColumns._ID,
-                Carrera_asignatura.ID, Carrera_asignatura.CARRERA_ID, Referencias.CARRERA_ID,
-                Carrera_asignatura.ASIGNATURA_ID, Referencias.ASIGNATURA_ID));
-
-        db.execSQL(String.format("CREATE TABLE %s (%s INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL," +
-                        "%s INTEGER NOT NULL, %s TEXT NOT NULL,%s INTEGER NOT NULL)",
-                Tablas.ASIGNATURA, BaseColumns._ID,
-                Asignatura.ID, Asignatura.NOMBRE, Asignatura.HORAS));
-
-        db.execSQL(String.format("CREATE TABLE %s (%s INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL," +
-                        "%s INTEGER NOT NULL, %s TEXT NOT NULL,%s INTEGER NOT NULL %s)",
-                Tablas.MATERIAL, BaseColumns._ID,
-                Material.ID, Material.ARCHIVO, Material.ASIGNATURA_ID, Referencias.ASIGNATURA_ID));
-
-        db.execSQL(String.format("CREATE TABLE %s (%s INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL," +
-                        "%s INTEGER NOT NULL, %s INTEGER NOT NULL,%s INTEGER NOT NULL %s, "+
-                        "%s INTEGER NOT NULL %S)",
-                Tablas.SECCION, BaseColumns._ID,
-                Seccion.ID, Seccion.NUMERO, Seccion.DOCENTE_ID, Referencias.DOCENTE_ID,
-                Seccion.ASIGNATURA_ID, Referencias.ASIGNATURA_ID));
-
-        db.execSQL(String.format("CREATE TABLE %s (%s INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL," +
-                        "%s INTEGER NOT NULL, %s TEXT NOT NULL,%s TEXT NOT NULL)",
-                Tablas.DOCENTE, BaseColumns._ID,
-                Docente.ID, Docente.NOMBRE, Docente.CORREO));
-
-        db.execSQL(String.format("CREATE TABLE %s (%s INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL," +
-                        "%s INTEGER NOT NULL,%s INTEGER NOT NULL %s, " +
-                        "%s INTEGER NOT NULL %s, %s INTEGER NOT NULL %s)",
-                Tablas.HORARIO_SECCION, BaseColumns._ID,
-                Horario_seccion.ID, Horario_seccion.HORARIO_ID, Referencias.HORARIO_ID,
-                Horario_seccion.SECCION_ID, Referencias.SECCION_ID, Horario_seccion.SALA_ID, Referencias.SALA_ID));
-
-        db.execSQL(String.format("CREATE TABLE %s (%s INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL," +
-                        "%s INTEGER NOT NULL, %s TEXT NOT NULL,%s INTEGER NOT NULL)",
-                Tablas.SALA, BaseColumns._ID,
-                Sala.ID, Sala.NOMBRE, Sala.PISO));
-
-        db.execSQL(String.format("CREATE TABLE %s (%s INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL," +
-                        "%s INTEGER NOT NULL, %s TIME NOT NULL,%s TIME NOT NULL, "+
-                        "%s INTEGER NOT NULL %S)",
-                Tablas.HORARIO, BaseColumns._ID,
-                Horario.ID, Horario.HORAINICIO, Horario.HORAFIN,
-                Horario.DIA_ID, Referencias.DIA_ID));
-
-        db.execSQL(String.format("CREATE TABLE %s (%s INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL," +
-                        "%s INTEGER NOT NULL, %s TEXT NOT NULL)",
-                Tablas.DIA, BaseColumns._ID,
-                Dia.ID, Dia.DIA_SEMANA));
-
-        db.execSQL(String.format("CREATE TABLE %s (%s INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL," +
-                        "%s INTEGER NOT NULL, %s INTEGER NOT NULL,%s INTEGER NOT NULL %s, "+
-                        "%s INTEGER NOT NULL %S)",
-                Tablas.ASISTENCIA, BaseColumns._ID,
-                Asistencia.ID, Asistencia.HORASASIST, Asistencia.ALUMNO_RUT, Referencias.ALUMNO_RUT,
-                Asistencia.ALUMNO_HAS_SECCION_ID, Referencias.ALUMNO_HAS_SECCION_ID));
-
-        db.execSQL(String.format("CREATE TABLE %s (%s TEXT PRIMARY KEY NOT NULL," +
-                        "%s INTEGER UNIQUE NOT NULL,%s TEXT NOT NULL,%s DATE NOT NULL, %s TEXT NOT NULL, " +
-                        "%s INTEGER NOT NULL, %s INTEGER NOT NULL %s)",
-                Tablas.PAGO, BaseColumns._ID,
-                Pago.ID, Pago.ESTADO, Pago.FENCHAVENC, Pago.CONCEPTO,
-                Pago.MONTO, Pago.ALUMNO_RUT, Referencias.ALUMNO_RUT));
-
-        db.execSQL(String.format("CREATE TABLE %s (%s TEXT PRIMARY KEY NOT NULL," +
-                        "%s INTEGER UNIQUE NOT NULL,%s DECIMAL NOT NULL,%s INTEGER NOT NULL, %s DATE NOT NULL, " +
-                        "%s INTEGER NOT NULL %s, %s INTEGER NOT NULL %s)",
-                Tablas.NOTA, BaseColumns._ID,
-                Nota.ID, Nota.NOTA, Nota.PONDERACION, Nota.FECHA,
-                Nota.ALUMNO_RUT, Referencias.ALUMNO_RUT, Nota.SECCION_ID, Referencias.SECCION_ID));
-
-        db.execSQL(String.format("CREATE TABLE %s (%s INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL," +
-                        "%s INTEGER NOT NULL,%s INTEGER NOT NULL %s, " +
-                        "%s INTEGER NOT NULL %s)",
-                Tablas.ALUMNO_HAS_SECCION, BaseColumns._ID,
-                Alumno_has_seccion.ID, Alumno_has_seccion.SECCION_ID, Referencias.SECCION_ID,
-                Alumno_has_seccion.ALUMNO_RUT, Referencias.ALUMNO_RUT));
     }
+
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
 
-        db.execSQL("DROP TABLE IF EXISTS " + Tablas.ALUMNO);
-        db.execSQL("DROP TABLE IF EXISTS " + Tablas.ALUMNO_HAS_ALARMA);
-        db.execSQL("DROP TABLE IF EXISTS " + Tablas.ALARMA);
-        db.execSQL("DROP TABLE IF EXISTS " + Tablas.CARRERA);
-        db.execSQL("DROP TABLE IF EXISTS " + Tablas.CARRERA_JEFECARRERA);
-        db.execSQL("DROP TABLE IF EXISTS " + Tablas.JEFECARRERA);
-        db.execSQL("DROP TABLE IF EXISTS " + Tablas.CARRERA_ASIGNATURA);
-        db.execSQL("DROP TABLE IF EXISTS " + Tablas.ASIGNATURA);
-        db.execSQL("DROP TABLE IF EXISTS " + Tablas.MATERIAL);
-        db.execSQL("DROP TABLE IF EXISTS " + Tablas.SECCION);
-        db.execSQL("DROP TABLE IF EXISTS " + Tablas.DOCENTE);
-        db.execSQL("DROP TABLE IF EXISTS " + Tablas.HORARIO_SECCION);
-        db.execSQL("DROP TABLE IF EXISTS " + Tablas.SALA);
-        db.execSQL("DROP TABLE IF EXISTS " + Tablas.HORARIO);
-        db.execSQL("DROP TABLE IF EXISTS " + Tablas.DIA);
-        db.execSQL("DROP TABLE IF EXISTS " + Tablas.ASISTENCIA);
-        db.execSQL("DROP TABLE IF EXISTS " + Tablas.PAGO);
-        db.execSQL("DROP TABLE IF EXISTS " + Tablas.NOTA);
-        db.execSQL("DROP TABLE IF EXISTS " + Tablas.ALUMNO_HAS_SECCION);
+    }
 
-        onCreate(db);
+    public void createDataBase() throws IOException {
+
+        boolean dbExist = checkDataBase();
+
+        if (dbExist) {
+            // Si existe, no haemos nada!
+        } else {
+            // Llamando a este método se crea la base de datos vacía en la ruta
+            // por defecto del sistema de nuestra aplicación por lo que
+            // podremos sobreescribirla con nuestra base de datos.
+            this.getReadableDatabase();
+        }
+        try {
+
+            copyDataBase();
+
+        } catch (Exception e) {
+
+            throw new Error("Error copiando database");
+        }
+    }
+
+
+    private boolean checkDataBase() {
+
+        SQLiteDatabase checkDB = null;
+
+        try {
+            String myPath = DB_PATH + DB_NAME;
+            checkDB = SQLiteDatabase.openDatabase(myPath, null, SQLiteDatabase.OPEN_READONLY);
+
+        } catch (SQLiteException e) {
+            // Base de datos no creada todavia
+        }
+
+        if (checkDB != null) {
+
+            checkDB.close();
+        }
+
+        return checkDB != null ? true : false;
+
+    }
+
+    public void openDataBase() throws SQLException {
+
+        // Open the database
+        String myPath = DB_PATH + DB_NAME;
+        db = SQLiteDatabase.openDatabase(myPath, null, SQLiteDatabase.OPEN_READWRITE);
+    }
+
+    @Override
+    public synchronized void close() {
+
+        if (db != null)
+            db.close();
+
+        super.close();
+    }
+
+    private void copyDataBase() {
+
+        try{
+            openDataBase();
+
+            String CREATE_ALARMA = "CREATE TABLE \"alarma\" (\"Id\" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL  ,\"Asunto\" VARCHAR(45)  NULL DEFAULT NULL COLLATE NOCASE,\"Dia_Hora\" DATETIME  NULL DEFAULT NULL );";
+            db.execSQL(CREATE_ALARMA);
+
+            String CREATE_ALUMNO = "CREATE TABLE \"alumno\" (\"Rut\" VARCHAR(10) PRIMARY KEY NOT NULL  COLLATE NOCASE,\"Nombre\" VARCHAR(80)  NOT NULL  COLLATE NOCASE,\"Contraseña\" VARCHAR(30)  NOT NULL  COLLATE NOCASE,\"Correo\" VARCHAR(45)  NOT NULL  COLLATE NOCASE,\"Carrera_Id\" INT  NOT NULL  ,CONSTRAINT `fk_Alumno_Carrera` FOREIGN KEY (`Carrera_Id`) REFERENCES carrera (`Id`) ON DELETE NO ACTION ON UPDATE NO ACTION);";
+            db.execSQL(CREATE_ALUMNO);
+
+            String CREATE_ALUMNO_HAS_ALARMA = "CREATE TABLE \"alumno_has_alarma\" (\"Alumno_Rut\" VARCHAR(10)  NOT NULL  COLLATE NOCASE,\"Alarma_Id\" INT  NOT NULL  ,\"Id\" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL  ,CONSTRAINT `fk_Alumno_has_Alarma_Alarma1` FOREIGN KEY (`Alarma_Id`) REFERENCES alarma (`Id`) ON DELETE NO ACTION ON UPDATE NO ACTION,CONSTRAINT `fk_Alumno_has_Alarma_Alumno1` FOREIGN KEY (`Alumno_Rut`) REFERENCES alumno (`Rut`) ON DELETE NO ACTION ON UPDATE NO ACTION);";
+            db.execSQL(CREATE_ALUMNO_HAS_ALARMA);
+
+            String CREATE_ALUMNO_HAS_SECCION = "CREATE TABLE \"alumno_has_seccion\" (\"Id\" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL  ,\"Seccion_Id\" INT  NOT NULL  ,\"Alumno_Rut\" VARCHAR(10)  NOT NULL  COLLATE NOCASE,CONSTRAINT `fk_Alumno_has_Seccion_Alumno1` FOREIGN KEY (`Alumno_Rut`) REFERENCES alumno (`Rut`) ON DELETE NO ACTION ON UPDATE NO ACTION,CONSTRAINT `fk_Alumno_has_Seccion_Seccion1` FOREIGN KEY (`Seccion_Id`) REFERENCES seccion (`Id`) ON DELETE NO ACTION ON UPDATE NO ACTION);";
+            db.execSQL(CREATE_ALUMNO_HAS_SECCION);
+
+            String CREATE_ASIGNATURA = "CREATE TABLE \"asignatura\" (\"Id\" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL  ,\"Nombre\" VARCHAR(80)  NULL DEFAULT NULL COLLATE NOCASE,\"Horas\" INT  NULL DEFAULT NULL );";
+            db.execSQL(CREATE_ASIGNATURA);
+
+            String CREATE_ASISTENCIA = "CREATE TABLE \"asistencia\" (\"Id\" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL  ,\"HorasAsist\" INT  NULL DEFAULT NULL ,\"Alumno_Rut\" VARCHAR(12)  NOT NULL  COLLATE NOCASE,\"Alumno_has_Seccion_Id\" INT  NOT NULL  ,CONSTRAINT `fk_Asistencia_Alumno1` FOREIGN KEY (`Alumno_Rut`) REFERENCES alumno (`Rut`) ON DELETE NO ACTION ON UPDATE NO ACTION,CONSTRAINT `fk_Asistencia_Alumno_has_Seccion1` FOREIGN KEY (`Alumno_has_Seccion_Id`) REFERENCES alumno_has_seccion (`Id`) ON DELETE NO ACTION ON UPDATE NO ACTION);";
+            db.execSQL(CREATE_ASISTENCIA);
+
+            String CREATE_CARRERA = "CREATE TABLE \"carrera\" (\"Id\" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL  ,\"Nombre\" VARCHAR(50)  NULL DEFAULT NULL COLLATE NOCASE,\"MontoAnual\" INT  NULL DEFAULT NULL );";
+            db.execSQL(CREATE_CARRERA);
+
+            String CREATE_CARRERA_ASIGNATURA = "CREATE TABLE \"carrera_asignatura\" (\"Carrera_Id\" INT  NOT NULL  ,\"Asignatura_Id\" INT  NOT NULL  ,\"Id\" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL  ,CONSTRAINT `fk_Carrera_has_Asignatura_Asignatura1` FOREIGN KEY (`Asignatura_Id`) REFERENCES asignatura (`Id`) ON DELETE NO ACTION ON UPDATE NO ACTION,CONSTRAINT `fk_Carrera_has_Asignatura_Carrera1` FOREIGN KEY (`Carrera_Id`) REFERENCES carrera (`Id`) ON DELETE NO ACTION ON UPDATE NO ACTION);";
+            db.execSQL(CREATE_CARRERA_ASIGNATURA);
+
+            String CREATE_CARRERA_JEFECARRERA = "CREATE TABLE \"carrera_jefecarrera\" (\"Carrera_Id\" INT  NOT NULL  ,\"JefeCarrera_Id\" INT  NOT NULL  ,\"Id\" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL  ,CONSTRAINT `fk_Carrera_has_JefeCarrera_Carrera1` FOREIGN KEY (`Carrera_Id`) REFERENCES carrera (`Id`) ON DELETE NO ACTION ON UPDATE NO ACTION,CONSTRAINT `fk_Carrera_has_JefeCarrera_JefeCarrera1` FOREIGN KEY (`JefeCarrera_Id`) REFERENCES jefecarrera (`Id`) ON DELETE NO ACTION ON UPDATE NO ACTION);";
+            db.execSQL(CREATE_CARRERA_JEFECARRERA);
+
+            String CREATE_DIA = "CREATE TABLE \"dia\" (\"Id\" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL  ,\"Dia_Semana\" VARCHAR(9)  NULL DEFAULT NULL COLLATE NOCASE);";
+            db.execSQL(CREATE_DIA);
+
+            String CREATE_DOCENTE = "CREATE TABLE \"docente\" (\"Id\" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL  ,\"Nombre\" VARCHAR(80)  NULL DEFAULT NULL COLLATE NOCASE,\"Correo\" VARCHAR(45)  NULL DEFAULT NULL COLLATE NOCASE);";
+            db.execSQL(CREATE_DOCENTE);
+
+            String CREATE_HORARIO = "CREATE TABLE \"horario\" (\"Id\" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL  ,\"HoraInicio\" TIME  NULL DEFAULT NULL ,\"HoraFin\" TIME  NULL DEFAULT NULL ,\"Dia_Id\" INT  NOT NULL  ,CONSTRAINT `fk_Horario_Dia1` FOREIGN KEY (`Dia_Id`) REFERENCES dia (`Id`) ON DELETE NO ACTION ON UPDATE NO ACTION);";
+            db.execSQL(CREATE_HORARIO);
+
+            String CREATE_HORARIO_SECCION = "CREATE TABLE \"horario_seccion\" (\"Id\" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL  ,\"Horario_Id\" INT  NOT NULL  ,\"Seccion_Id\" INT  NOT NULL  ,\"Sala_Id\" INT  NOT NULL  ,CONSTRAINT `fk_Horario_Seccion_Horario1` FOREIGN KEY (`Horario_Id`) REFERENCES horario (`Id`) ON DELETE NO ACTION ON UPDATE NO ACTION,CONSTRAINT `fk_Horario_Seccion_Sala1` FOREIGN KEY (`Sala_Id`) REFERENCES sala (`Id`) ON DELETE NO ACTION ON UPDATE NO ACTION,CONSTRAINT `fk_Horario_Seccion_Seccion1` FOREIGN KEY (`Seccion_Id`) REFERENCES seccion (`Id`) ON DELETE NO ACTION ON UPDATE NO ACTION);";
+            db.execSQL(CREATE_HORARIO_SECCION);
+
+            String CREATE_HORARIOS_HAS_SECCION = "CREATE TABLE \"horarios_has_sala\" (\"Sala_Id\" INT PRIMARY KEY NOT NULL  ,\"Horarios_has_Seccion_Horarios_Id\" INT  NOT NULL  ,\"Horarios_has_Seccion_Seccion_Id\" INT  NOT NULL  ,CONSTRAINT `fk_Horarios_has_Sala_Sala1` FOREIGN KEY (`Sala_Id`) REFERENCES sala (`Id`) ON DELETE NO ACTION ON UPDATE NO ACTION);";
+            db.execSQL(CREATE_HORARIOS_HAS_SECCION);
+
+
+            String CREATE_JEFECARRERA = "CREATE TABLE \"jefecarrera\" (\"Id\" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL  ,\"Nombre\" VARCHAR(80)  NULL DEFAULT NULL COLLATE NOCASE,\"Correo\" VARCHAR(45)  NULL DEFAULT NULL COLLATE NOCASE);";
+            db.execSQL(CREATE_JEFECARRERA);
+
+            String CREATE_MATERIAL = "CREATE TABLE \"material\" (\"Id\" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL  ,\"Archivo\" VARCHAR(45)  NULL DEFAULT NULL COLLATE NOCASE,\"Asignatura_Id\" INT  NOT NULL  ,CONSTRAINT `fk_Materiales_Asignatura1` FOREIGN KEY (`Asignatura_Id`) REFERENCES asignatura (`Id`) ON DELETE NO ACTION ON UPDATE NO ACTION);";
+            db.execSQL(CREATE_MATERIAL);
+
+            String CREATE_NOTA = "CREATE TABLE \"nota\" (\"Id\" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL  ,\"Nota\" FLOAT(2,1)  NULL DEFAULT NULL ,\"Ponderacion\" INT  NULL DEFAULT NULL ,\"Fecha\" DATE  NULL DEFAULT NULL ,\"Alumno_Rut\" VARCHAR(12)  NOT NULL  COLLATE NOCASE,\"Seccion_Id\" INT  NOT NULL  ,CONSTRAINT `fk_Notas_Alumno1` FOREIGN KEY (`Alumno_Rut`) REFERENCES alumno (`Rut`) ON DELETE NO ACTION ON UPDATE NO ACTION,CONSTRAINT `fk_Notas_Seccion1` FOREIGN KEY (`Seccion_Id`) REFERENCES seccion (`Id`) ON DELETE NO ACTION ON UPDATE NO ACTION);";
+            db.execSQL(CREATE_NOTA);
+
+            String CREATE_PAGO = "CREATE TABLE \"pago\" (\"Id\" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL  ,\"Estado\" VARCHAR(15)  NULL DEFAULT NULL COLLATE NOCASE,\"FechaVenc\" DATE  NULL DEFAULT NULL ,\"Concepto\" VARCHAR(45)  NULL DEFAULT NULL COLLATE NOCASE,\"Monto\" INT  NULL DEFAULT NULL ,\"Alumno_Rut\" VARCHAR(12)  NOT NULL  COLLATE NOCASE,CONSTRAINT `fk_Pagos_Alumno1` FOREIGN KEY (`Alumno_Rut`) REFERENCES alumno (`Rut`) ON DELETE NO ACTION ON UPDATE NO ACTION);";
+            db.execSQL(CREATE_PAGO);
+
+            String CREATE_SALA = "CREATE TABLE \"sala\" (\"Id\" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL  ,\"Nombre\" VARCHAR(45)  NULL DEFAULT NULL COLLATE NOCASE,\"Piso\" INT  NULL DEFAULT NULL );";
+            db.execSQL(CREATE_SALA);
+
+            String CREATE_SECCION = "CREATE TABLE \"seccion\" (\"Id\" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL  ,\"Numero\" INT  NULL DEFAULT NULL ,\"Docente_Id\" INT  NOT NULL  ,\"Asignatura_Id\" INT  NOT NULL  ,CONSTRAINT `fk_Seccion_Asignatura1` FOREIGN KEY (`Asignatura_Id`) REFERENCES asignatura (`Id`) ON DELETE NO ACTION ON UPDATE NO ACTION,CONSTRAINT `fk_Seccion_Docente1` FOREIGN KEY (`Docente_Id`) REFERENCES docente (`Id`) ON DELETE NO ACTION ON UPDATE NO ACTION);";
+            db.execSQL(CREATE_SECCION);
+
+
+            close();
+        }
+        catch(Exception ex)
+        {
+            ex.printStackTrace();
+        }
     }
 }

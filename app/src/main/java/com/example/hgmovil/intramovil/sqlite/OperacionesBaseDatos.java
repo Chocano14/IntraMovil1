@@ -29,18 +29,20 @@ import com.example.hgmovil.intramovil.modelo.Nota;
 
 public final class OperacionesBaseDatos {
 
-        private static BDIntraMovil baseDatos;
+    private static BDIntraMovil baseDatos;
 
-        private static OperacionesBaseDatos instancia = new OperacionesBaseDatos();
+    private static OperacionesBaseDatos instancia = new OperacionesBaseDatos();
 
-        private OperacionesBaseDatos() {
-        }
-
-        public static OperacionesBaseDatos obtenerInstancia(Context contexto) {
-            if (baseDatos == null) {
-                baseDatos = new BDIntraMovil(contexto);
-            }
-            return instancia;
-        }
+    public OperacionesBaseDatos() {
     }
+
+    public static OperacionesBaseDatos obtenerInstancia(Context contexto) {
+        if (baseDatos == null) {
+            baseDatos = new BDIntraMovil(contexto);
+        }
+        return instancia;
+    }
+}
+
+
 
