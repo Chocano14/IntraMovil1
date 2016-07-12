@@ -59,13 +59,13 @@ public class AsignaturaDAO extends BDIntraMovil
         }
         return dev;
     }
-    public ArrayList<String> listadoNombres(){
+    public ArrayList<String> listadoAsigxCarrera(){
         ArrayList<String> dev = null;
         try{
             openDataBase();
             dev = new ArrayList<String>();
-            String[] campos = {"Nombre"};
-            Cursor c = db.query(tabla, campos, null,null, null, null, null, null);
+            String query = "SELECT a.Nombre  FROM asignatura as a JOIN carrera_asignatura as ca ON   a.Id = ca.Asignatura_Id Where ca.Carrera_Id = \"1\";";
+            Cursor c = db.rawQuery(query, null);
             if (c.moveToFirst()) {
                 do {
                     String nombre = c.getString(0);

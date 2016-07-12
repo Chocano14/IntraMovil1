@@ -1,5 +1,6 @@
 package com.example.hgmovil.intramovil.sqlite;
 import android.content.Context;
+import android.database.Cursor;
 import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteException;
@@ -238,5 +239,27 @@ public class BDIntraMovil extends SQLiteOpenHelper
         {
             ex.printStackTrace();
         }
+    }
+    public String searchPass (String rut)
+    {
+        db = this.getReadableDatabase();
+        String query = "select Rut, Contraseña from alumno";
+        Cursor cursor = db.rawQuery(query, null);
+        String a, b;
+        b = "No encontrado";
+        if (cursor.moveToFirst())
+        {
+            do
+            {
+                a = cursor.getString(0);
+                if(a.equals(rut))
+                {
+                    b = cursor.getString(1);
+                    break;
+                }
+            }
+            while (cursor.moveToNext());
+        }
+        return b;
     }
 }

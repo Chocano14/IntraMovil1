@@ -7,7 +7,7 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.example.hgmovil.intramovil.LoginActivity"
+    tools:context=".view.LoginActivity"
     android:background="#fefefe"
     android:id="@+id/login">
 
@@ -21,7 +21,9 @@
         android:background="#000000"
         android:layout_marginBottom="37dp"
         android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:onClick="ingresar"
+        android:nestedScrollingEnabled="true" />
 
     <EditText
         android:id="@+id/txtRut"

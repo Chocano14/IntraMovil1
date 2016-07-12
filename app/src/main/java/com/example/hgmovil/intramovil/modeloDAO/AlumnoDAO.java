@@ -1,6 +1,7 @@
 package com.example.hgmovil.intramovil.modeloDAO;
 
 import android.content.Context;
+import android.database.Cursor;
 
 import com.example.hgmovil.intramovil.sqlite.BDIntraMovil;
 
@@ -14,7 +15,27 @@ public class AlumnoDAO extends BDIntraMovil
         super(context);
     }
 
-
-
+    public String searchPass (String rut)
+    {
+        db = this.getReadableDatabase();
+        String query = "select Rut, Contraseña from alumno";
+        Cursor cursor = db.rawQuery(query, null);
+        String a, b;
+        b = "No encontrado";
+        if (cursor.moveToFirst())
+        {
+            do
+            {
+                a = cursor.getString(0);
+                if(a.equals(rut))
+                {
+                    b = cursor.getString(1);
+                    break;
+                }
+            }
+            while (cursor.moveToNext());
+        }
+        return b;
+    }
 }
 
