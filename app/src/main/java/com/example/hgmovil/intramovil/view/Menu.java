@@ -8,7 +8,8 @@ import android.content.Intent;
         import android.widget.Button;
         import android.widget.EditText;
         import android.widget.ImageButton;
-        import android.widget.Toast;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.hgmovil.intramovil.R;
 
@@ -29,10 +30,20 @@ public class Menu extends AppCompatActivity
 
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState)
+    {
+        String rt = getIntent().getStringExtra("Rutt");
+        Intent rt2 = new Intent(this, MenuNot.class);
+        rt2.putExtra("RuttMenu", rt);
+        startActivity(rt2);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.menu);
         BtnNot = (ImageButton) findViewById(R.id.BtnNotas);
+        String nom = getIntent().getStringExtra("Nomb");
+
+        TextView tv = (TextView)findViewById(R.id.txtUser);
+        tv.setText(nom);
+
 
         BtnNot.setOnClickListener(new View.OnClickListener() {
             @Override

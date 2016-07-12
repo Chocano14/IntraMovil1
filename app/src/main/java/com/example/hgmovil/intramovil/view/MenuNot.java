@@ -28,18 +28,23 @@ public class MenuNot extends AppCompatActivity implements View.OnClickListener
     private TextView Fecha,Fecha1,Fecha2,Fecha3,Fecha4,Fecha5,Fecha6;
     private ListView listNot;
     private List<String> item = null;
-
+    private String ry;
 
     private ArrayAdapter adapter;
     @Override
-    protected void onCreate(Bundle savedInstanceState)
+    public void onCreate(Bundle savedInstanceState)
     {
+
         AsignaturaDAO empdao = new AsignaturaDAO(this);
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.menu_not);
+        ry = getIntent().getStringExtra("RuttMenu");
+
+
         btn = (Button) findViewById(R.id.btn);
         spn = (Spinner) findViewById(R.id.spnAsig);
+
         //listNot = (ListView)findViewById(R.id.lv);
 
         Nota = (TextView) findViewById(R.id.txtNota);
@@ -75,7 +80,7 @@ public class MenuNot extends AppCompatActivity implements View.OnClickListener
         btn.setOnClickListener(this);
 
         AsignaturaDAO AsigDAO = new AsignaturaDAO(this);
-        ArrayList<String> emp = AsigDAO.listadoAsigxCarrera();
+        ArrayList<String> emp = listadoAsigxCarrera2();
         adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, emp);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spn.setAdapter(adapter);
@@ -94,7 +99,7 @@ public class MenuNot extends AppCompatActivity implements View.OnClickListener
         BDIntraMovil helper = new BDIntraMovil(this);
         SQLiteDatabase db = helper.getReadableDatabase();
         helper.openDataBase();
-        Cursor c = db.rawQuery("SELECT n.Nota, n.Ponderacion, n.Fecha FROM nota as n  LEFT JOIN seccion as sec ON n.Seccion_Id = sec.Id JOIN asignatura as asig ON sec.Asignatura_Id =asig.Id WHERE asig.Nombre ='" + asignaturaSelec + "';", null);
+        Cursor c = db.rawQuery("SELECT n.Nota, n.Ponderacion, n.Fecha FROM nota as n  LEFT JOIN seccion as sec ON n.Seccion_Id = sec.Id JOIN asignatura as asig ON sec.Asignatura_Id =asig.Id JOIN alumno as al ON n.Alumno_Rut = al.Rut WHERE asig.Nombre ='" + asignaturaSelec + "'and al.Rut='"+ry+"';", null);
         Nota.setText("");Nota1.setText("");Nota2.setText("");Nota3.setText("");Nota4.setText("");Nota5.setText("");Nota6.setText("");
         Ponderacion.setText("");Ponderacion1.setText("");Ponderacion2.setText("");;Ponderacion3.setText("");Ponderacion4.setText("");;Ponderacion5.setText("");Ponderacion6.setText("");
         Fecha.setText("");Fecha1.setText("");Fecha2.setText("");;Fecha3.setText("");Fecha4.setText("");;Fecha5.setText("");Fecha6.setText("");
@@ -188,4 +193,37 @@ public class MenuNot extends AppCompatActivity implements View.OnClickListener
 
     }
 
+    public ArrayList<String> listadoAsigxCarrera2()
+    {
+        BDIntraMovil helper = new BDIntraMovil(this);
+        SQLiteDatabase db = helper.getReadableDatabase();
+        ArrayList<String> dev = null;
+        try{
+            helper.openDataBase();
+            dev = new ArrayList<String>();
+            Cursor c = db.rawQuery("SELECT a.Nombre\n" +
+                    "FROM asignatura as a\n" +
+                    "JOIN seccion as sec\n" +
+                    "ON a.Id=sec.Asignatura_Id\n" +
+                    "JOIN Alumno_has_Seccion as ahs\n" +
+                    "ON sec.Id= ahs.Seccion_Id\n" +
+                    "JOIN Alumno as alum\n" +
+                    "ON ahs.Alumno_Rut = alum.Rut\n" +
+                    "WHERE alum.Rut='"+ry+"'", null);
+            if (c.moveToFirst()) {
+                do {
+                    String nombre = c.getString(0);
+                    dev.add(nombre);
+                } while(c.moveToNext());
+            }
+            c.close();
+            helper.close();
+
+        }catch(Exception ex){
+            ex.printStackTrace();
+            helper.close();
+            return null;
+        }
+        return dev;
+    }
 }

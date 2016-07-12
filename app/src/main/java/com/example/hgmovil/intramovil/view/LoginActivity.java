@@ -39,13 +39,16 @@ public class LoginActivity extends AppCompatActivity
             if(v.getId() == R.id.btnIniciar)
             {
 
-                fila = db.rawQuery("select rut, contraseña from alumno where rut='"+user+"' and contraseña='"+contra+"'", null);
+                fila = db.rawQuery("select rut, contraseña, nombre from alumno where rut='"+user+"' and contraseña='"+contra+"'", null);
                 if (fila.moveToFirst()) {
                     String usua = fila.getString(0);
                     String pass = fila.getString(1);
+                    String nom = fila.getString(2);
 
                     if (user.equals(usua) && contra.equals(pass)) {
                         Intent i = new Intent(LoginActivity.this, com.example.hgmovil.intramovil.view.Menu.class);
+                        i.putExtra("Nomb", nom);
+                        i.putExtra("Rutt", usua);
                         startActivity(i);
                     }
                 }

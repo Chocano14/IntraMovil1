@@ -233,4 +233,13 @@
         android:layout_below="@+id/txtFecha5"
         android:layout_alignStart="@+id/txtFecha5" />
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Medium Text"
+        android:id="@+id/txtRu"
+        android:layout_above="@+id/btn"
+        android:layout_centerHorizontal="true" />
+
 </RelativeLayout>
