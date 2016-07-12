@@ -18,4 +18,36 @@ public class Horario
         this.HORAFIN=horafin;
         this.DIA_ID=dia_id;
     }
+
+    public Time getHORAINICIO() {
+        return HORAINICIO;
+    }
+
+    public void setHORAINICIO(Time HORAINICIO) {
+        this.HORAINICIO = HORAINICIO;
+    }
+
+    public int getID() {
+        return ID;
+    }
+
+    public void setID(int ID) {
+        this.ID = ID;
+    }
+
+    public Time getHORAFIN() {
+        return HORAFIN;
+    }
+
+    public void setHORAFIN(Time HORAFIN) {
+        this.HORAFIN = HORAFIN;
+    }
+
+    public int getDIA_ID() {
+        return DIA_ID;
+    }
+
+    public void setDIA_ID(int DIA_ID) {
+        this.DIA_ID = DIA_ID;
+    }
 }

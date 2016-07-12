@@ -14,5 +14,29 @@ public class Alumno_has_alarma
         this.Alarma_Id=alarma_Id;
         this.Id=Id;
     }
+
+    public char getAlumno_Rut() {
+        return Alumno_Rut;
+    }
+
+    public void setAlumno_Rut(char alumno_Rut) {
+        Alumno_Rut = alumno_Rut;
+    }
+
+    public int getAlarma_Id() {
+        return Alarma_Id;
+    }
+
+    public void setAlarma_Id(int alarma_Id) {
+        Alarma_Id = alarma_Id;
+    }
+
+    public int getId() {
+        return Id;
+    }
+
+    public void setId(int id) {
+        Id = id;
+    }
 }
 

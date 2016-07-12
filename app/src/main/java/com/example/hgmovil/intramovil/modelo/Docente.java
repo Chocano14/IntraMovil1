@@ -14,4 +14,28 @@ public class Docente
         this.NOMBRE=nombre;
         this.CORREO=correo;
     }
+
+    public int getID() {
+        return ID;
+    }
+
+    public void setID(int ID) {
+        this.ID = ID;
+    }
+
+    public char getCORREO() {
+        return CORREO;
+    }
+
+    public void setCORREO(char CORREO) {
+        this.CORREO = CORREO;
+    }
+
+    public char getNOMBRE() {
+        return NOMBRE;
+    }
+
+    public void setNOMBRE(char NOMBRE) {
+        this.NOMBRE = NOMBRE;
+    }
 }

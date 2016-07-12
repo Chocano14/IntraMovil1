@@ -32,10 +32,7 @@ public class Menu extends AppCompatActivity
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
-        String rt = getIntent().getStringExtra("Rutt");
-        Intent rt2 = new Intent(this, MenuNot.class);
-        rt2.putExtra("RuttMenu", rt);
-        startActivity(rt2);
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.menu);
         BtnNot = (ImageButton) findViewById(R.id.BtnNotas);
@@ -50,20 +47,22 @@ public class Menu extends AppCompatActivity
             public void onClick(View v) {
                 Intent menunotas = new Intent(Menu.this, MenuNot.class);
                 startActivity(menunotas);
+                PasarvarMenunot();
             }
         });
 
-        /*BtnAsis = (ImageButton) findViewById(R.id.BtnAsistencia);
+        BtnAsis = (ImageButton) findViewById(R.id.BtnAsistencia);
 
         BtnAsis.setOnClickListener(new View.OnClickListener()
         {
             public void onClick(View v) {
-                Intent menuasis = new Intent(MenuPrincipal.this, MenuAsist.class);
+                Intent menuasis = new Intent(Menu.this, MenuAsist.class);
                 startActivity(menuasis);
+                PasarvarMenuasit();
             }
         });
 
-        BtnHora =(ImageButton) findViewById(R.id.BtnHorario);
+        /*BtnHora =(ImageButton) findViewById(R.id.BtnHorario);
 
         BtnHora.setOnClickListener(new View.OnClickListener()
         {
@@ -120,5 +119,21 @@ public class Menu extends AppCompatActivity
                 startActivity(formnuevo7);
             }
         });*/
+    }
+    public void PasarvarMenunot()
+    {
+        String rt = getIntent().getStringExtra("Rutt");
+        Intent rt2 = new Intent(this, MenuNot.class);
+        rt2.putExtra("RuttMenu", rt);
+        startActivity(rt2);
+
+    }
+    public void PasarvarMenuasit()
+    {
+        String rt = getIntent().getStringExtra("Rutt");
+        Intent rt2 = new Intent(this, MenuAsist.class);
+        rt2.putExtra("RuttMenu", rt);
+        startActivity(rt2);
+
     }
 }

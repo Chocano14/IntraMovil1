@@ -22,20 +22,15 @@ public class MenuNot extends AppCompatActivity implements View.OnClickListener
 {
     private Button btn;
     private Spinner spn;
-    private ListView lista;
     public TextView Nota,Nota1,Nota2,Nota3,Nota4,Nota5,Nota6;
     private TextView Ponderacion,Ponderacion1,Ponderacion2,Ponderacion3,Ponderacion4,Ponderacion5,Ponderacion6;
     private TextView Fecha,Fecha1,Fecha2,Fecha3,Fecha4,Fecha5,Fecha6;
-    private ListView listNot;
-    private List<String> item = null;
     private String ry;
 
     private ArrayAdapter adapter;
     @Override
     public void onCreate(Bundle savedInstanceState)
     {
-
-        AsignaturaDAO empdao = new AsignaturaDAO(this);
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.menu_not);
@@ -79,7 +74,6 @@ public class MenuNot extends AppCompatActivity implements View.OnClickListener
 
         btn.setOnClickListener(this);
 
-        AsignaturaDAO AsigDAO = new AsignaturaDAO(this);
         ArrayList<String> emp = listadoAsigxCarrera2();
         adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, emp);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);

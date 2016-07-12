@@ -13,4 +13,20 @@ public class Dia
         this.DIA_SEMANA=dia_semana;
 
     }
+
+    public int getID() {
+        return ID;
+    }
+
+    public void setID(int ID) {
+        this.ID = ID;
+    }
+
+    public char getDIA_SEMANA() {
+        return DIA_SEMANA;
+    }
+
+    public void setDIA_SEMANA(char DIA_SEMANA) {
+        this.DIA_SEMANA = DIA_SEMANA;
+    }
 }

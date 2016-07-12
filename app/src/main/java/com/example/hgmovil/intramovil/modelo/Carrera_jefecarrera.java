@@ -14,5 +14,29 @@ public class Carrera_jefecarrera
         this.JEFECARRERA_ID=jefecarrera;
         this.ID=id;
     }
+
+    public int getCARRERA_ID() {
+        return CARRERA_ID;
+    }
+
+    public void setCARRERA_ID(int CARRERA_ID) {
+        this.CARRERA_ID = CARRERA_ID;
+    }
+
+    public int getJEFECARRERA_ID() {
+        return JEFECARRERA_ID;
+    }
+
+    public void setJEFECARRERA_ID(int JEFECARRERA_ID) {
+        this.JEFECARRERA_ID = JEFECARRERA_ID;
+    }
+
+    public int getID() {
+        return ID;
+    }
+
+    public void setID(int ID) {
+        this.ID = ID;
+    }
 }
 

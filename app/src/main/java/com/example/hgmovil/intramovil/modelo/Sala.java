@@ -14,4 +14,28 @@ public class Sala
         this.NOMBRE=nombre;
         this.PISO=piso;
     }
+
+    public int getID() {
+        return ID;
+    }
+
+    public void setID(int ID) {
+        this.ID = ID;
+    }
+
+    public char getNOMBRE() {
+        return NOMBRE;
+    }
+
+    public void setNOMBRE(char NOMBRE) {
+        this.NOMBRE = NOMBRE;
+    }
+
+    public int getPISO() {
+        return PISO;
+    }
+
+    public void setPISO(int PISO) {
+        this.PISO = PISO;
+    }
 }

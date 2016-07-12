@@ -14,4 +14,28 @@ public class Alarma
     this.Asunto=asunto;
     this.Dia_Hora=dia_hora;
 }
-        }
+
+    public int getId() {
+        return Id;
+    }
+
+    public void setId(int id) {
+        Id = id;
+    }
+
+    public char getAsunto() {
+        return Asunto;
+    }
+
+    public void setAsunto(char asunto) {
+        Asunto = asunto;
+    }
+
+    public char getDia_Hora() {
+        return Dia_Hora;
+    }
+
+    public void setDia_Hora(char dia_Hora) {
+        Dia_Hora = dia_Hora;
+    }
+}

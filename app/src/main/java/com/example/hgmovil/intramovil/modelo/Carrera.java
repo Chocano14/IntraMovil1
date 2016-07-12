@@ -14,4 +14,28 @@ public class Carrera
         this.NOMBRE=nombre;
         this.MONTOANUAL=montoanual;
     }
+
+    public int getID() {
+        return ID;
+    }
+
+    public void setID(int ID) {
+        this.ID = ID;
+    }
+
+    public int getMONTOANUAL() {
+        return MONTOANUAL;
+    }
+
+    public void setMONTOANUAL(int MONTOANUAL) {
+        this.MONTOANUAL = MONTOANUAL;
+    }
+
+    public char getNOMBRE() {
+        return NOMBRE;
+    }
+
+    public void setNOMBRE(char NOMBRE) {
+        this.NOMBRE = NOMBRE;
+    }
 }

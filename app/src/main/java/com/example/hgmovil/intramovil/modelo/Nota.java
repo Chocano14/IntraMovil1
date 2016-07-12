@@ -21,4 +21,52 @@ public class Nota {
         this.ALUMNO_RUT=alumno_rut;
         this.SECCION_ID=seccion_id;
     }
+
+    public int getID() {
+        return ID;
+    }
+
+    public void setID(int ID) {
+        this.ID = ID;
+    }
+
+    public float getNOTA() {
+        return NOTA;
+    }
+
+    public void setNOTA(float NOTA) {
+        this.NOTA = NOTA;
+    }
+
+    public int getPONDERACION() {
+        return PONDERACION;
+    }
+
+    public void setPONDERACION(int PONDERACION) {
+        this.PONDERACION = PONDERACION;
+    }
+
+    public Date getFECHA() {
+        return FECHA;
+    }
+
+    public void setFECHA(Date FECHA) {
+        this.FECHA = FECHA;
+    }
+
+    public char getALUMNO_RUT() {
+        return ALUMNO_RUT;
+    }
+
+    public void setALUMNO_RUT(char ALUMNO_RUT) {
+        this.ALUMNO_RUT = ALUMNO_RUT;
+    }
+
+    public int getSECCION_ID() {
+        return SECCION_ID;
+    }
+
+    public void setSECCION_ID(int SECCION_ID) {
+        this.SECCION_ID = SECCION_ID;
+    }
 }

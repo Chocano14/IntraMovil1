@@ -14,5 +14,29 @@ public class Carrera_asignatura
         this.ASIGNATURA_ID=asignatura_id;
         this.ID=id;
     }
+
+    public int getCARRERA_ID() {
+        return CARRERA_ID;
+    }
+
+    public void setCARRERA_ID(int CARRERA_ID) {
+        this.CARRERA_ID = CARRERA_ID;
+    }
+
+    public int getID() {
+        return ID;
+    }
+
+    public void setID(int ID) {
+        this.ID = ID;
+    }
+
+    public int getASIGNATURA_ID() {
+        return ASIGNATURA_ID;
+    }
+
+    public void setASIGNATURA_ID(int ASIGNATURA_ID) {
+        this.ASIGNATURA_ID = ASIGNATURA_ID;
+    }
 }
 

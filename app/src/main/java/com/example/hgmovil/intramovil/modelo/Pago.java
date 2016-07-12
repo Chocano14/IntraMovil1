@@ -23,4 +23,51 @@ public class Pago
         this.ALUMNO_RUT=alumno_rut;
     }
 
+    public int getID() {
+        return ID;
+    }
+
+    public void setID(int ID) {
+        this.ID = ID;
+    }
+
+    public Date getFENCHAVENC() {
+        return FENCHAVENC;
+    }
+
+    public void setFENCHAVENC(Date FENCHAVENC) {
+        this.FENCHAVENC = FENCHAVENC;
+    }
+
+    public char getCONCEPTO() {
+        return CONCEPTO;
+    }
+
+    public void setCONCEPTO(char CONCEPTO) {
+        this.CONCEPTO = CONCEPTO;
+    }
+
+    public char getESTADO() {
+        return ESTADO;
+    }
+
+    public void setESTADO(char ESTADO) {
+        this.ESTADO = ESTADO;
+    }
+
+    public int getMONTO() {
+        return MONTO;
+    }
+
+    public void setMONTO(int MONTO) {
+        this.MONTO = MONTO;
+    }
+
+    public char getALUMNO_RUT() {
+        return ALUMNO_RUT;
+    }
+
+    public void setALUMNO_RUT(char ALUMNO_RUT) {
+        this.ALUMNO_RUT = ALUMNO_RUT;
+    }
 }

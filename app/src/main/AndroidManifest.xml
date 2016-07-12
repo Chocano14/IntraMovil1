@@ -16,7 +16,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".view.Menu" />
-        <activity android:name=".view.MenuNot"></activity>
+        <activity android:name=".view.MenuNot" />
+        <activity android:name=".view.MenuAsist"></activity>
     </application>
 
 </manifest>

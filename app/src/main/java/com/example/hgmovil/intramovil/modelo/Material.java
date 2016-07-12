@@ -14,4 +14,28 @@ public class Material
         this.ARCHIVO=archivo;
         this.ASIGNATURA_ID=asignatura_id;
     }
+
+    public int getID() {
+        return ID;
+    }
+
+    public void setID(int ID) {
+        this.ID = ID;
+    }
+
+    public char getARCHIVO() {
+        return ARCHIVO;
+    }
+
+    public void setARCHIVO(char ARCHIVO) {
+        this.ARCHIVO = ARCHIVO;
+    }
+
+    public int getASIGNATURA_ID() {
+        return ASIGNATURA_ID;
+    }
+
+    public void setASIGNATURA_ID(int ASIGNATURA_ID) {
+        this.ASIGNATURA_ID = ASIGNATURA_ID;
+    }
 }
