@@ -18,7 +18,7 @@
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="23dp"
-        android:textColor="#000000" />
+        android:textColor="#1eff00" />
 
     <Button
         android:layout_width="wrap_content"
