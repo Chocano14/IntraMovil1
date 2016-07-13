@@ -153,7 +153,8 @@
         android:id="@+id/txt1Situ"
         android:layout_alignTop="@+id/txt1Prome"
         android:layout_alignParentEnd="true"
-        android:textColor="#000000" />
+        android:textColor="#000000"
+        android:visibility="invisible" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -179,10 +180,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Situacion"
-        android:id="@+id/textView21"
+        android:id="@+id/txt2Situ"
         android:layout_below="@+id/Asignatura1"
         android:layout_alignEnd="@+id/txt1Situ"
-        android:textColor="#000000" />
+        android:textColor="#000000"
+        android:visibility="invisible" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -208,10 +210,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Situacion"
-        android:id="@+id/textView24"
+        android:id="@+id/txt3Situ"
         android:layout_below="@+id/Asignatura2"
         android:layout_alignParentEnd="true"
-        android:textColor="#000000" />
+        android:textColor="#000000"
+        android:visibility="invisible" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -237,10 +240,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Situacion"
-        android:id="@+id/textView27"
+        android:id="@+id/txt4Situ"
         android:layout_alignTop="@+id/txt4Prome"
-        android:layout_alignStart="@+id/textView24"
-        android:textColor="#000000" />
+        android:layout_alignStart="@+id/txt3Situ"
+        android:textColor="#000000"
+        android:visibility="invisible" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -266,10 +270,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Situacion"
-        android:id="@+id/textView30"
+        android:id="@+id/txt5Situ"
         android:layout_alignTop="@+id/txt5Prome"
-        android:layout_alignStart="@+id/textView27"
-        android:textColor="#000000" />
+        android:layout_alignStart="@+id/txt4Situ"
+        android:textColor="#000000"
+        android:visibility="invisible" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -295,10 +300,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Situacion"
-        android:id="@+id/textView33"
+        android:id="@+id/txt6Situ"
         android:layout_alignTop="@+id/txt6Prome"
-        android:layout_alignStart="@+id/textView30"
-        android:textColor="#000000" />
+        android:layout_alignStart="@+id/txt5Situ"
+        android:textColor="#000000"
+        android:visibility="invisible" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -324,10 +330,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Situacion"
-        android:id="@+id/textView36"
+        android:id="@+id/txt7Situ"
         android:layout_alignTop="@+id/txt7Prome"
-        android:layout_alignStart="@+id/textView33"
-        android:textColor="#000000" />
+        android:layout_alignStart="@+id/txt6Situ"
+        android:textColor="#000000"
+        android:visibility="invisible" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -347,7 +354,6 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="New Text"
         android:id="@+id/txtSitu"
         android:layout_below="@+id/txt1Situ"
         android:layout_alignEnd="@+id/txt1Situ" />
@@ -369,9 +375,8 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="New Text"
         android:id="@+id/txtSitu1"
-        android:layout_below="@+id/textView21"
+        android:layout_below="@+id/txt2Situ"
         android:layout_alignParentEnd="true" />
 
     <TextView
@@ -391,7 +396,6 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="New Text"
         android:id="@+id/txtSitu2"
         android:layout_alignTop="@+id/txtProm2"
         android:layout_alignParentEnd="true" />
@@ -413,9 +417,8 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="New Text"
         android:id="@+id/txtSitu3"
-        android:layout_below="@+id/textView27"
+        android:layout_below="@+id/txt4Situ"
         android:layout_alignParentEnd="true" />
 
     <TextView
@@ -435,9 +438,8 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="New Text"
         android:id="@+id/txtSitu4"
-        android:layout_below="@+id/textView30"
+        android:layout_below="@+id/txt5Situ"
         android:layout_alignStart="@+id/txtSitu3" />
 
     <TextView
@@ -457,9 +459,8 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="New Text"
         android:id="@+id/txtSitu5"
-        android:layout_below="@+id/textView33"
+        android:layout_below="@+id/txt6Situ"
         android:layout_alignParentEnd="true" />
 
     <TextView
@@ -479,9 +480,8 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="txtSitu8"
         android:id="@+id/txtSitu6"
-        android:layout_below="@+id/textView36"
-        android:layout_alignEnd="@+id/textView36" />
+        android:layout_below="@+id/txt7Situ"
+        android:layout_alignEnd="@+id/txt7Situ" />
 
 </RelativeLayout>

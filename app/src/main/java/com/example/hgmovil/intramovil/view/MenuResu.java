@@ -20,6 +20,7 @@ public class MenuResu extends AppCompatActivity implements View.OnClickListener 
     private TextView Asignatura, Asignatura1, Asignatura2, Asignatura3, Asignatura4, Asignatura5, Asignatura6;
     private TextView txtA1,txtA2,txtA3,txtA4,txtA5,txtA6,txtA7;
     private TextView txtP1,txtP2,txtP3,txtP4,txtP5,txtP6,txtP7;
+    private TextView txtS1,txtS2,txtS3,txtS4,txtS5,txtS6,txtS7;
     private String ry;
 
 
@@ -44,6 +45,15 @@ public class MenuResu extends AppCompatActivity implements View.OnClickListener 
         txtP5=(TextView)findViewById(R.id.txt5Prome);
         txtP6=(TextView)findViewById(R.id.txt6Prome);
         txtP7=(TextView)findViewById(R.id.txt7Prome);
+
+        txtS1=(TextView)findViewById(R.id.txt1Situ);
+        txtS2=(TextView)findViewById(R.id.txt2Situ);
+        txtS3=(TextView)findViewById(R.id.txt3Situ);
+        txtS4=(TextView)findViewById(R.id.txt4Situ);
+        txtS5=(TextView)findViewById(R.id.txt5Situ);
+        txtS6=(TextView)findViewById(R.id.txt6Situ);
+        txtS7=(TextView)findViewById(R.id.txt7Situ);
+
 
 
 
@@ -143,6 +153,13 @@ public class MenuResu extends AppCompatActivity implements View.OnClickListener 
                         String promeRam = x.getString(0);
                         String prome = z.getString(0);
                         Asis.setText(prome + "HRS" + "/" + promeRam + "HRS");
+                        double contendor=Double.parseDouble(Nota.trim());
+                        if(contendor>4.0)
+                        {
+                            Situacion.setText("Sin Riesgo");
+                            txtS1.setVisibility(View.VISIBLE);
+                        }else{Situacion.setText("Riesgo");txtS1.setVisibility(View.VISIBLE);}
+
 
                     }
                 }
@@ -186,6 +203,12 @@ public class MenuResu extends AppCompatActivity implements View.OnClickListener 
                             String promeRam1 = xx.getString(0);
                             String prome1 = zz.getString(0);
                             Asis1.setText(prome1 + "HRS" + "/" + promeRam1 + "HRS");
+                            double contendor1=Double.parseDouble(Nota1.trim());
+                            if(contendor1>4.0)
+                            {
+                                Situacion1.setText("Sin Riesgo");
+                                txtS2.setVisibility(View.VISIBLE);
+                            }else{Situacion1.setText("Riesgo");txtS2.setVisibility(View.VISIBLE);}
 
                         }
 
@@ -227,6 +250,11 @@ public class MenuResu extends AppCompatActivity implements View.OnClickListener 
                                     String promeRam2 = xx2.getString(0);
                                     String prome2 = zz2.getString(0);
                                     Asis2.setText(prome2 + "HRS" + "/" + promeRam2 + "HRS");
+                                    double contendor=Double.parseDouble(Nota2.trim());
+                                    if(contendor>4.0)
+                                    {
+                                        Situacion2.setText("Sin Riesgo");txtS3.setVisibility(View.VISIBLE);
+                                    }else{Situacion2.setText("Riesgo");txtS3.setVisibility(View.VISIBLE);}
 
                                 }
                             }
@@ -267,6 +295,11 @@ public class MenuResu extends AppCompatActivity implements View.OnClickListener 
                                         String promeRam3 = xx3.getString(0);
                                         String prome3 = zz3.getString(0);
                                         Asis3.setText(prome3 + "HRS" + "/" + promeRam3 + "HRS");
+                                        double contendor=Double.parseDouble(Nota3.trim());
+                                        if(contendor>4.0)
+                                        {
+                                            Situacion3.setText("Sin Riesgo");txtS4.setVisibility(View.VISIBLE);
+                                        }else{Situacion3.setText("Riesgo");txtS4.setVisibility(View.VISIBLE);}
 
                                     }
                                 }
@@ -308,6 +341,11 @@ public class MenuResu extends AppCompatActivity implements View.OnClickListener 
                                             String promeRam4 = xx4.getString(0);
                                             String prome4 = zz4.getString(0);
                                             Asis4.setText(prome4 + "HRS" + "/" + promeRam4 + "HRS");
+                                            double contendor=Double.parseDouble(Nota4.trim());
+                                            if(contendor>4.0)
+                                            {
+                                                Situacion4.setText("Sin Riesgo");txtS5.setVisibility(View.VISIBLE);
+                                            }else{Situacion4.setText("Riesgo");txtS5.setVisibility(View.VISIBLE);}
 
                                         }
                                         if (a.moveToNext()) {
@@ -343,10 +381,15 @@ public class MenuResu extends AppCompatActivity implements View.OnClickListener 
                                                         "ON sec.Asignatura_Id = asig.Id\n" +
                                                         "WHERE alum.Rut ='" + ry + "'AND asig.Nombre ='" + Asig5 + "';", null);
 
-                                                if (zz4.moveToFirst() && xx4.moveToFirst()) {
+                                                if (zz5.moveToFirst() && xx5.moveToFirst()) {
                                                     String promeRam5 = xx5.getString(0);
                                                     String prome5 = zz5.getString(0);
                                                     Asis5.setText(prome5 + "HRS" + "/" + promeRam5 + "HRS");
+                                                    double contendor=Double.parseDouble(Nota5.trim());
+                                                    if(contendor>4.0)
+                                                    {
+                                                        Situacion5.setText("Sin Riesgo");txtS6.setVisibility(View.VISIBLE);
+                                                    }else{Situacion5.setText("Riesgo");txtS6.setVisibility(View.VISIBLE);}
 
                                                 }
                                                 if (a.moveToNext()) {
@@ -363,7 +406,7 @@ public class MenuResu extends AppCompatActivity implements View.OnClickListener 
                                                             "JOIN alumno as al \n" +
                                                             "ON n.Alumno_Rut = al.Rut \n" +
                                                             "WHERE asig.Nombre ='" + Asig6 + "'and al.Rut='" + ry + "';", null);
-                                                    if (cc5.moveToLast()) {
+                                                    if (cc6.moveToLast()) {
                                                         String Nota6 = cc5.getString(0);
                                                         Promedio6.setText(Nota6);
                                                         Promedio6.setVisibility(View.VISIBLE);
@@ -386,6 +429,11 @@ public class MenuResu extends AppCompatActivity implements View.OnClickListener 
                                                             String promeRam6 = xx6.getString(0);
                                                             String prome6 = zz6.getString(0);
                                                             Asis6.setText(prome6 + "HRS" + "/" + promeRam6 + "HRS");
+                                                            double contendor=Double.parseDouble(Nota6.trim());
+                                                            if(contendor>4.0)
+                                                            {
+                                                                Situacion6.setText("Sin Riesgo");txtS7.setVisibility(View.VISIBLE);
+                                                            }else{Situacion6.setText("Riesgo");txtS7.setVisibility(View.VISIBLE);}
 
                                                         }
 

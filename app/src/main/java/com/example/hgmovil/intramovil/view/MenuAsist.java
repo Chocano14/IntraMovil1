@@ -13,6 +13,7 @@ import android.widget.TextView;
 import com.example.hgmovil.intramovil.R;
 import com.example.hgmovil.intramovil.sqlite.BDIntraMovil;
 
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 
 public class MenuAsist extends AppCompatActivity implements View.OnClickListener {
@@ -22,6 +23,11 @@ public class MenuAsist extends AppCompatActivity implements View.OnClickListener
     private TextView totalhAsig,totalhAsistidas,porcentaje;
     private Button btnes;
     public String horas;
+    public String horasig;
+    public double horalum,horasaisg,total;
+    public int horalum1,horasaisg1,total1;
+    public String totalentrgar;
+
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
@@ -45,7 +51,7 @@ public class MenuAsist extends AppCompatActivity implements View.OnClickListener
     {
         TotalHoras();
         HorasAsis();
-
+        porcentajecom();
     }
     public  void TotalHoras()
     {
@@ -58,8 +64,9 @@ public class MenuAsist extends AppCompatActivity implements View.OnClickListener
             if (c.moveToFirst())
             {
 
-                String horasig = c.getString(0);
+                horasig = c.getString(0);
                 totalhAsig.setText(horasig);
+
 
             }
             c.close();
@@ -94,6 +101,7 @@ public class MenuAsist extends AppCompatActivity implements View.OnClickListener
                 horas = c.getString(0);
                 totalhAsistidas.setText(horas);
 
+
             }
             c.close();
             helper.close();
@@ -125,6 +133,7 @@ public class MenuAsist extends AppCompatActivity implements View.OnClickListener
                 do {
                     String nombre = c.getString(0);
                     dev.add(nombre);
+
                 } while(c.moveToNext());
             }
             c.close();
@@ -136,5 +145,16 @@ public class MenuAsist extends AppCompatActivity implements View.OnClickListener
             return null;
         }
         return dev;
+    }
+    public void porcentajecom()
+    {
+
+        horalum=Double.parseDouble(horas.trim());
+        horasaisg=Double.parseDouble(horasig.trim());
+        total=horalum*100/horasaisg;
+        totalentrgar=String.valueOf(total);
+        DecimalFormat df = new DecimalFormat("#.#");
+        porcentaje.setText(String.valueOf(Double.valueOf(df.format(total)))+"%");;
+
     }
 }

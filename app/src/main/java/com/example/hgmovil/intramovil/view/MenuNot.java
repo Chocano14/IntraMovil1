@@ -99,7 +99,7 @@ public class MenuNot extends AppCompatActivity implements View.OnClickListener
                 String ponderacion = c.getString(1);
                 String fecha = c.getString(2);
                 Nota.setText(nota);
-                Ponderacion.setText(ponderacion);
+                Ponderacion.setText(ponderacion+"%");
                 Fecha.setText(fecha);
                 if(c.moveToNext())
                 {
@@ -108,7 +108,7 @@ public class MenuNot extends AppCompatActivity implements View.OnClickListener
                     String fecha1 = c.getString(2);
 
                     Nota1.setText(nota1);
-                    Ponderacion1.setText(ponderacion1);
+                    Ponderacion1.setText(ponderacion1+"%");
                     Fecha1.setText(fecha1);
                     if(c.moveToNext())
                     {
@@ -117,7 +117,7 @@ public class MenuNot extends AppCompatActivity implements View.OnClickListener
                         String fecha2 = c.getString(2);
 
                         Nota2.setText(nota2);
-                        Ponderacion2.setText(ponderacion2);
+                        Ponderacion2.setText(ponderacion2+"%");
                         Fecha2.setText(fecha2);
                         if(c.moveToNext())
                         {
@@ -126,7 +126,7 @@ public class MenuNot extends AppCompatActivity implements View.OnClickListener
                             String fecha3 = c.getString(2);
 
                             Nota3.setText(nota3);
-                            Ponderacion3.setText(ponderacion3);
+                            Ponderacion3.setText(ponderacion3+"%");
                             Fecha3.setText(fecha3);
                             if(c.moveToNext())
                             {
@@ -135,7 +135,7 @@ public class MenuNot extends AppCompatActivity implements View.OnClickListener
                                 String fecha4 = c.getString(2);
 
                                 Nota4.setText(nota4);
-                                Ponderacion4.setText(ponderacion4);
+                                Ponderacion4.setText(ponderacion4+"%");
                                 Fecha4.setText(fecha4);
                                 if(c.moveToNext())
                                 {
@@ -144,7 +144,7 @@ public class MenuNot extends AppCompatActivity implements View.OnClickListener
                                     String fecha5 = c.getString(2);
 
                                     Nota5.setText(nota5);
-                                    Ponderacion5.setText(ponderacion5);
+                                    Ponderacion5.setText(ponderacion5+"%");
                                     Fecha5.setText(fecha5);
                                     if(c.moveToNext())
                                     {
@@ -153,7 +153,7 @@ public class MenuNot extends AppCompatActivity implements View.OnClickListener
                                         String fecha6 = c.getString(2);
 
                                         Nota6.setText(nota6);
-                                        Ponderacion6.setText(ponderacion6);
+                                        Ponderacion6.setText(ponderacion6+"%");
                                         Fecha6.setText(fecha6);
                                     }
                                 }
