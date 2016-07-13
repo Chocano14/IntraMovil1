@@ -72,16 +72,17 @@ public class Menu extends AppCompatActivity
             }
         });
 
-        /*BtnHora =(ImageButton) findViewById(R.id.BtnHorario);
+        BtnHora =(ImageButton) findViewById(R.id.BtnHorario);
 
         BtnHora.setOnClickListener(new View.OnClickListener()
         {
             public void onClick(View v) {
-                Intent formnuevo1 = new Intent(MenuPrincipal.this, MenuHora.class);
+                Intent formnuevo1 = new Intent(Menu.this, MenuHorario.class);
                 startActivity(formnuevo1);
+                PasarvarMenuHorario();
             }
         });
-        BtnCorr = (ImageButton) findViewById(R.id.BtnCorreos);
+       /* BtnCorr = (ImageButton) findViewById(R.id.BtnCorreos);
         BtnCorr.setOnClickListener(new View.OnClickListener()
         {
             public void onClick(View v) {
@@ -97,16 +98,16 @@ public class Menu extends AppCompatActivity
                 startActivity(formnuevo3);
             }
         });
-        BtnAlarm = (ImageButton) findViewById(R.id.BtnAlam);
+        */BtnAlarm = (ImageButton) findViewById(R.id.BtnAlam);
         BtnAlarm.setOnClickListener(new View.OnClickListener()
         {
             public void onClick(View v) {
-                Intent formnuevo4 = new Intent(MenuPrincipal.this, MenuAlarm.class);
+                Intent formnuevo4 = new Intent(Menu.this, MenuAlarma.class);
                 startActivity(formnuevo4);
             }
         });
 
-       */ BtnPag = (ImageButton) findViewById(R.id.BtnPag);
+       BtnPag = (ImageButton) findViewById(R.id.BtnPag);
         BtnPag.setOnClickListener(new View.OnClickListener()
         {
             public void onClick(View v) {
@@ -151,6 +152,13 @@ public class Menu extends AppCompatActivity
     {
         String rt = getIntent().getStringExtra("Rutt");
         Intent rt2 = new Intent(this, MenuPago.class);
+        rt2.putExtra("RuttMenu", rt);
+        startActivity(rt2);
+    }
+    public void PasarvarMenuHorario()
+    {
+        String rt = getIntent().getStringExtra("Rutt");
+        Intent rt2 = new Intent(this, MenuHorario.class);
         rt2.putExtra("RuttMenu", rt);
         startActivity(rt2);
     }

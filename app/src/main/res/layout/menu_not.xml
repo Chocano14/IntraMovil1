@@ -240,5 +240,4 @@
         android:layout_below="@+id/txtFecha5"
         android:layout_alignStart="@+id/txtFecha5"
         android:textColor="#000000" />
-
 </RelativeLayout>

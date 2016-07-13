@@ -8,18 +8,21 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".view.LoginActivity">
+        <activity android:name=".view.LoginActivity" android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".view.Menu" />
-        <activity android:name=".view.MenuNot" />
-        <activity android:name=".view.MenuAsist" />
-        <activity android:name=".view.MenuPago" />
-        <activity android:name=".view.MenuResu"></activity>
+        <activity android:name=".view.Menu" android:screenOrientation="portrait" />
+        <activity android:name=".view.MenuNot" android:screenOrientation="portrait"/>
+        <activity android:name=".view.MenuAsist" android:screenOrientation="portrait"/>
+        <activity android:name=".view.MenuPago" android:screenOrientation="portrait"/>
+        <activity android:name=".view.MenuResu" android:screenOrientation="portrait"/>
+        <activity android:name=".view.MenuHorario" android:screenOrientation="portrait" />
+        <activity android:name=".view.MenuAlarma" android:screenOrientation="portrait"></activity>
+        android:screenOrientation="portrait">
     </application>
 
 </manifest>
