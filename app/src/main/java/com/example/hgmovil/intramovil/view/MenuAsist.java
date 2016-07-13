@@ -21,6 +21,7 @@ public class MenuAsist extends AppCompatActivity implements View.OnClickListener
     private ArrayAdapter adapter;
     private TextView totalhAsig,totalhAsistidas,porcentaje;
     private Button btnes;
+    public String horas;
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
@@ -39,16 +40,11 @@ public class MenuAsist extends AppCompatActivity implements View.OnClickListener
         adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, emp);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spnenr.setAdapter(adapter);
-
-
-
-
-
-
     }
     public void onClick(View v)
     {
         TotalHoras();
+        HorasAsis();
 
     }
     public  void TotalHoras()
@@ -80,22 +76,22 @@ public class MenuAsist extends AppCompatActivity implements View.OnClickListener
         BDIntraMovil helper = new BDIntraMovil(this);
         SQLiteDatabase db = helper.getReadableDatabase();
         helper.openDataBase();
-        Cursor c = db.rawQuery("SELECT SUM(asis.HorasAsist)\n" +
+        Cursor c = db.rawQuery("SELECT sum(asis.HorasAsist)\n" +
                 "FROM asistencia as asis\n" +
+                "JOIN alumno_has_Seccion as ahs\n" +
+                "ON asis.Alumno_has_Seccion_Id = ahs.Id\n" +
                 "JOIN alumno as alum\n" +
-                "ON asis.Alumno_Rut = alum.Rut\n" +
-                "JOIN alumno_has_seccion as ahs\n" +
-                "ON alum.RUT = ahs.Alumno_Rut\n" +
+                "ON ahs.Alumno_Rut = alum.Rut\n" +
                 "JOIN seccion as sec\n" +
                 "ON ahs.Seccion_Id = sec.Id\n" +
                 "JOIN asignatura as asig\n" +
                 "ON sec.Asignatura_Id = asig.Id\n" +
-                "WHERE alum.Rut = '" +ry + "'asig.Nombre ='"+asignaturaSelec +"';", null);
+                "WHERE alum.Rut = '" +ry + "'and asig.Nombre ='"+asignaturaSelec +"';", null);
         try {
             if (c.moveToFirst())
             {
 
-                int horas = c.getInt(0);
+                horas = c.getString(0);
                 totalhAsistidas.setText(horas);
 
             }

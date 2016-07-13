@@ -128,10 +128,10 @@ public class MenuResu extends AppCompatActivity implements View.OnClickListener 
                     Cursor x = db.rawQuery("SELECT Horas FROM asignatura WHERE Nombre='" + Asig + "';", null);
                     Cursor z = db.rawQuery("SELECT sum(asis.HorasAsist)\n" +
                             "FROM asistencia as asis\n" +
+                            "JOIN alumno_has_Seccion as ahs\n" +
+                            "ON asis.Alumno_has_Seccion_Id = ahs.Id\n" +
                             "JOIN alumno as alum\n" +
-                            "ON asis.Alumno_Rut = alum.Rut\n" +
-                            "JOIN alumno_has_seccion as ahs\n" +
-                            "ON alum.RUT = ahs.Alumno_Rut\n" +
+                            "ON ahs.Alumno_Rut = alum.Rut\n" +
                             "JOIN seccion as sec\n" +
                             "ON ahs.Seccion_Id = sec.Id\n" +
                             "JOIN asignatura as asig\n" +
@@ -172,10 +172,10 @@ public class MenuResu extends AppCompatActivity implements View.OnClickListener 
                         Cursor xx = db.rawQuery("SELECT Horas FROM asignatura WHERE Nombre='" + Asig1 + "';", null);
                         Cursor zz = db.rawQuery("SELECT sum(asis.HorasAsist)\n" +
                                 "FROM asistencia as asis\n" +
+                                "JOIN alumno_has_Seccion as ahs\n" +
+                                "ON asis.Alumno_has_Seccion_Id = ahs.Id\n" +
                                 "JOIN alumno as alum\n" +
-                                "ON asis.Alumno_Rut = alum.Rut\n" +
-                                "JOIN alumno_has_seccion as ahs\n" +
-                                "ON alum.RUT = ahs.Alumno_Rut\n" +
+                                "ON ahs.Alumno_Rut = alum.Rut\n" +
                                 "JOIN seccion as sec\n" +
                                 "ON ahs.Seccion_Id = sec.Id\n" +
                                 "JOIN asignatura as asig\n" +
@@ -213,10 +213,10 @@ public class MenuResu extends AppCompatActivity implements View.OnClickListener 
                                 Cursor xx2 = db.rawQuery("SELECT Horas FROM asignatura WHERE Nombre='" + Asig2 + "';", null);
                                 Cursor zz2 = db.rawQuery("SELECT sum(asis.HorasAsist)\n" +
                                         "FROM asistencia as asis\n" +
+                                        "JOIN alumno_has_Seccion as ahs\n" +
+                                        "ON asis.Alumno_has_Seccion_Id = ahs.Id\n" +
                                         "JOIN alumno as alum\n" +
-                                        "ON asis.Alumno_Rut = alum.Rut\n" +
-                                        "JOIN alumno_has_seccion as ahs\n" +
-                                        "ON alum.RUT = ahs.Alumno_Rut\n" +
+                                        "ON ahs.Alumno_Rut = alum.Rut\n" +
                                         "JOIN seccion as sec\n" +
                                         "ON ahs.Seccion_Id = sec.Id\n" +
                                         "JOIN asignatura as asig\n" +
@@ -253,10 +253,10 @@ public class MenuResu extends AppCompatActivity implements View.OnClickListener 
                                     Cursor xx3 = db.rawQuery("SELECT Horas FROM asignatura WHERE Nombre='" + Asig3 + "';", null);
                                     Cursor zz3 = db.rawQuery("SELECT sum(asis.HorasAsist)\n" +
                                             "FROM asistencia as asis\n" +
+                                            "JOIN alumno_has_Seccion as ahs\n" +
+                                            "ON asis.Alumno_has_Seccion_Id = ahs.Id\n" +
                                             "JOIN alumno as alum\n" +
-                                            "ON asis.Alumno_Rut = alum.Rut\n" +
-                                            "JOIN alumno_has_seccion as ahs\n" +
-                                            "ON alum.RUT = ahs.Alumno_Rut\n" +
+                                            "ON ahs.Alumno_Rut = alum.Rut\n" +
                                             "JOIN seccion as sec\n" +
                                             "ON ahs.Seccion_Id = sec.Id\n" +
                                             "JOIN asignatura as asig\n" +
@@ -294,10 +294,10 @@ public class MenuResu extends AppCompatActivity implements View.OnClickListener 
                                         Cursor xx4 = db.rawQuery("SELECT Horas FROM asignatura WHERE Nombre='" + Asig4 + "';", null);
                                         Cursor zz4 = db.rawQuery("SELECT sum(asis.HorasAsist)\n" +
                                                 "FROM asistencia as asis\n" +
+                                                "JOIN alumno_has_Seccion as ahs\n" +
+                                                "ON asis.Alumno_has_Seccion_Id = ahs.Id\n" +
                                                 "JOIN alumno as alum\n" +
-                                                "ON asis.Alumno_Rut = alum.Rut\n" +
-                                                "JOIN alumno_has_seccion as ahs\n" +
-                                                "ON alum.RUT = ahs.Alumno_Rut\n" +
+                                                "ON ahs.Alumno_Rut = alum.Rut\n" +
                                                 "JOIN seccion as sec\n" +
                                                 "ON ahs.Seccion_Id = sec.Id\n" +
                                                 "JOIN asignatura as asig\n" +
@@ -333,10 +333,10 @@ public class MenuResu extends AppCompatActivity implements View.OnClickListener 
                                                 Cursor xx5 = db.rawQuery("SELECT Horas FROM asignatura WHERE Nombre='" + Asig5 + "';", null);
                                                 Cursor zz5 = db.rawQuery("SELECT sum(asis.HorasAsist)\n" +
                                                         "FROM asistencia as asis\n" +
+                                                        "JOIN alumno_has_Seccion as ahs\n" +
+                                                        "ON asis.Alumno_has_Seccion_Id = ahs.Id\n" +
                                                         "JOIN alumno as alum\n" +
-                                                        "ON asis.Alumno_Rut = alum.Rut\n" +
-                                                        "JOIN alumno_has_seccion as ahs\n" +
-                                                        "ON alum.RUT = ahs.Alumno_Rut\n" +
+                                                        "ON ahs.Alumno_Rut = alum.Rut\n" +
                                                         "JOIN seccion as sec\n" +
                                                         "ON ahs.Seccion_Id = sec.Id\n" +
                                                         "JOIN asignatura as asig\n" +
@@ -372,10 +372,10 @@ public class MenuResu extends AppCompatActivity implements View.OnClickListener 
                                                         Cursor xx6 = db.rawQuery("SELECT Horas FROM asignatura WHERE Nombre='" + Asig6 + "';", null);
                                                         Cursor zz6 = db.rawQuery("SELECT sum(asis.HorasAsist)\n" +
                                                                 "FROM asistencia as asis\n" +
+                                                                "JOIN alumno_has_Seccion as ahs\n" +
+                                                                "ON asis.Alumno_has_Seccion_Id = ahs.Id\n" +
                                                                 "JOIN alumno as alum\n" +
-                                                                "ON asis.Alumno_Rut = alum.Rut\n" +
-                                                                "JOIN alumno_has_seccion as ahs\n" +
-                                                                "ON alum.RUT = ahs.Alumno_Rut\n" +
+                                                                "ON ahs.Alumno_Rut = alum.Rut\n" +
                                                                 "JOIN seccion as sec\n" +
                                                                 "ON ahs.Seccion_Id = sec.Id\n" +
                                                                 "JOIN asignatura as asig\n" +
