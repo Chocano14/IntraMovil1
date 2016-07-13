@@ -31,11 +31,9 @@ public class MenuNot extends AppCompatActivity implements View.OnClickListener
     @Override
     public void onCreate(Bundle savedInstanceState)
     {
-
         super.onCreate(savedInstanceState);
         setContentView(R.layout.menu_not);
         ry = getIntent().getStringExtra("RuttMenu");
-
 
         btn = (Button) findViewById(R.id.btn);
         spn = (Spinner) findViewById(R.id.spnAsig);
@@ -70,25 +68,21 @@ public class MenuNot extends AppCompatActivity implements View.OnClickListener
         Ponderacion6 = (TextView) findViewById(R.id.txtPon6);
         Fecha6 = (TextView) findViewById(R.id.txtFecha6);
 
-
-
         btn.setOnClickListener(this);
 
         ArrayList<String> emp = listadoAsigxCarrera2();
         adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, emp);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spn.setAdapter(adapter);
-
     }
 
     @Override
-
     public void onClick(View v)
     {
         cargar();
-
     }
-    public void cargar() {
+    public void cargar()
+    {
         String asignaturaSelec = spn.getSelectedItem().toString();
         BDIntraMovil helper = new BDIntraMovil(this);
         SQLiteDatabase db = helper.getReadableDatabase();
@@ -101,7 +95,6 @@ public class MenuNot extends AppCompatActivity implements View.OnClickListener
         try {
             if (c.moveToFirst())
             {
-
                 String nota = c.getString(0);
                 String ponderacion = c.getString(1);
                 String fecha = c.getString(2);
@@ -162,19 +155,12 @@ public class MenuNot extends AppCompatActivity implements View.OnClickListener
                                         Nota6.setText(nota6);
                                         Ponderacion6.setText(ponderacion6);
                                         Fecha6.setText(fecha6);
-
                                     }
-
                                 }
-
                             }
-
                         }
-
                     }
-
                 }
-
             }
 
             c.close();

@@ -29,6 +29,7 @@ public class Menu extends AppCompatActivity
     private ImageButton BtnMat;
 
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
@@ -105,15 +106,16 @@ public class Menu extends AppCompatActivity
             }
         });
 
-        BtnPag = (ImageButton) findViewById(R.id.BtnPag);
+       */ BtnPag = (ImageButton) findViewById(R.id.BtnPag);
         BtnPag.setOnClickListener(new View.OnClickListener()
         {
             public void onClick(View v) {
-                Intent formnuevo6 = new Intent(MenuPrincipal.this, MenuPagos.class);
+                Intent formnuevo6 = new Intent(Menu.this, MenuPago.class);
                 startActivity(formnuevo6);
+                PasarvarMenuPago();
             }
         });
-        BtnMat = (ImageButton) findViewById(R.id.BtnMateriales);
+        /*BtnMat = (ImageButton) findViewById(R.id.BtnMateriales);
         BtnMat.setOnClickListener(new View.OnClickListener()
         {
             public void onClick(View v) {
@@ -144,6 +146,12 @@ public class Menu extends AppCompatActivity
         Intent rt2 = new Intent(this, MenuResu.class);
         rt2.putExtra("RuttMenu", rt);
         startActivity(rt2);
-
+    }
+    public void PasarvarMenuPago()
+    {
+        String rt = getIntent().getStringExtra("Rutt");
+        Intent rt2 = new Intent(this, MenuPago.class);
+        rt2.putExtra("RuttMenu", rt);
+        startActivity(rt2);
     }
 }
