@@ -15,19 +15,24 @@
         android:layout_height="wrap_content"
         android:text="Resumen Academico"
         android:id="@+id/textView6"
+        android:textColor="#000000"
+        android:textSize="25dp"
         android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="23dp"
-        android:textColor="#1eff00" />
+        android:layout_alignStart="@+id/btnResum" />
 
     <Button
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Ver"
         android:id="@+id/btnResum"
+        android:background="@android:color/holo_orange_dark"
+        android:layout_marginTop="35dp"
+        android:textColor="#ffffff"
+        android:textSize="20dp"
+        android:layout_marginRight="120dp"
         android:layout_below="@+id/textView6"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="38dp" />
+        android:shadowColor="#0c0c0c" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -36,10 +41,10 @@
         android:id="@+id/Asignatura"
         android:layout_below="@+id/btnResum"
         android:layout_alignParentStart="true"
-        android:layout_marginTop="38dp"
+        android:layout_marginTop="30dp"
         android:layout_alignParentEnd="true"
-        android:background="#12ff01"
-        android:textColor="#020202"
+        android:background="#f77613"
+        android:textColor="#ffffff"
         android:textAlignment="center"
         android:visibility="invisible" />
 
@@ -48,11 +53,11 @@
         android:layout_height="wrap_content"
         android:text="New Text"
         android:id="@+id/Asignatura1"
-        android:background="#00ff08"
-        android:layout_marginTop="35dp"
+        android:background="#f77613"
+        android:layout_marginTop="40dp"
         android:layout_below="@+id/Asignatura"
         android:layout_alignParentStart="true"
-        android:textColor="#000000"
+        android:textColor="#ffffff"
         android:visibility="invisible"
         android:textAlignment="center" />
 
@@ -63,10 +68,10 @@
         android:id="@+id/Asignatura2"
         android:layout_below="@+id/Asignatura1"
         android:layout_alignParentStart="true"
-        android:layout_marginTop="33dp"
+        android:layout_marginTop="40dp"
         android:layout_alignParentEnd="true"
-        android:background="#26ff00"
-        android:textColor="#000000"
+        android:background="#f77613"
+        android:textColor="#ffffff"
         android:visibility="invisible"
         android:textAlignment="center" />
 
@@ -75,12 +80,12 @@
         android:layout_height="wrap_content"
         android:text="New Text"
         android:id="@+id/Asignatura3"
-        android:layout_marginTop="39dp"
+        android:layout_marginTop="40dp"
         android:layout_below="@+id/Asignatura2"
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
-        android:background="#00ff04"
-        android:textColor="#000000"
+        android:background="#f77613"
+        android:textColor="#ffffff"
         android:textAlignment="center"
         android:visibility="invisible" />
 
@@ -91,10 +96,10 @@
         android:id="@+id/Asignatura4"
         android:layout_below="@+id/Asignatura3"
         android:layout_alignParentStart="true"
-        android:layout_marginTop="33dp"
+        android:layout_marginTop="40dp"
         android:layout_alignParentEnd="true"
-        android:background="#00ff0d"
-        android:textColor="#000000"
+        android:background="#f77613"
+        android:textColor="#ffffff"
         android:textAlignment="center"
         android:visibility="invisible" />
 
@@ -105,10 +110,10 @@
         android:id="@+id/Asignatura5"
         android:layout_below="@+id/Asignatura4"
         android:layout_alignParentStart="true"
-        android:layout_marginTop="33dp"
+        android:layout_marginTop="40dp"
         android:layout_alignParentEnd="true"
-        android:background="#00ff04"
-        android:textColor="#000000"
+        android:background="#f77613"
+        android:textColor="#ffffff"
         android:textAlignment="center"
         android:visibility="invisible" />
 
@@ -119,10 +124,10 @@
         android:id="@+id/Asignatura6"
         android:layout_below="@+id/Asignatura5"
         android:layout_alignParentStart="true"
-        android:layout_marginTop="37dp"
+        android:layout_marginTop="40dp"
         android:layout_alignParentEnd="true"
-        android:background="#0dff00"
-        android:textColor="#000000"
+        android:background="#f77613"
+        android:textColor="#ffffff"
         android:textAlignment="center"
         android:visibility="invisible" />
 
@@ -347,9 +352,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/txtProm"
+        android:textAlignment="textStart"
         android:layout_below="@+id/txt1Prome"
-        android:layout_alignEnd="@+id/txt1Prome"
-        android:textAlignment="textStart" />
+        android:layout_centerHorizontal="true" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -426,7 +431,8 @@
         android:layout_height="wrap_content"
         android:id="@+id/txtAsisten4"
         android:layout_below="@+id/txt5Asis"
-        android:layout_alignEnd="@+id/txt5Asis" />
+        android:layout_alignParentStart="true"
+        android:textAlignment="viewStart" />
 
     <TextView
         android:layout_width="wrap_content"
