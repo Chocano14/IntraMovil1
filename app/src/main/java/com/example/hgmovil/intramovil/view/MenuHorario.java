@@ -1,5 +1,6 @@
 package com.example.hgmovil.intramovil.view;
 
+import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.support.v7.app.AppCompatActivity;
@@ -8,6 +9,7 @@ import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.GridLayout;
+import android.widget.ImageButton;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -19,7 +21,7 @@ import java.util.ArrayList;
 
 public class MenuHorario extends AppCompatActivity implements View.OnClickListener
 {
-    private Button btn;
+    private Button btn, btn1;
     private Spinner spnHora;
     private ArrayAdapter adapter;
     private String ry;
@@ -33,6 +35,14 @@ public class MenuHorario extends AppCompatActivity implements View.OnClickListen
         super.onCreate(savedInstanceState);
         setContentView(R.layout.menu_horario);
         btn = (Button) findViewById(R.id.btnBuscar);
+        btn1 = (Button) findViewById(R.id.btnSala);
+        btn1.setOnClickListener(new View.OnClickListener()
+        {
+            public void onClick(View v) {
+                Intent formnuevo3 = new Intent(MenuHorario.this, MenuSala.class);
+                startActivity(formnuevo3);
+            }
+        });
 
         ry = getIntent().getStringExtra("RuttMenu");
         spnHora = (Spinner) findViewById(R.id.spnHorario);

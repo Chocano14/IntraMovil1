@@ -100,8 +100,6 @@ public class MenuAsist extends AppCompatActivity implements View.OnClickListener
 
                 horas = c.getString(0);
                 totalhAsistidas.setText(horas);
-
-
             }
             c.close();
             helper.close();

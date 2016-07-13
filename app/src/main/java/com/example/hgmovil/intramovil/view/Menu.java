@@ -90,15 +90,15 @@ public class Menu extends AppCompatActivity
                 startActivity(formnuevo2);
             }
         });
-        BtnBusc = (ImageButton) findViewById(R.id.BtnBusquet);
+        */BtnBusc = (ImageButton) findViewById(R.id.BtnBusquet);
         BtnBusc.setOnClickListener(new View.OnClickListener()
         {
             public void onClick(View v) {
-                Intent formnuevo3 = new Intent(MenuPrincipal.this, MenuBusque.class);
+                Intent formnuevo3 = new Intent(Menu.this, MenuSala.class);
                 startActivity(formnuevo3);
             }
         });
-        */BtnAlarm = (ImageButton) findViewById(R.id.BtnAlam);
+        BtnAlarm = (ImageButton) findViewById(R.id.BtnAlam);
         BtnAlarm.setOnClickListener(new View.OnClickListener()
         {
             public void onClick(View v) {

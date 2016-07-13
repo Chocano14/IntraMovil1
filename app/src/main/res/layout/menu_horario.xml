@@ -364,6 +364,15 @@
                 android:layout_alignTop="@+id/spnHorario"
                 android:layout_alignParentEnd="true"
                 android:onClick="onClick" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Buscar Sala"
+                android:id="@+id/btnSala"
+                android:layout_alignParentTop="true"
+                android:layout_alignStart="@+id/btnBuscar" />
+
         </RelativeLayout>
 </ScrollView>
 </RelativeLayout>
