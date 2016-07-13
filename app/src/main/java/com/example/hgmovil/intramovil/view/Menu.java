@@ -61,6 +61,15 @@ public class Menu extends AppCompatActivity
                 PasarvarMenuasit();
             }
         });
+        BtnREsumen = (ImageButton) findViewById(R.id.BtnResAc);
+        BtnREsumen.setOnClickListener(new View.OnClickListener()
+        {
+            public void onClick(View v) {
+                Intent formnuevo5 = new Intent(Menu.this, MenuResu.class);
+                startActivity(formnuevo5);
+                PasarvarMenuResu();
+            }
+        });
 
         /*BtnHora =(ImageButton) findViewById(R.id.BtnHorario);
 
@@ -95,14 +104,7 @@ public class Menu extends AppCompatActivity
                 startActivity(formnuevo4);
             }
         });
-        BtnREsumen = (ImageButton) findViewById(R.id.BtnResAc);
-        BtnREsumen.setOnClickListener(new View.OnClickListener()
-        {
-            public void onClick(View v) {
-                Intent formnuevo5 = new Intent(MenuPrincipal.this, MenuResumen.class);
-                startActivity(formnuevo5);
-            }
-        });
+
         BtnPag = (ImageButton) findViewById(R.id.BtnPag);
         BtnPag.setOnClickListener(new View.OnClickListener()
         {
@@ -132,6 +134,14 @@ public class Menu extends AppCompatActivity
     {
         String rt = getIntent().getStringExtra("Rutt");
         Intent rt2 = new Intent(this, MenuAsist.class);
+        rt2.putExtra("RuttMenu", rt);
+        startActivity(rt2);
+
+    }
+    public void PasarvarMenuResu()
+    {
+        String rt = getIntent().getStringExtra("Rutt");
+        Intent rt2 = new Intent(this, MenuResu.class);
         rt2.putExtra("RuttMenu", rt);
         startActivity(rt2);
 

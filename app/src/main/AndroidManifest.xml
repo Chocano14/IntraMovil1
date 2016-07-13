@@ -17,7 +17,8 @@
         </activity>
         <activity android:name=".view.Menu" />
         <activity android:name=".view.MenuNot" />
-        <activity android:name=".view.MenuAsist"></activity>
+        <activity android:name=".view.MenuAsist" />
+        <activity android:name=".view.MenuResu"></activity>
     </application>
 
 </manifest>
