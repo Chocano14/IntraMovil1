@@ -116,14 +116,16 @@ public class Menu extends AppCompatActivity
                 PasarvarMenuPago();
             }
         });
-        /*BtnMat = (ImageButton) findViewById(R.id.BtnMateriales);
+        BtnMat = (ImageButton) findViewById(R.id.BtnMateriales);
         BtnMat.setOnClickListener(new View.OnClickListener()
         {
             public void onClick(View v) {
-                Intent formnuevo7 = new Intent(MenuPrincipal.this, Menu_Materiales.class);
+                Intent formnuevo7 = new Intent(Menu.this, MenuMat.class);
                 startActivity(formnuevo7);
+                PasarvarMenuMat();
             }
-        });*/
+        });
+
     }
     public void PasarvarMenunot()
     {
@@ -159,6 +161,13 @@ public class Menu extends AppCompatActivity
     {
         String rt = getIntent().getStringExtra("Rutt");
         Intent rt2 = new Intent(this, MenuHorario.class);
+        rt2.putExtra("RuttMenu", rt);
+        startActivity(rt2);
+    }
+    public void PasarvarMenuMat()
+    {
+        String rt = getIntent().getStringExtra("Rutt");
+        Intent rt2 = new Intent(this, MenuMat.class);
         rt2.putExtra("RuttMenu", rt);
         startActivity(rt2);
     }
