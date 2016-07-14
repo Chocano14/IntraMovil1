@@ -16,7 +16,9 @@
         android:id="@+id/btnVer"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:onClick="onClick" />
+        android:onClick="onClick"
+        android:background="@android:color/holo_orange_dark"
+        android:textColor="#ffffff"/>
 
     <TextView
         android:layout_width="wrap_content"

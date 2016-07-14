@@ -15,7 +15,9 @@
         android:text="Materiales"
         android:id="@+id/textView11"
         android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:textColor="#000000"
+        android:textSize="30dp" />
 
     <Spinner
         android:layout_width="wrap_content"
@@ -30,13 +32,14 @@
         android:text="Ver"
         android:id="@+id/btnMat"
         android:layout_below="@+id/textView11"
-        android:layout_alignParentEnd="true" />
+        android:layout_alignParentEnd="true"
+        android:background="@android:color/holo_orange_dark"
+        android:textColor="#ffffff"/>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Large Text"
         android:id="@+id/txtUrl"
         android:layout_below="@+id/spnMat"
         android:layout_alignParentStart="true"

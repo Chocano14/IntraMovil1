@@ -41,7 +41,6 @@ public class MenuMat extends AppCompatActivity implements View.OnClickListener
         adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, emp);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spnMat1.setAdapter(adapter);
-
     }
 
 

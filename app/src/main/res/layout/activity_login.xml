@@ -17,8 +17,8 @@
         android:layout_height="wrap_content"
         android:text="Iniciar sesiòn"
         android:id="@+id/btnIniciar"
-        android:textColor="#00ff00"
-        android:background="#000000"
+        android:background="@android:color/holo_orange_dark"
+        android:textColor="#ffffff"
         android:layout_marginBottom="37dp"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
@@ -53,7 +53,8 @@
 
         android:layout_marginTop="28dp"
         android:layout_below="@+id/textView2"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/inicio" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -61,7 +62,7 @@
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="Bienvenidos"
         android:id="@+id/textView2"
-        android:textColor="#15ff00"
+        android:textColor="@android:color/holo_orange_dark"
         android:textSize="40dp"
         android:visibility="visible"
         android:layout_alignParentTop="true"

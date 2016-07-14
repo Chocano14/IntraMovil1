@@ -27,6 +27,7 @@ public class Menu extends AppCompatActivity
     private ImageButton BtnREsumen;
     private ImageButton BtnPag;
     private ImageButton BtnMat;
+    private Button btnLogOut;
 
 
 
@@ -123,6 +124,16 @@ public class Menu extends AppCompatActivity
                 Intent formnuevo7 = new Intent(Menu.this, MenuMat.class);
                 startActivity(formnuevo7);
                 PasarvarMenuMat();
+            }
+        });
+
+        btnLogOut = (Button) findViewById(R.id.btnSalir);
+        btnLogOut.setOnClickListener(new View.OnClickListener()
+        {
+            public void onClick(View v)
+            {
+                Intent frmnuevo8 = new Intent (Menu.this, LoginActivity.class);
+                startActivity(frmnuevo8);
             }
         });
 

@@ -28,7 +28,6 @@ public class MenuPago extends AppCompatActivity implements View.OnClickListener
         setContentView(R.layout.menu_pago);
         rutPago = getIntent().getStringExtra("RuttMenu");
 
-
         btnVer = (Button) findViewById(R.id.btnVer);
         est1 = (TextView) findViewById(R.id.est1);
         est2 = (TextView) findViewById(R.id.est2);

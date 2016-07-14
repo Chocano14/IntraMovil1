@@ -21,7 +21,7 @@ import java.util.ArrayList;
 
 public class MenuHorario extends AppCompatActivity implements View.OnClickListener
 {
-    private Button btn, btn1;
+    private Button btn;
     private Spinner spnHora;
     private ArrayAdapter adapter;
     private String ry;
@@ -35,14 +35,7 @@ public class MenuHorario extends AppCompatActivity implements View.OnClickListen
         super.onCreate(savedInstanceState);
         setContentView(R.layout.menu_horario);
         btn = (Button) findViewById(R.id.btnBuscar);
-        btn1 = (Button) findViewById(R.id.btnSala);
-        btn1.setOnClickListener(new View.OnClickListener()
-        {
-            public void onClick(View v) {
-                Intent formnuevo3 = new Intent(MenuHorario.this, MenuSala.class);
-                startActivity(formnuevo3);
-            }
-        });
+
 
         ry = getIntent().getStringExtra("RuttMenu");
         spnHora = (Spinner) findViewById(R.id.spnHorario);

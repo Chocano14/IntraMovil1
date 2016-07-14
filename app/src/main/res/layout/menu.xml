@@ -12,10 +12,12 @@
         android:layout_height="fill_parent">
 
 
+
+
     <RelativeLayout
 
         android:layout_width="match_parent"
-        android:layout_height="1000dp"
+        android:layout_height="1100dp"
         android:visibility="visible"
         android:id="@+id/bgrSede"
         android:layout_alignParentTop="true"
@@ -26,12 +28,11 @@
             android:textAppearance="?android:attr/textAppearanceSmall"
             android:text="Bienvenido"
             android:id="@+id/textView"
-            android:textColor="#000000"
+            android:textColor="@android:color/holo_orange_dark"
             android:textStyle="bold"
-            android:layout_alignParentTop="true"
-            android:layout_centerHorizontal="true"
             android:textSize="50dp"
-            android:layout_marginTop="30dp"/>
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true" />
 
         <ImageButton
             android:layout_width="100dp"
@@ -226,11 +227,25 @@
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:id="@+id/txtUser"
-            android:layout_alignParentTop="true"
-            android:layout_centerHorizontal="true"
             android:textColor="#000000"
-            android:textSize="20dp" />
+            android:textSize="20dp"
+            android:layout_below="@+id/textView"
+            android:layout_centerHorizontal="true" />
+
+        <Button
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:text="Desconectarse"
+            android:id="@+id/btnSalir"
+            android:background="@android:color/holo_orange_dark"
+            android:textColor="#ffffff"
+            android:layout_marginLeft="100dp"
+            android:layout_marginTop="800dp"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:onClick="ingresar"
+            android:nestedScrollingEnabled="true" />
+
     </RelativeLayout>
     </ScrollView>
-
 </RelativeLayout>
