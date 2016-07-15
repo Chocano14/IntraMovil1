@@ -8,7 +8,7 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context=".view.LoginActivity"
-    android:background="#fefefe"
+    android:background="#fcf5b4"
     android:id="@+id/login">
 
 
@@ -68,7 +68,7 @@
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="32dp"
-        android:background="#ffffff" />
+        android:background="#fcf5b4" />
 
 
 </RelativeLayout>

@@ -65,7 +65,7 @@ public class MenuAsist extends AppCompatActivity implements View.OnClickListener
             {
 
                 horasig = c.getString(0);
-                totalhAsig.setText(horasig);
+                totalhAsig.setText(horasig+" HRS");
 
 
             }
@@ -97,9 +97,14 @@ public class MenuAsist extends AppCompatActivity implements View.OnClickListener
         try {
             if (c.moveToFirst())
             {
-
                 horas = c.getString(0);
-                totalhAsistidas.setText(horas);
+                if (c.isNull(0))
+                {
+                    totalhAsistidas.setText("0 HRS");
+                }
+                else {
+                    totalhAsistidas.setText(horas+" HRS");
+                }
             }
             c.close();
             helper.close();
@@ -146,13 +151,19 @@ public class MenuAsist extends AppCompatActivity implements View.OnClickListener
     }
     public void porcentajecom()
     {
-
-        horalum=Double.parseDouble(horas.trim());
-        horasaisg=Double.parseDouble(horasig.trim());
-        total=horalum*100/horasaisg;
-        totalentrgar=String.valueOf(total);
-        DecimalFormat df = new DecimalFormat("#.#");
-        porcentaje.setText(String.valueOf(Double.valueOf(df.format(total)))+"%");;
-
+        if (horas == null)
+        {
+            porcentaje.setText("0%");
+        }
+        else
+{
+    horalum = Double.parseDouble(horas.trim());
+    horasaisg = Double.parseDouble(horasig.trim());
+    total = horalum * 100 / horasaisg;
+    totalentrgar = String.valueOf(total);
+    DecimalFormat df = new DecimalFormat("#.#");
+    porcentaje.setText(String.valueOf(Double.valueOf(df.format(total))) + "%");
+    ;
+}
     }
 }
