@@ -44,7 +44,15 @@
             android:name=".view.MenuAlarma"
             android:screenOrientation="portrait" />
         android:screenOrientation="portrait">
-        <activity android:name=".view.MenuMat" />
+        <activity
+            android:name=".view.MenuMat"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".view.MenuCorreo"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".view.EnviarCorreo"
+            android:screenOrientation="portrait"></activity>
     </application>
 
 </manifest>

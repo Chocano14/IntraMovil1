@@ -2,8 +2,10 @@ package com.example.hgmovil.intramovil.view;
 
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.content.Intent;
@@ -16,9 +18,11 @@ public class LoginActivity extends AppCompatActivity
 {
     EditText txRut, txPass;
     private Cursor fila;
+    private boolean twice =false;
+    final String TAG = this.getClass().getName();
+
     @Override
-    protected void onCreate(Bundle savedInstanceState)
-    {
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
         txRut = (EditText) findViewById(R.id.txtRut);
@@ -65,6 +69,31 @@ public class LoginActivity extends AppCompatActivity
                     admin.close();
                 }
 
+    }
+    @Override
+    public void onBackPressed()
+    {
+        if (twice == true)
+        {
+            Intent intent = new Intent(Intent.ACTION_MAIN);
+            intent.addCategory(intent.CATEGORY_HOME);
+            intent.setFlags(intent.FLAG_ACTIVITY_CLEAR_TOP);
+            startActivity(intent);
+            finish();
+            System.exit(0);
+        }
+
+        Log.d(TAG, "twice: "+twice);
+
+        Toast.makeText(getApplicationContext(), "Pulse atras nuevamente para salir", Toast.LENGTH_SHORT).show();
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                twice = false;
+                Log.d(TAG, "twice "+twice);
+            }
+        }, 3000);
+        twice=true;
     }
 }
 

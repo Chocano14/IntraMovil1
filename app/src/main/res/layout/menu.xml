@@ -2,9 +2,10 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:background="#ffffff"
+    android:background="#fcf5b4"
     android:weightSum="1"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    >
 
 
     <ScrollView
@@ -43,7 +44,7 @@
             android:layout_alignParentTop="true"
             android:layout_toLeftOf="@+id/BtnMateriales"
             android:layout_toStartOf="@+id/BtnMateriales"
-            android:background="@drawable/notas" />
+            android:background="@drawable/notas2" />
         <ImageButton
             android:layout_width="100dp"
             android:layout_height="120dp"
@@ -52,7 +53,7 @@
             android:layout_alignTop="@+id/BtnNotas"
             android:layout_toRightOf="@+id/BtnMateriales"
             android:layout_toEndOf="@+id/BtnMateriales"
-            android:background="@drawable/asistencia1" />
+            android:background="@drawable/asistencia12" />
         <ImageButton
             android:layout_width="100dp"
             android:layout_height="120dp"
@@ -62,7 +63,7 @@
             android:layout_below="@+id/BtnNotas"
             android:layout_alignLeft="@+id/BtnNotas"
             android:layout_alignStart="@+id/BtnNotas"
-            android:background="@drawable/orario1" />
+            android:background="@drawable/orario12" />
         <ImageButton
             android:layout_width="100dp"
             android:layout_height="120dp"
@@ -72,7 +73,7 @@
             android:layout_alignLeft="@+id/BtnHorario"
             android:layout_alignStart="@+id/BtnHorario"
             android:layout_marginTop="600dp"
-            android:background="@drawable/bsqueda"
+            android:background="@drawable/bsqueda2"
             />
 
         <ImageButton
@@ -84,7 +85,7 @@
             android:layout_alignLeft="@+id/BtnHorario"
             android:layout_alignStart="@+id/BtnHorario"
             android:layout_marginTop="40dp"
-            android:background="@drawable/acad" />
+            android:background="@drawable/acad2" />
 
         <ImageButton
             android:layout_width="100dp"
@@ -94,7 +95,7 @@
             android:layout_alignTop="@+id/BtnHorario"
             android:layout_alignLeft="@+id/BtnAsistencia"
             android:layout_alignStart="@+id/BtnAsistencia"
-            android:background="@drawable/pgosd" />
+            android:background="@drawable/pgosd2" />
 
         <ImageButton
             android:layout_width="100dp"
@@ -115,7 +116,7 @@
             android:layout_alignTop="@+id/BtnResAc"
             android:layout_alignLeft="@+id/BtnPag"
             android:layout_alignStart="@+id/BtnPag"
-            android:background="@drawable/mail23" />
+            android:background="@drawable/mail232" />
         <ImageButton
             android:layout_width="100dp"
             android:layout_height="120dp"
@@ -127,7 +128,7 @@
             android:layout_alignParentEnd="true"
             android:layout_marginRight="55dp"
             android:layout_marginEnd="55dp"
-            android:background="@drawable/larmak"/>
+            android:background="@drawable/larmak2"/>
 
         <TextView
             android:layout_width="wrap_content"

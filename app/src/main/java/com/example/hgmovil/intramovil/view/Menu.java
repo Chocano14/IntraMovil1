@@ -1,10 +1,14 @@
 package com.example.hgmovil.intramovil.view;
 
+import android.content.DialogInterface;
 import android.content.Intent;
         import android.os.Bundle;
-        import android.provider.ContactsContract;
-        import android.support.v7.app.AppCompatActivity;
-        import android.view.View;
+import android.os.Handler;
+import android.provider.ContactsContract;
+import android.support.v7.app.AlertDialog;
+import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
+import android.view.View;
         import android.widget.Button;
         import android.widget.EditText;
         import android.widget.ImageButton;
@@ -28,7 +32,8 @@ public class Menu extends AppCompatActivity
     private ImageButton BtnPag;
     private ImageButton BtnMat;
     private Button btnLogOut;
-
+    final String TAG = this.getClass().getName();
+    private boolean twice = false;
 
 
     @Override
@@ -83,15 +88,15 @@ public class Menu extends AppCompatActivity
                 PasarvarMenuHorario();
             }
         });
-       /* BtnCorr = (ImageButton) findViewById(R.id.BtnCorreos);
+        BtnCorr = (ImageButton) findViewById(R.id.BtnCorreos);
         BtnCorr.setOnClickListener(new View.OnClickListener()
         {
             public void onClick(View v) {
-                Intent formnuevo2 = new Intent(MenuPrincipal.this, MenuCorr.class);
+                Intent formnuevo2 = new Intent(Menu.this, MenuCorreo.class);
                 startActivity(formnuevo2);
             }
         });
-        */BtnBusc = (ImageButton) findViewById(R.id.BtnBusquet);
+        BtnBusc = (ImageButton) findViewById(R.id.BtnBusquet);
         BtnBusc.setOnClickListener(new View.OnClickListener()
         {
             public void onClick(View v) {
@@ -132,8 +137,26 @@ public class Menu extends AppCompatActivity
         {
             public void onClick(View v)
             {
-                Intent frmnuevo8 = new Intent (Menu.this, LoginActivity.class);
-                startActivity(frmnuevo8);
+                final AlertDialog.Builder asitencias = new AlertDialog.Builder(Menu.this);
+                asitencias.setTitle("ADVERTENCIA");
+                asitencias.setMessage("Esta Seguro Que Quieres"+"\n"+"Cerrar Sesion");
+                asitencias.setPositiveButton("NO", new DialogInterface.OnClickListener()
+                {
+                    public void onClick(DialogInterface dialog, int which)
+                    {
+
+                    }
+                }).setNegativeButton("SI", new DialogInterface.OnClickListener()
+                {
+                    public void onClick(DialogInterface dialog, int which)
+                    {
+                        Intent frmnuevo8 = new Intent (Menu.this, LoginActivity.class);
+                        startActivity(frmnuevo8);
+                    }
+                });
+                asitencias.show();
+
+
             }
         });
 
@@ -145,6 +168,31 @@ public class Menu extends AppCompatActivity
         rt2.putExtra("RuttMenu", rt);
         startActivity(rt2);
 
+    }
+    @Override
+    public void onBackPressed()
+    {
+        if (twice == true)
+        {
+            Intent intent = new Intent(Intent.ACTION_MAIN);
+            intent.addCategory(intent.CATEGORY_HOME);
+            intent.setFlags(intent.FLAG_ACTIVITY_CLEAR_TOP);
+            startActivity(intent);
+            finish();
+            System.exit(0);
+        }
+
+        Log.d(TAG, "twice: "+twice);
+
+        Toast.makeText(getApplicationContext(), "Pulse atras nuevamente para salir", Toast.LENGTH_SHORT).show();
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                twice = false;
+                Log.d(TAG, "twice "+twice);
+            }
+        }, 3000);
+        twice=true;
     }
     public void PasarvarMenuasit()
     {
