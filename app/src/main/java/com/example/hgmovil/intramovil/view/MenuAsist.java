@@ -131,7 +131,7 @@ public class MenuAsist extends AppCompatActivity implements View.OnClickListener
                     "ON sec.Id= ahs.Seccion_Id\n" +
                     "JOIN Alumno as alum\n" +
                     "ON ahs.Alumno_Rut = alum.Rut\n" +
-                    "WHERE alum.Rut='"+ry+"'", null);
+                    "WHERE alum.Rut='"+ry+"'ORDER BY a.Nombre ASC", null);
             if (c.moveToFirst()) {
                 do {
                     String nombre = c.getString(0);

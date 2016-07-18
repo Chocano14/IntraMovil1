@@ -32,8 +32,8 @@
         android:layout_centerHorizontal="true" />
 
         <ImageButton
-            android:layout_width="130dp"
-            android:layout_height="100dp"
+            android:layout_width="100dp"
+            android:layout_height="70dp"
             android:id="@+id/BtnEnviar"
             android:layout_gravity="top|left"
             android:layout_marginTop="81dp"
@@ -47,7 +47,7 @@
             android:layout_height="wrap_content"
             android:text="Enviar Correo"
             android:id="@+id/textView16"
-            android:textSize="25dp"
+            android:textSize="20dp"
             android:textColor="#000000"
             android:textStyle="bold"
             android:layout_marginLeft="50dp"

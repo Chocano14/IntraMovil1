@@ -114,7 +114,7 @@ public class MenuResu extends AppCompatActivity implements View.OnClickListener 
                 "ON sec.Id= ahs.Seccion_Id\n" +
                 "JOIN Alumno as alum\n" +
                 "ON ahs.Alumno_Rut = alum.Rut\n" +
-                "WHERE alum.Rut='" + ry + "';", null);
+                "WHERE alum.Rut='" + ry + "'ORDER BY a.Nombre ASC;", null);
         try {
             if (a.moveToFirst()) {
                 String Asig = a.getString(0);
@@ -152,6 +152,10 @@ public class MenuResu extends AppCompatActivity implements View.OnClickListener 
                     {
                         String promeRam = x.getString(0);
                         String prome = z.getString(0);
+                        if(c.isNull(0))
+                        {
+                            prome = "0";
+                        }
                         Asis.setText(prome + "HRS" + "/" + promeRam + "HRS");
                         double contendor=Double.parseDouble(Nota.trim());
                         if(contendor>4.0)
@@ -202,6 +206,10 @@ public class MenuResu extends AppCompatActivity implements View.OnClickListener 
                         if (zz.moveToFirst() && xx.moveToFirst()) {
                             String promeRam1 = xx.getString(0);
                             String prome1 = zz.getString(0);
+                            if(zz.isNull(0))
+                            {
+                                prome1 = "0";
+                            }
                             Asis1.setText(prome1 + "HRS" + "/" + promeRam1 + "HRS");
                             double contendor1=Double.parseDouble(Nota1.trim());
                             if(contendor1>4.0)
@@ -249,6 +257,10 @@ public class MenuResu extends AppCompatActivity implements View.OnClickListener 
                                 if (zz2.moveToFirst() && xx2.moveToFirst()) {
                                     String promeRam2 = xx2.getString(0);
                                     String prome2 = zz2.getString(0);
+                                    if(zz2.isNull(0))
+                                    {
+                                        prome2 = "0";
+                                    }
                                     Asis2.setText(prome2 + "HRS" + "/" + promeRam2 + "HRS");
                                     double contendor=Double.parseDouble(Nota2.trim());
                                     if(contendor>4.0)
@@ -294,6 +306,10 @@ public class MenuResu extends AppCompatActivity implements View.OnClickListener 
                                     if (zz3.moveToFirst() && xx3.moveToFirst()) {
                                         String promeRam3 = xx3.getString(0);
                                         String prome3 = zz3.getString(0);
+                                        if(zz3.isNull(0))
+                                        {
+                                            prome3 = "0";
+                                        }
                                         Asis3.setText(prome3 + "HRS" + "/" + promeRam3 + "HRS");
                                         double contendor=Double.parseDouble(Nota3.trim());
                                         if(contendor>4.0)
@@ -340,6 +356,10 @@ public class MenuResu extends AppCompatActivity implements View.OnClickListener 
                                         if (zz4.moveToFirst() && xx4.moveToFirst()) {
                                             String promeRam4 = xx4.getString(0);
                                             String prome4 = zz4.getString(0);
+                                            if(zz4.isNull(0))
+                                            {
+                                                prome4 = "0";
+                                            }
                                             Asis4.setText(prome4 + "HRS" + "/" + promeRam4 + "HRS");
                                             double contendor=Double.parseDouble(Nota4.trim());
                                             if(contendor>4.0)
@@ -384,6 +404,10 @@ public class MenuResu extends AppCompatActivity implements View.OnClickListener 
                                                 if (zz5.moveToFirst() && xx5.moveToFirst()) {
                                                     String promeRam5 = xx5.getString(0);
                                                     String prome5 = zz5.getString(0);
+                                                    if(zz5.isNull(0))
+                                                    {
+                                                        prome5 = "0";
+                                                    }
                                                     Asis5.setText(prome5 + "HRS" + "/" + promeRam5 + "HRS");
                                                     double contendor=Double.parseDouble(Nota5.trim());
                                                     if(contendor>4.0)
@@ -428,6 +452,10 @@ public class MenuResu extends AppCompatActivity implements View.OnClickListener 
                                                         if (zz6.moveToFirst() && xx6.moveToFirst()) {
                                                             String promeRam6 = xx6.getString(0);
                                                             String prome6 = zz6.getString(0);
+                                                            if(zz6.isNull(0))
+                                                            {
+                                                                prome6 = "0";
+                                                            }
                                                             Asis6.setText(prome6 + "HRS" + "/" + promeRam6 + "HRS");
                                                             double contendor=Double.parseDouble(Nota6.trim());
                                                             if(contendor>4.0)
