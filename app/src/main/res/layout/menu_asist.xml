@@ -41,7 +41,6 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="New Text"
             android:id="@+id/txtTHAsig"
             android:textColor="#ffffff"
             android:layout_alignTop="@+id/textView5"
@@ -72,7 +71,6 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="New Text"
             android:id="@+id/txtTHAsis"
             android:textColor="#ffffff"
             android:layout_alignTop="@+id/textView7"
@@ -82,7 +80,6 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="New Text"
             android:id="@+id/txtPDA"
             android:layout_alignTop="@+id/textView8"
             android:layout_toEndOf="@+id/textView5"

@@ -24,7 +24,15 @@ public class MenuCorreo extends AppCompatActivity {
             public void onClick(View v) {
                 Intent formnuevo1 = new Intent(MenuCorreo.this, EnviarCorreo.class);
                 startActivity(formnuevo1);
+                PasarvarCorreo();
             }
         });
+    }
+    public void PasarvarCorreo()
+    {
+        String rt = getIntent().getStringExtra("RuttMenu");
+        Intent rt2 = new Intent(this, EnviarCorreo.class);
+        rt2.putExtra("Rutt", rt);
+        startActivity(rt2);
     }
 }

@@ -29,6 +29,7 @@
         android:id="@+id/txtRut"
         android:layout_height="wrap_content"
         android:layout_width="fill_parent"
+
         android:hint="Rut"
         android:inputType="text"
         android:layout_above="@+id/txtContra"
