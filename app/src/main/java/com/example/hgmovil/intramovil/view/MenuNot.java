@@ -1,5 +1,6 @@
 package com.example.hgmovil.intramovil.view;
 
+import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.support.v7.app.AppCompatActivity;
@@ -10,6 +11,7 @@ import android.widget.Button;
 import android.widget.ListView;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.hgmovil.intramovil.R;
 import com.example.hgmovil.intramovil.modeloDAO.AsignaturaDAO;
@@ -25,7 +27,7 @@ public class MenuNot extends AppCompatActivity implements View.OnClickListener
     public TextView Nota,Nota1,Nota2,Nota3,Nota4,Nota5,Nota6;
     private TextView Ponderacion,Ponderacion1,Ponderacion2,Ponderacion3,Ponderacion4,Ponderacion5,Ponderacion6;
     private TextView Fecha,Fecha1,Fecha2,Fecha3,Fecha4,Fecha5,Fecha6;
-    private String ry;
+    private String ry, nm;
 
     private ArrayAdapter adapter;
     @Override
@@ -34,6 +36,7 @@ public class MenuNot extends AppCompatActivity implements View.OnClickListener
         super.onCreate(savedInstanceState);
         setContentView(R.layout.menu_not);
         ry = getIntent().getStringExtra("RuttMenu");
+        nm= getIntent().getStringExtra("Nombre");
 
         btn = (Button) findViewById(R.id.btn);
         spn = (Spinner) findViewById(R.id.spnAsig);
@@ -78,8 +81,11 @@ public class MenuNot extends AppCompatActivity implements View.OnClickListener
 
     @Override
     public void onClick(View v)
+
     {
         cargar();
+        Toast.makeText(getApplicationContext(), "Operación realizada...", Toast.LENGTH_SHORT).show();
+
     }
     public void cargar()
     {
@@ -205,5 +211,14 @@ public class MenuNot extends AppCompatActivity implements View.OnClickListener
             return null;
         }
         return dev;
+    }
+
+    @Override
+    public void onBackPressed()
+    {
+        Intent i = new Intent(MenuNot.this, com.example.hgmovil.intramovil.view.Menu.class);
+        i.putExtra("Nomb", nm);
+        i.putExtra("Rutt", ry);
+        startActivity(i);
     }
 }

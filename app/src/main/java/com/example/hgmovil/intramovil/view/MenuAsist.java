@@ -1,5 +1,6 @@
 package com.example.hgmovil.intramovil.view;
 
+import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.support.v7.app.AppCompatActivity;
@@ -9,6 +10,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.hgmovil.intramovil.R;
 import com.example.hgmovil.intramovil.sqlite.BDIntraMovil;
@@ -18,7 +20,7 @@ import java.util.ArrayList;
 
 public class MenuAsist extends AppCompatActivity implements View.OnClickListener {
     private Spinner spnenr;
-    private String ry;
+    private String ry, nm;
     private ArrayAdapter adapter;
     private TextView totalhAsig,totalhAsistidas,porcentaje;
     private Button btnes;
@@ -34,6 +36,8 @@ public class MenuAsist extends AppCompatActivity implements View.OnClickListener
         super.onCreate(savedInstanceState);
         setContentView(R.layout.menu_asist);
         ry = getIntent().getStringExtra("RuttMenu");
+        nm= getIntent().getStringExtra("Nombre");
+
         spnenr = (Spinner) findViewById(R.id.spnAsis);
         btnes=(Button)findViewById(R.id.btnAsist);
 
@@ -52,6 +56,8 @@ public class MenuAsist extends AppCompatActivity implements View.OnClickListener
         TotalHoras();
         HorasAsis();
         porcentajecom();
+        Toast.makeText(getApplicationContext(), "Operación realizada...", Toast.LENGTH_SHORT).show();
+
     }
     public  void TotalHoras()
     {
@@ -156,7 +162,7 @@ public class MenuAsist extends AppCompatActivity implements View.OnClickListener
             porcentaje.setText("0%");
         }
         else
-{
+        {
     horalum = Double.parseDouble(horas.trim());
     horasaisg = Double.parseDouble(horasig.trim());
     total = horalum * 100 / horasaisg;
@@ -165,5 +171,13 @@ public class MenuAsist extends AppCompatActivity implements View.OnClickListener
     porcentaje.setText(String.valueOf(Double.valueOf(df.format(total))) + "%");
     ;
 }
+    }
+    @Override
+    public void onBackPressed()
+    {
+        Intent i = new Intent(MenuAsist.this, com.example.hgmovil.intramovil.view.Menu.class);
+        i.putExtra("Nomb", nm);
+        i.putExtra("Rutt", ry);
+        startActivity(i);
     }
 }

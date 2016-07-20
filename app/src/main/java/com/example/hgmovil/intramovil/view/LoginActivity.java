@@ -2,6 +2,7 @@ package com.example.hgmovil.intramovil.view;
 
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.os.AsyncTask;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -13,6 +14,11 @@ import android.widget.Toast;
 
 import com.example.hgmovil.intramovil.R;
 import com.example.hgmovil.intramovil.sqlite.BDIntraMovil;
+
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.net.URL;
+import java.net.URLConnection;
 
 public class LoginActivity extends AppCompatActivity
 {
@@ -42,6 +48,7 @@ public class LoginActivity extends AppCompatActivity
         {
             if(v.getId() == R.id.btnIniciar)
             {
+                new Sender().execute(user, contra);
 
                 fila = db.rawQuery("select rut, contraseña, nombre from alumno where rut='"+user+"' and contraseña='"+contra+"'", null);
                 if (fila.moveToFirst()) {
@@ -94,6 +101,59 @@ public class LoginActivity extends AppCompatActivity
             }
         }, 3000);
         twice=true;
+    }
+
+    class Sender extends AsyncTask<String, Void , String> {
+
+
+        @Override
+        protected String doInBackground(String... strings) {
+
+            String text = "";
+            BufferedReader reader = null;
+
+
+            // Send data
+            try {
+
+                // Defined URL  where to send data
+
+                URL url = new URL("http://192.168.43.137:8080/Sesion/iniciarSesion?rut=" + strings[0]+"&contra="+ strings[1]);
+
+                // Send POST data reques
+
+                URLConnection conn = url.openConnection();
+                conn.setDoOutput(true);
+
+                // Get the server response
+
+                reader = new BufferedReader(new InputStreamReader(conn.getInputStream()));
+                StringBuilder sb = new StringBuilder();
+                String line = null;
+
+                // Read Server Response
+                while ((line = reader.readLine()) != null) {
+                    // Append server response in string
+                    sb.append(line + "\n");
+                }
+
+
+                text = sb.toString();
+            } catch (Exception ex) {
+                String mensaje = ex.getMessage();
+            } finally {
+                try {
+
+                    reader.close();
+                } catch (Exception ex) {
+                }
+            }
+
+            // Show response on activity
+            return text;
+
+            //Snackbar.make(view,text, Snackbar.LENGTH_LONG).setAction("Action", null).show();
+        }
     }
 }
 

@@ -34,6 +34,7 @@ public class Menu extends AppCompatActivity
     private Button btnLogOut;
     final String TAG = this.getClass().getName();
     private boolean twice = false;
+    private String nom;
 
 
     @Override
@@ -43,7 +44,7 @@ public class Menu extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.menu);
         BtnNot = (ImageButton) findViewById(R.id.BtnNotas);
-        String nom = getIntent().getStringExtra("Nomb");
+        nom = getIntent().getStringExtra("Nomb");
 
         TextView tv = (TextView)findViewById(R.id.txtUser);
         tv.setText(nom);
@@ -140,7 +141,7 @@ public class Menu extends AppCompatActivity
             {
                 final AlertDialog.Builder asitencias = new AlertDialog.Builder(Menu.this);
                 asitencias.setTitle("ADVERTENCIA");
-                asitencias.setMessage("Esta Seguro Que Quieres"+"\n"+"Cerrar Sesion");
+                asitencias.setMessage("Esta seguro que quieres"+"\n"+"cerrar sesion");
                 asitencias.setPositiveButton("NO", new DialogInterface.OnClickListener()
                 {
                     public void onClick(DialogInterface dialog, int which)
@@ -156,8 +157,6 @@ public class Menu extends AppCompatActivity
                     }
                 });
                 asitencias.show();
-
-
             }
         });
 
@@ -167,6 +166,7 @@ public class Menu extends AppCompatActivity
         String rt = getIntent().getStringExtra("Rutt");
         Intent rt2 = new Intent(this, MenuNot.class);
         rt2.putExtra("RuttMenu", rt);
+        rt2.putExtra("Nombre", nom);
         startActivity(rt2);
 
     }
@@ -200,6 +200,7 @@ public class Menu extends AppCompatActivity
         String rt = getIntent().getStringExtra("Rutt");
         Intent rt2 = new Intent(this, MenuAsist.class);
         rt2.putExtra("RuttMenu", rt);
+        rt2.putExtra("Nombre", nom);
         startActivity(rt2);
 
     }
@@ -208,6 +209,7 @@ public class Menu extends AppCompatActivity
         String rt = getIntent().getStringExtra("Rutt");
         Intent rt2 = new Intent(this, MenuResu.class);
         rt2.putExtra("RuttMenu", rt);
+        rt2.putExtra("Nombre", nom);
         startActivity(rt2);
     }
     public void PasarvarMenuPago()
@@ -215,6 +217,7 @@ public class Menu extends AppCompatActivity
         String rt = getIntent().getStringExtra("Rutt");
         Intent rt2 = new Intent(this, MenuPago.class);
         rt2.putExtra("RuttMenu", rt);
+        rt2.putExtra("Nombre", nom);
         startActivity(rt2);
     }
     public void PasarvarMenuHorario()
@@ -222,6 +225,7 @@ public class Menu extends AppCompatActivity
         String rt = getIntent().getStringExtra("Rutt");
         Intent rt2 = new Intent(this, MenuHorario.class);
         rt2.putExtra("RuttMenu", rt);
+        rt2.putExtra("Nombre", nom);
         startActivity(rt2);
     }
     public void PasarvarMenuMat()
@@ -229,6 +233,7 @@ public class Menu extends AppCompatActivity
         String rt = getIntent().getStringExtra("Rutt");
         Intent rt2 = new Intent(this, MenuMat.class);
         rt2.putExtra("RuttMenu", rt);
+        rt2.putExtra("Nombre", nom);
         startActivity(rt2);
     }
 
@@ -237,6 +242,7 @@ public class Menu extends AppCompatActivity
         String rt = getIntent().getStringExtra("Rutt");
         Intent rt2 = new Intent(this, MenuCorreo.class);
         rt2.putExtra("RuttMenu", rt);
+        rt2.putExtra("Nombre", nom);
         startActivity(rt2);
     }
 }

@@ -24,7 +24,7 @@ public class MenuHorario extends AppCompatActivity implements View.OnClickListen
     private Button btn;
     private Spinner spnHora;
     private ArrayAdapter adapter;
-    private String ry;
+    private String ry, nm;
     private TextView asig1, asig2, asig3, asig4, asig5, asig6, asig7, asig8,
             sala1, sala2, sala3, sala4, sala5, sala6, sala7, sala8,
             hora1, hora2, hora3, hora4, hora5, hora6, hora7, hora8;
@@ -36,8 +36,9 @@ public class MenuHorario extends AppCompatActivity implements View.OnClickListen
         setContentView(R.layout.menu_horario);
         btn = (Button) findViewById(R.id.btnBuscar);
 
-
         ry = getIntent().getStringExtra("RuttMenu");
+        nm= getIntent().getStringExtra("Nombre");
+
         spnHora = (Spinner) findViewById(R.id.spnHorario);
         asig1 = (TextView) findViewById(R.id.txtAsig1);
         asig2 = (TextView) findViewById(R.id.txtAsig2);
@@ -225,5 +226,13 @@ public class MenuHorario extends AppCompatActivity implements View.OnClickListen
             return null;
         }
         return dev;
+    }
+    @Override
+    public void onBackPressed()
+    {
+        Intent i = new Intent(MenuHorario.this, com.example.hgmovil.intramovil.view.Menu.class);
+        i.putExtra("Nomb", nm);
+        i.putExtra("Rutt", ry);
+        startActivity(i);
     }
 }

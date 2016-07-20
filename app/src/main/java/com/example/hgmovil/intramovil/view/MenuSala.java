@@ -13,6 +13,7 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.hgmovil.intramovil.R;
 import com.example.hgmovil.intramovil.sqlite.BDIntraMovil;
@@ -46,6 +47,8 @@ public class MenuSala extends AppCompatActivity implements View.OnClickListener
     public void onClick(View v)
     {
         cargaSala();
+        Toast.makeText(getApplicationContext(), "Operación realizada...", Toast.LENGTH_SHORT).show();
+
     }
 
     public void cargaSala()

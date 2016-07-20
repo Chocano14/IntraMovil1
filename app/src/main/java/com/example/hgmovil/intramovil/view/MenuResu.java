@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.hgmovil.intramovil.R;
 import com.example.hgmovil.intramovil.sqlite.BDIntraMovil;
@@ -21,7 +22,7 @@ public class MenuResu extends AppCompatActivity implements View.OnClickListener 
     private TextView txtA1,txtA2,txtA3,txtA4,txtA5,txtA6,txtA7;
     private TextView txtP1,txtP2,txtP3,txtP4,txtP5,txtP6,txtP7;
     private TextView txtS1,txtS2,txtS3,txtS4,txtS5,txtS6,txtS7;
-    private String ry;
+    private String ry, nm;
 
 
     @Override
@@ -29,6 +30,8 @@ public class MenuResu extends AppCompatActivity implements View.OnClickListener 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.menu_resu);
         ry = getIntent().getStringExtra("RuttMenu");
+        nm= getIntent().getStringExtra("Nombre");
+
         btn = (Button) findViewById(R.id.btnResum);
         txtA1=(TextView)findViewById(R.id.txt1Asis);
         txtA2=(TextView)findViewById(R.id.txt2Asis);
@@ -96,8 +99,10 @@ public class MenuResu extends AppCompatActivity implements View.OnClickListener 
 
     @Override
 
-    public void onClick(View v) {
+    public void onClick(View v)
+    {
         Promedioramo();
+        Toast.makeText(getApplicationContext(), "Operación realizada...", Toast.LENGTH_SHORT).show();
 
     }
 
@@ -485,5 +490,13 @@ public class MenuResu extends AppCompatActivity implements View.OnClickListener 
             ex.printStackTrace();
             helper.close();
         }
+    }
+    @Override
+    public void onBackPressed()
+    {
+        Intent i = new Intent(MenuResu.this, com.example.hgmovil.intramovil.view.Menu.class);
+        i.putExtra("Nomb", nm);
+        i.putExtra("Rutt", ry);
+        startActivity(i);
     }
 }

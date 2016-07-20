@@ -1,5 +1,6 @@
 package com.example.hgmovil.intramovil.view;
 
+import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.support.v7.app.AppCompatActivity;
@@ -11,6 +12,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.hgmovil.intramovil.R;
 import com.example.hgmovil.intramovil.sqlite.BDIntraMovil;
@@ -22,7 +24,7 @@ public class MenuMat extends AppCompatActivity implements View.OnClickListener
     private Button btnMat1;
     private Spinner spnMat1;
     private ArrayAdapter adapter;
-    private String ry;
+    private String ry, nm;
     private TextView url;
 
     @Override
@@ -30,6 +32,7 @@ public class MenuMat extends AppCompatActivity implements View.OnClickListener
         super.onCreate(savedInstanceState);
         setContentView(R.layout.menu_mat);
         ry = getIntent().getStringExtra("RuttMenu");
+        nm= getIntent().getStringExtra("Nombre");
 
         btnMat1 = (Button) findViewById(R.id.btnMat);
         spnMat1 = (Spinner) findViewById(R.id.spnMat);
@@ -48,6 +51,7 @@ public class MenuMat extends AppCompatActivity implements View.OnClickListener
     public void onClick(View v)
     {
         cargarMat();
+        Toast.makeText(getApplicationContext(), "Operación realizada...", Toast.LENGTH_SHORT).show();
     }
 
     public ArrayList<String> listadoAsigxCarrera2()
@@ -66,7 +70,7 @@ public class MenuMat extends AppCompatActivity implements View.OnClickListener
                     "ON sec.Id= ahs.Seccion_Id\n" +
                     "JOIN Alumno as alum\n" +
                     "ON ahs.Alumno_Rut = alum.Rut\n" +
-                    "WHERE alum.Rut='"+ry+"'", null);
+                    "WHERE alum.Rut='"+ry+"'ORDER BY a.Nombre ASC", null);
             if (c.moveToFirst()) {
                 do {
                     String nombre = c.getString(0);
@@ -105,6 +109,13 @@ public class MenuMat extends AppCompatActivity implements View.OnClickListener
             url.setMovementMethod(LinkMovementMethod.getInstance());
 
         }
-
+    }
+    @Override
+    public void onBackPressed()
+    {
+        Intent i = new Intent(MenuMat.this, com.example.hgmovil.intramovil.view.Menu.class);
+        i.putExtra("Nomb", nm);
+        i.putExtra("Rutt", ry);
+        startActivity(i);
     }
 }

@@ -1,5 +1,6 @@
 package com.example.hgmovil.intramovil.view;
 
+import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.support.v7.app.AppCompatActivity;
@@ -9,6 +10,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.hgmovil.intramovil.R;
 import com.example.hgmovil.intramovil.sqlite.BDIntraMovil;
@@ -20,13 +22,15 @@ public class MenuPago extends AppCompatActivity implements View.OnClickListener
             con1, con2, con3, con4, con5, con6, con7, con8,
             mon1, mon2, mon3, mon4, mon5, mon6, mon7, mon8,
             fech1, fech2, fech3, fech4, fech5, fech6, fech7, fech8;
-    private String rutPago;
+    private String rutPago, nm;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.menu_pago);
         rutPago = getIntent().getStringExtra("RuttMenu");
+        nm= getIntent().getStringExtra("Nombre");
+
 
         btnVer = (Button) findViewById(R.id.btnVer);
         est1 = (TextView) findViewById(R.id.est1);
@@ -72,6 +76,7 @@ public class MenuPago extends AppCompatActivity implements View.OnClickListener
     public void onClick(View v)
     {
         CargarPago();
+        Toast.makeText(getApplicationContext(), "Operación realizada...", Toast.LENGTH_SHORT).show();
     }
 
     public void CargarPago()
@@ -195,6 +200,13 @@ public class MenuPago extends AppCompatActivity implements View.OnClickListener
             ex.printStackTrace();
             helper.close();
         }
-
+    }
+    @Override
+    public void onBackPressed()
+    {
+        Intent i = new Intent(MenuPago.this, com.example.hgmovil.intramovil.view.Menu.class);
+        i.putExtra("Nomb", nm);
+        i.putExtra("Rutt", rutPago);
+        startActivity(i);
     }
 }

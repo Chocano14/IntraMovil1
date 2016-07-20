@@ -12,11 +12,15 @@ import com.example.hgmovil.intramovil.R;
 public class MenuCorreo extends AppCompatActivity {
 
     private ImageButton btnEnviar;
+    private String ry, nm;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.menu_correo);
+
+        ry = getIntent().getStringExtra("RuttMenu");
+        nm= getIntent().getStringExtra("Nombre");
 
         btnEnviar = (ImageButton) findViewById(R.id.BtnEnviar);
         btnEnviar.setOnClickListener(new View.OnClickListener()
@@ -32,7 +36,17 @@ public class MenuCorreo extends AppCompatActivity {
     {
         String rt = getIntent().getStringExtra("RuttMenu");
         Intent rt2 = new Intent(this, EnviarCorreo.class);
-        rt2.putExtra("Rutt", rt);
+        rt2.putExtra("Ruttt", rt);
+        rt2.putExtra("Nombree", nm);
         startActivity(rt2);
+    }
+
+    @Override
+    public void onBackPressed()
+    {
+        Intent i = new Intent(MenuCorreo.this, com.example.hgmovil.intramovil.view.Menu.class);
+        i.putExtra("Nomb", nm);
+        i.putExtra("Rutt", ry);
+        startActivity(i);
     }
 }

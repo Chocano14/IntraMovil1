@@ -1,6 +1,7 @@
 package com.example.hgmovil.intramovil.view;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
@@ -37,7 +38,7 @@ public class EnviarCorreo extends Activity implements OnClickListener{
     ProgressDialog pdialog = null;
     Context context = null;
     EditText reciep, sub, msg;
-    String rec, subject, textMessage, correoSelec, rt, contra, correo;
+    String rec, subject, textMessage, correoSelec, rt, contra, correo, nm;
     Spinner spin;
     ArrayAdapter adapter;
 
@@ -45,7 +46,9 @@ public class EnviarCorreo extends Activity implements OnClickListener{
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.enviar_correo);
-        rt = getIntent().getStringExtra("Rutt");
+        rt = getIntent().getStringExtra("Ruttt");
+        nm= getIntent().getStringExtra("Nombree");
+
 
         context = this;
 
@@ -182,5 +185,13 @@ public class EnviarCorreo extends Activity implements OnClickListener{
             return null;
         }
         return dev;
+    }
+    @Override
+    public void onBackPressed()
+    {
+        Intent i = new Intent(EnviarCorreo.this, com.example.hgmovil.intramovil.view.MenuCorreo.class);
+        i.putExtra("Nombre", nm);
+        i.putExtra("RuttMenu", rt);
+        startActivity(i);
     }
 }
