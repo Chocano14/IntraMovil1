@@ -1,163 +1,148 @@
 package com.example.hgmovil.intramovil.view;
 
-import android.database.Cursor;
-import android.database.sqlite.SQLiteDatabase;
+import android.app.Activity;
+import android.app.ProgressDialog;
+import android.content.Context;
+import android.content.Intent;
 import android.os.AsyncTask;
-import android.os.Handler;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
-import android.content.Intent;
 import android.widget.Toast;
 
 import com.example.hgmovil.intramovil.R;
-import com.example.hgmovil.intramovil.sqlite.BDIntraMovil;
 
-import java.io.BufferedReader;
-import java.io.InputStreamReader;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
+import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
 import java.net.URL;
-import java.net.URLConnection;
 
-public class LoginActivity extends AppCompatActivity
-{
-    EditText txRut, txPass;
-    private Cursor fila;
-    private boolean twice =false;
-    final String TAG = this.getClass().getName();
+public class LoginActivity extends Activity {
+
+    EditText rut, contraseña;
+    String Rut, Contraseña;
+    Context ctx=this;
+    ProgressDialog pdialog = null;
+    String NOMBRE=null;
+    Context context = null;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-        txRut = (EditText) findViewById(R.id.txtRut);
-        txPass = (EditText) findViewById(R.id.txtContra);
+        rut = (EditText) findViewById(R.id.main_name);
+        contraseña = (EditText) findViewById(R.id.main_password);
+        context = this;
     }
 
-    public void ingresar (View v)
-    {
-        BDIntraMovil admin = new BDIntraMovil(this);
-        SQLiteDatabase db = admin.getReadableDatabase();
-        admin.openDataBase();
+    // public void main_register(View v){
+    //   startActivity(new Intent(this,Register.class));
+    //}
 
-        String user = txRut.getText().toString();
-        String contra = txPass.getText().toString();
-
-        try
+    public void main_login(View v){
+        Rut = rut.getText().toString();
+        Contraseña = contraseña.getText().toString();
+        BackGround b = new BackGround();
+        if(Rut.equals("")||Contraseña.equals(""))
         {
-            if(v.getId() == R.id.btnIniciar)
-            {
-                new Sender().execute(user, contra);
+            Toast.makeText(ctx, "Inserte campos validos", Toast.LENGTH_LONG).show();
 
-                fila = db.rawQuery("select rut, contraseña, nombre from alumno where rut='"+user+"' and contraseña='"+contra+"'", null);
-                if (fila.moveToFirst()) {
-                    String usua = fila.getString(0);
-                    String pass = fila.getString(1);
-                    String nom = fila.getString(2);
+        }
+        else
+        {
+            b.execute(Rut, Contraseña);
+            pdialog = ProgressDialog.show(context, "", "CONECTANDO...", true);
+        }
 
-                    if (user.equals(usua) && contra.equals(pass)) {
-                        Intent i = new Intent(LoginActivity.this, com.example.hgmovil.intramovil.view.Menu.class);
-                        i.putExtra("Nomb", nom);
-                        i.putExtra("Rutt", usua);
-                        startActivity(i);
-                    }
+
+    }
+
+    class BackGround extends AsyncTask<String, String, String>
+    {
+
+        @Override
+        protected String doInBackground(String... params) {
+            String rut1 = params[0];
+            String contraseña1 = params[1];
+            String data="";
+            int tmp;
+
+            try {
+                URL url = new URL("http://www.intramovil.hol.es/login.php");
+                String urlParams = "name="+rut1+"&password="+contraseña1;
+                HttpURLConnection httpURLConnection = (HttpURLConnection) url.openConnection();
+                httpURLConnection.setDoOutput(true);
+                OutputStream os = httpURLConnection.getOutputStream();
+                os.write(urlParams.getBytes());
+                os.flush();
+                os.close();
+
+                InputStream is = httpURLConnection.getInputStream();
+                while((tmp=is.read())!=-1){
+                    data+= (char)tmp;
+                }
+
+                is.close();
+                httpURLConnection.disconnect();
+
+                return data;
+            } catch (MalformedURLException e) {
+                e.printStackTrace();
+                return "Exception: "+e.getMessage();
+            } catch (IOException e) {
+                e.printStackTrace();
+                return "Exception: "+e.getMessage();
+            }
+        }
+        @Override
+        protected void onPostExecute(String s)
+        {
+
+            String RUT=null,CONTRASEÑA=null;
+            pdialog.dismiss();
+            try {
+                    JSONObject root = new JSONObject(s);
+                    JSONObject user_data = root.getJSONObject("user_data");
+                    NOMBRE= user_data.getString("nombre");
+                    RUT= user_data.getString("rut");
+                    CONTRASEÑA= user_data.getString("contraseña");
+
+                if(RUT.equals("")||CONTRASEÑA.equals("")||RUT.equals(null)||CONTRASEÑA.equals(null))
+                {
+
+                    Toast.makeText(ctx, "Rut y contraseña incorrectos ", Toast.LENGTH_LONG).show();
+
                 }
                 else
                 {
-                    Toast.makeText(getApplicationContext(), "Usuario o contraseña incorrectos", Toast.LENGTH_SHORT).show();
-                }
-            }
-        }
-        catch (Exception ex)
-                {
-                    Toast.makeText(getApplicationContext(), "Error en busqueda", Toast.LENGTH_SHORT).show();
-                    ex.printStackTrace();
-                    admin.close();
-                }
 
-    }
-    @Override
-    public void onBackPressed()
-    {
-        if (twice == true)
-        {
-            Intent intent = new Intent(Intent.ACTION_MAIN);
-            intent.addCategory(intent.CATEGORY_HOME);
-            intent.setFlags(intent.FLAG_ACTIVITY_CLEAR_TOP);
-            startActivity(intent);
-            finish();
-            System.exit(0);
-        }
-
-        Log.d(TAG, "twice: "+twice);
-
-        Toast.makeText(getApplicationContext(), "Pulse atras nuevamente para salir", Toast.LENGTH_SHORT).show();
-        new Handler().postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                twice = false;
-                Log.d(TAG, "twice "+twice);
-            }
-        }, 3000);
-        twice=true;
-    }
-
-    class Sender extends AsyncTask<String, Void , String> {
-
-
-        @Override
-        protected String doInBackground(String... strings) {
-
-            String text = "";
-            BufferedReader reader = null;
-
-
-            // Send data
-            try {
-
-                // Defined URL  where to send data
-
-                URL url = new URL("http://192.168.43.137:8080/Sesion/iniciarSesion?rut=" + strings[0]+"&contra="+ strings[1]);
-
-                // Send POST data reques
-
-                URLConnection conn = url.openConnection();
-                conn.setDoOutput(true);
-
-                // Get the server response
-
-                reader = new BufferedReader(new InputStreamReader(conn.getInputStream()));
-                StringBuilder sb = new StringBuilder();
-                String line = null;
-
-                // Read Server Response
-                while ((line = reader.readLine()) != null) {
-                    // Append server response in string
-                    sb.append(line + "\n");
+                    Intent i = new Intent(ctx, Menu.class);
+                    i.putExtra("Nomb", NOMBRE);
+                    startActivity(i);
                 }
 
 
-                text = sb.toString();
-            } catch (Exception ex) {
-                String mensaje = ex.getMessage();
-            } finally {
-                try {
-
-                    reader.close();
-                } catch (Exception ex) {
+                    //CORREO= user_data.getString("correo");
+                    //CARRERA_ID= user_data.getString("carrera_id");
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                Toast.makeText(ctx, "Rut y contraseña incorrectos ", Toast.LENGTH_LONG).show();
                 }
-            }
 
-            // Show response on activity
-            return text;
 
-            //Snackbar.make(view,text, Snackbar.LENGTH_LONG).setAction("Action", null).show();
+
+
+
+
+
         }
     }
+
 }
-
-
-
-
 

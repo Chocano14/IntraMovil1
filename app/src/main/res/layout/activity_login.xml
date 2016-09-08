@@ -1,74 +1,72 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context=".view.LoginActivity"
-    android:background="#fcf5b4"
-    android:id="@+id/login">
-
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Iniciar sesión"
-        android:id="@+id/btnIniciar"
-        android:background="@android:color/holo_orange_dark"
-        android:textColor="#ffffff"
-        android:layout_marginBottom="37dp"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:onClick="ingresar"
-        android:nestedScrollingEnabled="true" />
-
-    <EditText
-        android:id="@+id/txtRut"
-        android:layout_height="wrap_content"
-        android:layout_width="fill_parent"
-
-        android:hint="Rut"
-        android:inputType="text"
-        android:layout_above="@+id/txtContra"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginBottom="20dp" />
-
-    <EditText android:id="@+id/txtContra"
-        android:layout_height="wrap_content"
-        android:layout_width="fill_parent"
-        android:hint="Contraseña"
-        android:inputType="textPassword"
-        android:layout_marginBottom="29dp"
-        android:layout_above="@+id/btnIniciar"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
-
-    <ImageView
-        android:layout_width="280dp"
-        android:layout_height="280dp"
-        android:id="@+id/imageView"
-
-        android:src="@drawable/inicio"
-        android:layout_below="@+id/textView2"
-        android:layout_centerHorizontal="true" />
+    android:paddingTop="@dimen/activity_vertical_margin">
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Bienvenidos"
-        android:id="@+id/textView2"
-        android:textColor="@android:color/holo_orange_dark"
-        android:textSize="50dp"
-        android:visibility="visible"
+        android:text="Bienvenido"
+        android:id="@+id/textview"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="32dp"
-        android:background="#fcf5b4" />
+        android:textSize="100px"
+        android:textColor="#fea304" />
 
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/main_name"
+        android:hint="Rut"
+        android:layout_below="@+id/textView17"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="36dp"
+        android:layout_alignParentStart="true" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPassword"
+        android:ems="10"
+        android:id="@+id/main_password"
+        android:hint="Contraseña"
+        android:layout_below="@+id/main_name"
+        android:layout_alignParentStart="true"
+        android:layout_alignEnd="@+id/main_name" />
+
+    <Button
+        android:onClick="main_login"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Aceptar"
+        android:id="@+id/main_login"
+        android:layout_marginBottom="30dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignEnd="@+id/main_name"
+        android:layout_alignParentStart="true"
+        android:background="@android:color/holo_orange_dark" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/imageView"
+        android:src="@drawable/inicio"
+        android:layout_below="@+id/textview"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="54dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="IntraMovil"
+        android:id="@+id/textView17"
+        android:textColor="#3077f1"
+        android:textSize="60px"
+        android:layout_below="@+id/imageView"
+        android:layout_centerHorizontal="true" />
 
 </RelativeLayout>
