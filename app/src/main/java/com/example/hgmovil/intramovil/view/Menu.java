@@ -89,15 +89,6 @@ public class Menu extends AppCompatActivity
                 PasarvarMenuHorario();
             }
         });
-        BtnCorr = (ImageButton) findViewById(R.id.BtnCorreos);
-        BtnCorr.setOnClickListener(new View.OnClickListener()
-        {
-            public void onClick(View v) {
-                Intent formnuevo2 = new Intent(Menu.this, MenuCorreo.class);
-                startActivity(formnuevo2);
-                PasarvarCorreo();
-            }
-        });
         BtnBusc = (ImageButton) findViewById(R.id.BtnBusquet);
         BtnBusc.setOnClickListener(new View.OnClickListener()
         {
@@ -232,15 +223,6 @@ public class Menu extends AppCompatActivity
     {
         String rt = getIntent().getStringExtra("Rutt");
         Intent rt2 = new Intent(this, MenuMat.class);
-        rt2.putExtra("RuttMenu", rt);
-        rt2.putExtra("Nombre", nom);
-        startActivity(rt2);
-    }
-
-    public void PasarvarCorreo()
-    {
-        String rt = getIntent().getStringExtra("Rutt");
-        Intent rt2 = new Intent(this, MenuCorreo.class);
         rt2.putExtra("RuttMenu", rt);
         rt2.putExtra("Nombre", nom);
         startActivity(rt2);

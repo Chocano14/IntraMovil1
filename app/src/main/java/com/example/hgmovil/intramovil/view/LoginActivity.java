@@ -124,6 +124,7 @@ public class LoginActivity extends Activity {
 
                     Intent i = new Intent(ctx, Menu.class);
                     i.putExtra("Nomb", NOMBRE);
+                    i.putExtra("Rutt", RUT);
                     startActivity(i);
                 }
 
