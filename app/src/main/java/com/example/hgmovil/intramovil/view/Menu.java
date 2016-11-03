@@ -25,7 +25,6 @@ public class Menu extends AppCompatActivity
     private ImageButton BtnNot;
     private ImageButton BtnAsis;
     private ImageButton BtnHora;
-    private ImageButton BtnCorr;
     private ImageButton BtnBusc;
     private ImageButton BtnAlarm;
     private ImageButton BtnREsumen;
