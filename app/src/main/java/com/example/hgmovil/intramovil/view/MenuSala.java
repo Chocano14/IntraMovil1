@@ -67,7 +67,127 @@ public class MenuSala extends AppCompatActivity implements View.OnClickListener
                 {
                     Matrix matrix = new Matrix();
                     matrix.postRotate(90.0f);
-                    Bitmap original = BitmapFactory.decodeResource(getResources(), R.drawable.piso5);
+                    Bitmap original = BitmapFactory.decodeResource(getResources(), R.drawable.sA1);
+                    Bitmap rotatedBitmap = Bitmap.createBitmap(original, 0, 0, original.getWidth(), original.getHeight(), matrix, true);
+                    ImageView imgRotate = (ImageView) findViewById(R.id.MapaSala);
+                    imgRotate.setImageBitmap(rotatedBitmap);
+                    imgRotate.setVisibility(View.VISIBLE);
+                }
+                if (pi.equals("3"))
+                {
+                    Matrix matrix = new Matrix();
+                    matrix.postRotate(90.0f);
+                    Bitmap original = BitmapFactory.decodeResource(getResources(), R.drawable.sA2);
+                    Bitmap rotatedBitmap = Bitmap.createBitmap(original, 0, 0, original.getWidth(), original.getHeight(), matrix, true);
+                    ImageView imgRotate = (ImageView) findViewById(R.id.MapaSala);
+                    imgRotate.setImageBitmap(rotatedBitmap);
+                    imgRotate.setVisibility(View.VISIBLE);
+                }
+                if (pi.equals("3"))
+                {
+                    Matrix matrix = new Matrix();
+                    matrix.postRotate(90.0f);
+                    Bitmap original = BitmapFactory.decodeResource(getResources(), R.drawable.sA3);
+                    Bitmap rotatedBitmap = Bitmap.createBitmap(original, 0, 0, original.getWidth(), original.getHeight(), matrix, true);
+                    ImageView imgRotate = (ImageView) findViewById(R.id.MapaSala);
+                    imgRotate.setImageBitmap(rotatedBitmap);
+                    imgRotate.setVisibility(View.VISIBLE);
+                }
+                if (pi.equals("3"))
+                {
+                    Matrix matrix = new Matrix();
+                    matrix.postRotate(90.0f);
+                    Bitmap original = BitmapFactory.decodeResource(getResources(), R.drawable.sA4);
+                    Bitmap rotatedBitmap = Bitmap.createBitmap(original, 0, 0, original.getWidth(), original.getHeight(), matrix, true);
+                    ImageView imgRotate = (ImageView) findViewById(R.id.MapaSala);
+                    imgRotate.setImageBitmap(rotatedBitmap);
+                    imgRotate.setVisibility(View.VISIBLE);
+                }
+                if (pi.equals("3"))
+                {
+                    Matrix matrix = new Matrix();
+                    matrix.postRotate(90.0f);
+                    Bitmap original = BitmapFactory.decodeResource(getResources(), R.drawable.sA5);
+                    Bitmap rotatedBitmap = Bitmap.createBitmap(original, 0, 0, original.getWidth(), original.getHeight(), matrix, true);
+                    ImageView imgRotate = (ImageView) findViewById(R.id.MapaSala);
+                    imgRotate.setImageBitmap(rotatedBitmap);
+                    imgRotate.setVisibility(View.VISIBLE);
+                }
+                if (pi.equals("3"))
+                {
+                    Matrix matrix = new Matrix();
+                    matrix.postRotate(90.0f);
+                    Bitmap original = BitmapFactory.decodeResource(getResources(), R.drawable.sA6);
+                    Bitmap rotatedBitmap = Bitmap.createBitmap(original, 0, 0, original.getWidth(), original.getHeight(), matrix, true);
+                    ImageView imgRotate = (ImageView) findViewById(R.id.MapaSala);
+                    imgRotate.setImageBitmap(rotatedBitmap);
+                    imgRotate.setVisibility(View.VISIBLE);
+                }
+                if (pi.equals("3"))
+                {
+                    Matrix matrix = new Matrix();
+                    matrix.postRotate(90.0f);
+                    Bitmap original = BitmapFactory.decodeResource(getResources(), R.drawable.sA7);
+                    Bitmap rotatedBitmap = Bitmap.createBitmap(original, 0, 0, original.getWidth(), original.getHeight(), matrix, true);
+                    ImageView imgRotate = (ImageView) findViewById(R.id.MapaSala);
+                    imgRotate.setImageBitmap(rotatedBitmap);
+                    imgRotate.setVisibility(View.VISIBLE);
+                }
+                if (pi.equals("3"))
+                {
+                    Matrix matrix = new Matrix();
+                    matrix.postRotate(90.0f);
+                    Bitmap original = BitmapFactory.decodeResource(getResources(), R.drawable.sA8);
+                    Bitmap rotatedBitmap = Bitmap.createBitmap(original, 0, 0, original.getWidth(), original.getHeight(), matrix, true);
+                    ImageView imgRotate = (ImageView) findViewById(R.id.MapaSala);
+                    imgRotate.setImageBitmap(rotatedBitmap);
+                    imgRotate.setVisibility(View.VISIBLE);
+                }
+                if (pi.equals("3"))
+                {
+                    Matrix matrix = new Matrix();
+                    matrix.postRotate(90.0f);
+                    Bitmap original = BitmapFactory.decodeResource(getResources(), R.drawable.sA9);
+                    Bitmap rotatedBitmap = Bitmap.createBitmap(original, 0, 0, original.getWidth(), original.getHeight(), matrix, true);
+                    ImageView imgRotate = (ImageView) findViewById(R.id.MapaSala);
+                    imgRotate.setImageBitmap(rotatedBitmap);
+                    imgRotate.setVisibility(View.VISIBLE);
+                }
+                if (pi.equals("3"))
+                {
+                    Matrix matrix = new Matrix();
+                    matrix.postRotate(90.0f);
+                    Bitmap original = BitmapFactory.decodeResource(getResources(), R.drawable.sA10);
+                    Bitmap rotatedBitmap = Bitmap.createBitmap(original, 0, 0, original.getWidth(), original.getHeight(), matrix, true);
+                    ImageView imgRotate = (ImageView) findViewById(R.id.MapaSala);
+                    imgRotate.setImageBitmap(rotatedBitmap);
+                    imgRotate.setVisibility(View.VISIBLE);
+                }
+                if (pi.equals("3"))
+                {
+                    Matrix matrix = new Matrix();
+                    matrix.postRotate(90.0f);
+                    Bitmap original = BitmapFactory.decodeResource(getResources(), R.drawable.sA11);
+                    Bitmap rotatedBitmap = Bitmap.createBitmap(original, 0, 0, original.getWidth(), original.getHeight(), matrix, true);
+                    ImageView imgRotate = (ImageView) findViewById(R.id.MapaSala);
+                    imgRotate.setImageBitmap(rotatedBitmap);
+                    imgRotate.setVisibility(View.VISIBLE);
+                }
+                if (pi.equals("3"))
+                {
+                    Matrix matrix = new Matrix();
+                    matrix.postRotate(90.0f);
+                    Bitmap original = BitmapFactory.decodeResource(getResources(), R.drawable.sA12);
+                    Bitmap rotatedBitmap = Bitmap.createBitmap(original, 0, 0, original.getWidth(), original.getHeight(), matrix, true);
+                    ImageView imgRotate = (ImageView) findViewById(R.id.MapaSala);
+                    imgRotate.setImageBitmap(rotatedBitmap);
+                    imgRotate.setVisibility(View.VISIBLE);
+                }
+                if (pi.equals("3"))
+                {
+                    Matrix matrix = new Matrix();
+                    matrix.postRotate(90.0f);
+                    Bitmap original = BitmapFactory.decodeResource(getResources(), R.drawable.sA3);
                     Bitmap rotatedBitmap = Bitmap.createBitmap(original, 0, 0, original.getWidth(), original.getHeight(), matrix, true);
                     ImageView imgRotate = (ImageView) findViewById(R.id.MapaSala);
                     imgRotate.setImageBitmap(rotatedBitmap);
@@ -77,7 +197,147 @@ public class MenuSala extends AppCompatActivity implements View.OnClickListener
                 {
                     Matrix matrix = new Matrix();
                     matrix.postRotate(90.0f);
-                    Bitmap original = BitmapFactory.decodeResource(getResources(), R.drawable.piso4);
+                    Bitmap original = BitmapFactory.decodeResource(getResources(), R.drawable.sB1);
+                    Bitmap rotatedBitmap = Bitmap.createBitmap(original, 0, 0, original.getWidth(), original.getHeight(), matrix, true);
+                    ImageView imgRotate = (ImageView) findViewById(R.id.MapaSala);
+                    imgRotate.setImageBitmap(rotatedBitmap);
+                    imgRotate.setVisibility(View.VISIBLE);
+                }
+                if (pi.equals("4"))
+                {
+                    Matrix matrix = new Matrix();
+                    matrix.postRotate(90.0f);
+                    Bitmap original = BitmapFactory.decodeResource(getResources(), R.drawable.sB2);
+                    Bitmap rotatedBitmap = Bitmap.createBitmap(original, 0, 0, original.getWidth(), original.getHeight(), matrix, true);
+                    ImageView imgRotate = (ImageView) findViewById(R.id.MapaSala);
+                    imgRotate.setImageBitmap(rotatedBitmap);
+                    imgRotate.setVisibility(View.VISIBLE);
+                }
+                if (pi.equals("4"))
+                {
+                    Matrix matrix = new Matrix();
+                    matrix.postRotate(90.0f);
+                    Bitmap original = BitmapFactory.decodeResource(getResources(), R.drawable.sB3);
+                    Bitmap rotatedBitmap = Bitmap.createBitmap(original, 0, 0, original.getWidth(), original.getHeight(), matrix, true);
+                    ImageView imgRotate = (ImageView) findViewById(R.id.MapaSala);
+                    imgRotate.setImageBitmap(rotatedBitmap);
+                    imgRotate.setVisibility(View.VISIBLE);
+                }
+                if (pi.equals("4"))
+                {
+                    Matrix matrix = new Matrix();
+                    matrix.postRotate(90.0f);
+                    Bitmap original = BitmapFactory.decodeResource(getResources(), R.drawable.sB4);
+                    Bitmap rotatedBitmap = Bitmap.createBitmap(original, 0, 0, original.getWidth(), original.getHeight(), matrix, true);
+                    ImageView imgRotate = (ImageView) findViewById(R.id.MapaSala);
+                    imgRotate.setImageBitmap(rotatedBitmap);
+                    imgRotate.setVisibility(View.VISIBLE);
+                }
+                if (pi.equals("4"))
+                {
+                    Matrix matrix = new Matrix();
+                    matrix.postRotate(90.0f);
+                    Bitmap original = BitmapFactory.decodeResource(getResources(), R.drawable.sB5);
+                    Bitmap rotatedBitmap = Bitmap.createBitmap(original, 0, 0, original.getWidth(), original.getHeight(), matrix, true);
+                    ImageView imgRotate = (ImageView) findViewById(R.id.MapaSala);
+                    imgRotate.setImageBitmap(rotatedBitmap);
+                    imgRotate.setVisibility(View.VISIBLE);
+                }
+                if (pi.equals("4"))
+                {
+                    Matrix matrix = new Matrix();
+                    matrix.postRotate(90.0f);
+                    Bitmap original = BitmapFactory.decodeResource(getResources(), R.drawable.sB6);
+                    Bitmap rotatedBitmap = Bitmap.createBitmap(original, 0, 0, original.getWidth(), original.getHeight(), matrix, true);
+                    ImageView imgRotate = (ImageView) findViewById(R.id.MapaSala);
+                    imgRotate.setImageBitmap(rotatedBitmap);
+                    imgRotate.setVisibility(View.VISIBLE);
+                }
+                if (pi.equals("4"))
+                {
+                    Matrix matrix = new Matrix();
+                    matrix.postRotate(90.0f);
+                    Bitmap original = BitmapFactory.decodeResource(getResources(), R.drawable.sB7);
+                    Bitmap rotatedBitmap = Bitmap.createBitmap(original, 0, 0, original.getWidth(), original.getHeight(), matrix, true);
+                    ImageView imgRotate = (ImageView) findViewById(R.id.MapaSala);
+                    imgRotate.setImageBitmap(rotatedBitmap);
+                    imgRotate.setVisibility(View.VISIBLE);
+                }
+                if (pi.equals("4"))
+                {
+                    Matrix matrix = new Matrix();
+                    matrix.postRotate(90.0f);
+                    Bitmap original = BitmapFactory.decodeResource(getResources(), R.drawable.sB8);
+                    Bitmap rotatedBitmap = Bitmap.createBitmap(original, 0, 0, original.getWidth(), original.getHeight(), matrix, true);
+                    ImageView imgRotate = (ImageView) findViewById(R.id.MapaSala);
+                    imgRotate.setImageBitmap(rotatedBitmap);
+                    imgRotate.setVisibility(View.VISIBLE);
+                }
+                if (pi.equals("4"))
+                {
+                    Matrix matrix = new Matrix();
+                    matrix.postRotate(90.0f);
+                    Bitmap original = BitmapFactory.decodeResource(getResources(), R.drawable.sB9);
+                    Bitmap rotatedBitmap = Bitmap.createBitmap(original, 0, 0, original.getWidth(), original.getHeight(), matrix, true);
+                    ImageView imgRotate = (ImageView) findViewById(R.id.MapaSala);
+                    imgRotate.setImageBitmap(rotatedBitmap);
+                    imgRotate.setVisibility(View.VISIBLE);
+                }
+                if (pi.equals("4"))
+                {
+                    Matrix matrix = new Matrix();
+                    matrix.postRotate(90.0f);
+                    Bitmap original = BitmapFactory.decodeResource(getResources(), R.drawable.sB10);
+                    Bitmap rotatedBitmap = Bitmap.createBitmap(original, 0, 0, original.getWidth(), original.getHeight(), matrix, true);
+                    ImageView imgRotate = (ImageView) findViewById(R.id.MapaSala);
+                    imgRotate.setImageBitmap(rotatedBitmap);
+                    imgRotate.setVisibility(View.VISIBLE);
+                }
+                if (pi.equals("4"))
+                {
+                    Matrix matrix = new Matrix();
+                    matrix.postRotate(90.0f);
+                    Bitmap original = BitmapFactory.decodeResource(getResources(), R.drawable.sB11);
+                    Bitmap rotatedBitmap = Bitmap.createBitmap(original, 0, 0, original.getWidth(), original.getHeight(), matrix, true);
+                    ImageView imgRotate = (ImageView) findViewById(R.id.MapaSala);
+                    imgRotate.setImageBitmap(rotatedBitmap);
+                    imgRotate.setVisibility(View.VISIBLE);
+                }
+                if (pi.equals("4"))
+                {
+                    Matrix matrix = new Matrix();
+                    matrix.postRotate(90.0f);
+                    Bitmap original = BitmapFactory.decodeResource(getResources(), R.drawable.sB12);
+                    Bitmap rotatedBitmap = Bitmap.createBitmap(original, 0, 0, original.getWidth(), original.getHeight(), matrix, true);
+                    ImageView imgRotate = (ImageView) findViewById(R.id.MapaSala);
+                    imgRotate.setImageBitmap(rotatedBitmap);
+                    imgRotate.setVisibility(View.VISIBLE);
+                }
+                if (pi.equals("4"))
+                {
+                    Matrix matrix = new Matrix();
+                    matrix.postRotate(90.0f);
+                    Bitmap original = BitmapFactory.decodeResource(getResources(), R.drawable.sB13);
+                    Bitmap rotatedBitmap = Bitmap.createBitmap(original, 0, 0, original.getWidth(), original.getHeight(), matrix, true);
+                    ImageView imgRotate = (ImageView) findViewById(R.id.MapaSala);
+                    imgRotate.setImageBitmap(rotatedBitmap);
+                    imgRotate.setVisibility(View.VISIBLE);
+                }
+                if (pi.equals("4"))
+                {
+                    Matrix matrix = new Matrix();
+                    matrix.postRotate(90.0f);
+                    Bitmap original = BitmapFactory.decodeResource(getResources(), R.drawable.LbPG01);
+                    Bitmap rotatedBitmap = Bitmap.createBitmap(original, 0, 0, original.getWidth(), original.getHeight(), matrix, true);
+                    ImageView imgRotate = (ImageView) findViewById(R.id.MapaSala);
+                    imgRotate.setImageBitmap(rotatedBitmap);
+                    imgRotate.setVisibility(View.VISIBLE);
+                }
+                if (pi.equals("4"))
+                {
+                    Matrix matrix = new Matrix();
+                    matrix.postRotate(90.0f);
+                    Bitmap original = BitmapFactory.decodeResource(getResources(), R.drawable.LbTC3);
                     Bitmap rotatedBitmap = Bitmap.createBitmap(original, 0, 0, original.getWidth(), original.getHeight(), matrix, true);
                     ImageView imgRotate = (ImageView) findViewById(R.id.MapaSala);
                     imgRotate.setImageBitmap(rotatedBitmap);
@@ -87,13 +347,154 @@ public class MenuSala extends AppCompatActivity implements View.OnClickListener
                 {
                     Matrix matrix = new Matrix();
                     matrix.postRotate(90.0f);
-                    Bitmap original = BitmapFactory.decodeResource(getResources(), R.drawable.piso5);
+                    Bitmap original = BitmapFactory.decodeResource(getResources(), R.drawable.sC1);
+                    Bitmap rotatedBitmap = Bitmap.createBitmap(original, 0, 0, original.getWidth(), original.getHeight(), matrix, true);
+                    ImageView imgRotate = (ImageView) findViewById(R.id.MapaSala);
+                    imgRotate.setImageBitmap(rotatedBitmap);
+                    imgRotate.setVisibility(View.VISIBLE);
+                }
+                if (pi.equals("5"))
+                {
+                    Matrix matrix = new Matrix();
+                    matrix.postRotate(90.0f);
+                    Bitmap original = BitmapFactory.decodeResource(getResources(), R.drawable.sC2);
+                    Bitmap rotatedBitmap = Bitmap.createBitmap(original, 0, 0, original.getWidth(), original.getHeight(), matrix, true);
+                    ImageView imgRotate = (ImageView) findViewById(R.id.MapaSala);
+                    imgRotate.setImageBitmap(rotatedBitmap);
+                    imgRotate.setVisibility(View.VISIBLE);
+                }
+                if (pi.equals("5"))
+                {
+                    Matrix matrix = new Matrix();
+                    matrix.postRotate(90.0f);
+                    Bitmap original = BitmapFactory.decodeResource(getResources(), R.drawable.sC3);
+                    Bitmap rotatedBitmap = Bitmap.createBitmap(original, 0, 0, original.getWidth(), original.getHeight(), matrix, true);
+                    ImageView imgRotate = (ImageView) findViewById(R.id.MapaSala);
+                    imgRotate.setImageBitmap(rotatedBitmap);
+                    imgRotate.setVisibility(View.VISIBLE);
+                }
+                if (pi.equals("5"))
+                {
+                    Matrix matrix = new Matrix();
+                    matrix.postRotate(90.0f);
+                    Bitmap original = BitmapFactory.decodeResource(getResources(), R.drawable.sC4);
+                    Bitmap rotatedBitmap = Bitmap.createBitmap(original, 0, 0, original.getWidth(), original.getHeight(), matrix, true);
+                    ImageView imgRotate = (ImageView) findViewById(R.id.MapaSala);
+                    imgRotate.setImageBitmap(rotatedBitmap);
+                    imgRotate.setVisibility(View.VISIBLE);
+                }
+                if (pi.equals("5"))
+                {
+                    Matrix matrix = new Matrix();
+                    matrix.postRotate(90.0f);
+                    Bitmap original = BitmapFactory.decodeResource(getResources(), R.drawable.sC5);
+                    Bitmap rotatedBitmap = Bitmap.createBitmap(original, 0, 0, original.getWidth(), original.getHeight(), matrix, true);
+                    ImageView imgRotate = (ImageView) findViewById(R.id.MapaSala);
+                    imgRotate.setImageBitmap(rotatedBitmap);
+                    imgRotate.setVisibility(View.VISIBLE);
+                }
+                if (pi.equals("5"))
+                {
+                    Matrix matrix = new Matrix();
+                    matrix.postRotate(90.0f);
+                    Bitmap original = BitmapFactory.decodeResource(getResources(), R.drawable.sC6);
+                    Bitmap rotatedBitmap = Bitmap.createBitmap(original, 0, 0, original.getWidth(), original.getHeight(), matrix, true);
+                    ImageView imgRotate = (ImageView) findViewById(R.id.MapaSala);
+                    imgRotate.setImageBitmap(rotatedBitmap);
+                    imgRotate.setVisibility(View.VISIBLE);
+                }
+                if (pi.equals("5"))
+                {
+                    Matrix matrix = new Matrix();
+                    matrix.postRotate(90.0f);
+                    Bitmap original = BitmapFactory.decodeResource(getResources(), R.drawable.sC7);
+                    Bitmap rotatedBitmap = Bitmap.createBitmap(original, 0, 0, original.getWidth(), original.getHeight(), matrix, true);
+                    ImageView imgRotate = (ImageView) findViewById(R.id.MapaSala);
+                    imgRotate.setImageBitmap(rotatedBitmap);
+                    imgRotate.setVisibility(View.VISIBLE);
+                }
+                if (pi.equals("5"))
+                {
+                    Matrix matrix = new Matrix();
+                    matrix.postRotate(90.0f);
+                    Bitmap original = BitmapFactory.decodeResource(getResources(), R.drawable.sC8);
+                    Bitmap rotatedBitmap = Bitmap.createBitmap(original, 0, 0, original.getWidth(), original.getHeight(), matrix, true);
+                    ImageView imgRotate = (ImageView) findViewById(R.id.MapaSala);
+                    imgRotate.setImageBitmap(rotatedBitmap);
+                    imgRotate.setVisibility(View.VISIBLE);
+                }
+                if (pi.equals("5"))
+                {
+                    Matrix matrix = new Matrix();
+                    matrix.postRotate(90.0f);
+                    Bitmap original = BitmapFactory.decodeResource(getResources(), R.drawable.sC9);
+                    Bitmap rotatedBitmap = Bitmap.createBitmap(original, 0, 0, original.getWidth(), original.getHeight(), matrix, true);
+                    ImageView imgRotate = (ImageView) findViewById(R.id.MapaSala);
+                    imgRotate.setImageBitmap(rotatedBitmap);
+                    imgRotate.setVisibility(View.VISIBLE);
+                }
+                if (pi.equals("5"))
+                {
+                    Matrix matrix = new Matrix();
+                    matrix.postRotate(90.0f);
+                    Bitmap original = BitmapFactory.decodeResource(getResources(), R.drawable.sC10);
+                    Bitmap rotatedBitmap = Bitmap.createBitmap(original, 0, 0, original.getWidth(), original.getHeight(), matrix, true);
+                    ImageView imgRotate = (ImageView) findViewById(R.id.MapaSala);
+                    imgRotate.setImageBitmap(rotatedBitmap);
+                    imgRotate.setVisibility(View.VISIBLE);
+                }
+                if (pi.equals("5"))
+                {
+                    Matrix matrix = new Matrix();
+                    matrix.postRotate(90.0f);
+                    Bitmap original = BitmapFactory.decodeResource(getResources(), R.drawable.sC11);
+                    Bitmap rotatedBitmap = Bitmap.createBitmap(original, 0, 0, original.getWidth(), original.getHeight(), matrix, true);
+                    ImageView imgRotate = (ImageView) findViewById(R.id.MapaSala);
+                    imgRotate.setImageBitmap(rotatedBitmap);
+                    imgRotate.setVisibility(View.VISIBLE);
+                }
+                if (pi.equals("5"))
+                {
+                    Matrix matrix = new Matrix();
+                    matrix.postRotate(90.0f);
+                    Bitmap original = BitmapFactory.decodeResource(getResources(), R.drawable.sC12);
+                    Bitmap rotatedBitmap = Bitmap.createBitmap(original, 0, 0, original.getWidth(), original.getHeight(), matrix, true);
+                    ImageView imgRotate = (ImageView) findViewById(R.id.MapaSala);
+                    imgRotate.setImageBitmap(rotatedBitmap);
+                    imgRotate.setVisibility(View.VISIBLE);
+                }
+                if (pi.equals("5"))
+                {
+                    Matrix matrix = new Matrix();
+                    matrix.postRotate(90.0f);
+                    Bitmap original = BitmapFactory.decodeResource(getResources(), R.drawable.sC13);
+                    Bitmap rotatedBitmap = Bitmap.createBitmap(original, 0, 0, original.getWidth(), original.getHeight(), matrix, true);
+                    ImageView imgRotate = (ImageView) findViewById(R.id.MapaSala);
+                    imgRotate.setImageBitmap(rotatedBitmap);
+                    imgRotate.setVisibility(View.VISIBLE);
+                }
+                if (pi.equals("5"))
+                {
+                    Matrix matrix = new Matrix();
+                    matrix.postRotate(90.0f);
+                    Bitmap original = BitmapFactory.decodeResource(getResources(), R.drawable.sD1);
+                    Bitmap rotatedBitmap = Bitmap.createBitmap(original, 0, 0, original.getWidth(), original.getHeight(), matrix, true);
+                    ImageView imgRotate = (ImageView) findViewById(R.id.MapaSala);
+                    imgRotate.setImageBitmap(rotatedBitmap);
+                    imgRotate.setVisibility(View.VISIBLE);
+                }
+                if (pi.equals("5"))
+                {
+                    Matrix matrix = new Matrix();
+                    matrix.postRotate(90.0f);
+                    Bitmap original = BitmapFactory.decodeResource(getResources(), R.drawable.sF1);
                     Bitmap rotatedBitmap = Bitmap.createBitmap(original, 0, 0, original.getWidth(), original.getHeight(), matrix, true);
                     ImageView imgRotate = (ImageView) findViewById(R.id.MapaSala);
                     imgRotate.setImageBitmap(rotatedBitmap);
                     imgRotate.setVisibility(View.VISIBLE);
                 }
             }
+
             c.close();
             helper.close();
         }
