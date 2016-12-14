@@ -24,11 +24,7 @@
         android:layout_marginTop="57dp"
 
         android:layout_below="@+id/textView8"
-        android:layout_centerHorizontal="true" /><![CDATA[/>
-
-
-
-    ]]>
+        android:layout_centerHorizontal="true" />
 
     <Button
 
