@@ -67,7 +67,7 @@ public class MenuSala extends AppCompatActivity implements View.OnClickListener
                 {
                     Matrix matrix = new Matrix();
                     matrix.postRotate(90.0f);
-                    Bitmap original = BitmapFactory.decodeResource(getResources(), R.drawable.sA1);
+                    Bitmap original = BitmapFactory.decodeResource(getResources(), R.drawable.sa1);
                     Bitmap rotatedBitmap = Bitmap.createBitmap(original, 0, 0, original.getWidth(), original.getHeight(), matrix, true);
                     ImageView imgRotate = (ImageView) findViewById(R.id.MapaSala);
                     imgRotate.setImageBitmap(rotatedBitmap);
@@ -77,7 +77,7 @@ public class MenuSala extends AppCompatActivity implements View.OnClickListener
                 {
                     Matrix matrix = new Matrix();
                     matrix.postRotate(90.0f);
-                    Bitmap original = BitmapFactory.decodeResource(getResources(), R.drawable.sA2);
+                    Bitmap original = BitmapFactory.decodeResource(getResources(), R.drawable.sa2);
                     Bitmap rotatedBitmap = Bitmap.createBitmap(original, 0, 0, original.getWidth(), original.getHeight(), matrix, true);
                     ImageView imgRotate = (ImageView) findViewById(R.id.MapaSala);
                     imgRotate.setImageBitmap(rotatedBitmap);
@@ -87,7 +87,7 @@ public class MenuSala extends AppCompatActivity implements View.OnClickListener
                 {
                     Matrix matrix = new Matrix();
                     matrix.postRotate(90.0f);
-                    Bitmap original = BitmapFactory.decodeResource(getResources(), R.drawable.sA3);
+                    Bitmap original = BitmapFactory.decodeResource(getResources(), R.drawable.sa3);
                     Bitmap rotatedBitmap = Bitmap.createBitmap(original, 0, 0, original.getWidth(), original.getHeight(), matrix, true);
                     ImageView imgRotate = (ImageView) findViewById(R.id.MapaSala);
                     imgRotate.setImageBitmap(rotatedBitmap);
@@ -97,7 +97,7 @@ public class MenuSala extends AppCompatActivity implements View.OnClickListener
                 {
                     Matrix matrix = new Matrix();
                     matrix.postRotate(90.0f);
-                    Bitmap original = BitmapFactory.decodeResource(getResources(), R.drawable.sA4);
+                    Bitmap original = BitmapFactory.decodeResource(getResources(), R.drawable.sa4);
                     Bitmap rotatedBitmap = Bitmap.createBitmap(original, 0, 0, original.getWidth(), original.getHeight(), matrix, true);
                     ImageView imgRotate = (ImageView) findViewById(R.id.MapaSala);
                     imgRotate.setImageBitmap(rotatedBitmap);
@@ -107,7 +107,7 @@ public class MenuSala extends AppCompatActivity implements View.OnClickListener
                 {
                     Matrix matrix = new Matrix();
                     matrix.postRotate(90.0f);
-                    Bitmap original = BitmapFactory.decodeResource(getResources(), R.drawable.sA5);
+                    Bitmap original = BitmapFactory.decodeResource(getResources(), R.drawable.sa5);
                     Bitmap rotatedBitmap = Bitmap.createBitmap(original, 0, 0, original.getWidth(), original.getHeight(), matrix, true);
                     ImageView imgRotate = (ImageView) findViewById(R.id.MapaSala);
                     imgRotate.setImageBitmap(rotatedBitmap);
@@ -117,7 +117,7 @@ public class MenuSala extends AppCompatActivity implements View.OnClickListener
                 {
                     Matrix matrix = new Matrix();
                     matrix.postRotate(90.0f);
-                    Bitmap original = BitmapFactory.decodeResource(getResources(), R.drawable.sA6);
+                    Bitmap original = BitmapFactory.decodeResource(getResources(), R.drawable.sa6);
                     Bitmap rotatedBitmap = Bitmap.createBitmap(original, 0, 0, original.getWidth(), original.getHeight(), matrix, true);
                     ImageView imgRotate = (ImageView) findViewById(R.id.MapaSala);
                     imgRotate.setImageBitmap(rotatedBitmap);
@@ -127,7 +127,7 @@ public class MenuSala extends AppCompatActivity implements View.OnClickListener
                 {
                     Matrix matrix = new Matrix();
                     matrix.postRotate(90.0f);
-                    Bitmap original = BitmapFactory.decodeResource(getResources(), R.drawable.sA7);
+                    Bitmap original = BitmapFactory.decodeResource(getResources(), R.drawable.sa7);
                     Bitmap rotatedBitmap = Bitmap.createBitmap(original, 0, 0, original.getWidth(), original.getHeight(), matrix, true);
                     ImageView imgRotate = (ImageView) findViewById(R.id.MapaSala);
                     imgRotate.setImageBitmap(rotatedBitmap);
@@ -137,7 +137,7 @@ public class MenuSala extends AppCompatActivity implements View.OnClickListener
                 {
                     Matrix matrix = new Matrix();
                     matrix.postRotate(90.0f);
-                    Bitmap original = BitmapFactory.decodeResource(getResources(), R.drawable.sA8);
+                    Bitmap original = BitmapFactory.decodeResource(getResources(), R.drawable.sa8);
                     Bitmap rotatedBitmap = Bitmap.createBitmap(original, 0, 0, original.getWidth(), original.getHeight(), matrix, true);
                     ImageView imgRotate = (ImageView) findViewById(R.id.MapaSala);
                     imgRotate.setImageBitmap(rotatedBitmap);
@@ -147,7 +147,7 @@ public class MenuSala extends AppCompatActivity implements View.OnClickListener
                 {
                     Matrix matrix = new Matrix();
                     matrix.postRotate(90.0f);
-                    Bitmap original = BitmapFactory.decodeResource(getResources(), R.drawable.sA9);
+                    Bitmap original = BitmapFactory.decodeResource(getResources(), R.drawable.sa9);
                     Bitmap rotatedBitmap = Bitmap.createBitmap(original, 0, 0, original.getWidth(), original.getHeight(), matrix, true);
                     ImageView imgRotate = (ImageView) findViewById(R.id.MapaSala);
                     imgRotate.setImageBitmap(rotatedBitmap);
@@ -157,7 +157,7 @@ public class MenuSala extends AppCompatActivity implements View.OnClickListener
                 {
                     Matrix matrix = new Matrix();
                     matrix.postRotate(90.0f);
-                    Bitmap original = BitmapFactory.decodeResource(getResources(), R.drawable.sA10);
+                    Bitmap original = BitmapFactory.decodeResource(getResources(), R.drawable.sa10);
                     Bitmap rotatedBitmap = Bitmap.createBitmap(original, 0, 0, original.getWidth(), original.getHeight(), matrix, true);
                     ImageView imgRotate = (ImageView) findViewById(R.id.MapaSala);
                     imgRotate.setImageBitmap(rotatedBitmap);
@@ -167,7 +167,7 @@ public class MenuSala extends AppCompatActivity implements View.OnClickListener
                 {
                     Matrix matrix = new Matrix();
                     matrix.postRotate(90.0f);
-                    Bitmap original = BitmapFactory.decodeResource(getResources(), R.drawable.sA11);
+                    Bitmap original = BitmapFactory.decodeResource(getResources(), R.drawable.s11);
                     Bitmap rotatedBitmap = Bitmap.createBitmap(original, 0, 0, original.getWidth(), original.getHeight(), matrix, true);
                     ImageView imgRotate = (ImageView) findViewById(R.id.MapaSala);
                     imgRotate.setImageBitmap(rotatedBitmap);
@@ -177,7 +177,7 @@ public class MenuSala extends AppCompatActivity implements View.OnClickListener
                 {
                     Matrix matrix = new Matrix();
                     matrix.postRotate(90.0f);
-                    Bitmap original = BitmapFactory.decodeResource(getResources(), R.drawable.sA12);
+                    Bitmap original = BitmapFactory.decodeResource(getResources(), R.drawable.s12);
                     Bitmap rotatedBitmap = Bitmap.createBitmap(original, 0, 0, original.getWidth(), original.getHeight(), matrix, true);
                     ImageView imgRotate = (ImageView) findViewById(R.id.MapaSala);
                     imgRotate.setImageBitmap(rotatedBitmap);
@@ -187,7 +187,7 @@ public class MenuSala extends AppCompatActivity implements View.OnClickListener
                 {
                     Matrix matrix = new Matrix();
                     matrix.postRotate(90.0f);
-                    Bitmap original = BitmapFactory.decodeResource(getResources(), R.drawable.sA3);
+                    Bitmap original = BitmapFactory.decodeResource(getResources(), R.drawable.s11);
                     Bitmap rotatedBitmap = Bitmap.createBitmap(original, 0, 0, original.getWidth(), original.getHeight(), matrix, true);
                     ImageView imgRotate = (ImageView) findViewById(R.id.MapaSala);
                     imgRotate.setImageBitmap(rotatedBitmap);
@@ -197,7 +197,7 @@ public class MenuSala extends AppCompatActivity implements View.OnClickListener
                 {
                     Matrix matrix = new Matrix();
                     matrix.postRotate(90.0f);
-                    Bitmap original = BitmapFactory.decodeResource(getResources(), R.drawable.sB1);
+                    Bitmap original = BitmapFactory.decodeResource(getResources(), R.drawable.sb1);
                     Bitmap rotatedBitmap = Bitmap.createBitmap(original, 0, 0, original.getWidth(), original.getHeight(), matrix, true);
                     ImageView imgRotate = (ImageView) findViewById(R.id.MapaSala);
                     imgRotate.setImageBitmap(rotatedBitmap);
@@ -207,7 +207,7 @@ public class MenuSala extends AppCompatActivity implements View.OnClickListener
                 {
                     Matrix matrix = new Matrix();
                     matrix.postRotate(90.0f);
-                    Bitmap original = BitmapFactory.decodeResource(getResources(), R.drawable.sB2);
+                    Bitmap original = BitmapFactory.decodeResource(getResources(), R.drawable.sb2);
                     Bitmap rotatedBitmap = Bitmap.createBitmap(original, 0, 0, original.getWidth(), original.getHeight(), matrix, true);
                     ImageView imgRotate = (ImageView) findViewById(R.id.MapaSala);
                     imgRotate.setImageBitmap(rotatedBitmap);
@@ -217,7 +217,7 @@ public class MenuSala extends AppCompatActivity implements View.OnClickListener
                 {
                     Matrix matrix = new Matrix();
                     matrix.postRotate(90.0f);
-                    Bitmap original = BitmapFactory.decodeResource(getResources(), R.drawable.sB3);
+                    Bitmap original = BitmapFactory.decodeResource(getResources(), R.drawable.sb3);
                     Bitmap rotatedBitmap = Bitmap.createBitmap(original, 0, 0, original.getWidth(), original.getHeight(), matrix, true);
                     ImageView imgRotate = (ImageView) findViewById(R.id.MapaSala);
                     imgRotate.setImageBitmap(rotatedBitmap);
@@ -227,7 +227,7 @@ public class MenuSala extends AppCompatActivity implements View.OnClickListener
                 {
                     Matrix matrix = new Matrix();
                     matrix.postRotate(90.0f);
-                    Bitmap original = BitmapFactory.decodeResource(getResources(), R.drawable.sB4);
+                    Bitmap original = BitmapFactory.decodeResource(getResources(), R.drawable.sb4);
                     Bitmap rotatedBitmap = Bitmap.createBitmap(original, 0, 0, original.getWidth(), original.getHeight(), matrix, true);
                     ImageView imgRotate = (ImageView) findViewById(R.id.MapaSala);
                     imgRotate.setImageBitmap(rotatedBitmap);
@@ -237,7 +237,7 @@ public class MenuSala extends AppCompatActivity implements View.OnClickListener
                 {
                     Matrix matrix = new Matrix();
                     matrix.postRotate(90.0f);
-                    Bitmap original = BitmapFactory.decodeResource(getResources(), R.drawable.sB5);
+                    Bitmap original = BitmapFactory.decodeResource(getResources(), R.drawable.sb5);
                     Bitmap rotatedBitmap = Bitmap.createBitmap(original, 0, 0, original.getWidth(), original.getHeight(), matrix, true);
                     ImageView imgRotate = (ImageView) findViewById(R.id.MapaSala);
                     imgRotate.setImageBitmap(rotatedBitmap);
@@ -247,7 +247,7 @@ public class MenuSala extends AppCompatActivity implements View.OnClickListener
                 {
                     Matrix matrix = new Matrix();
                     matrix.postRotate(90.0f);
-                    Bitmap original = BitmapFactory.decodeResource(getResources(), R.drawable.sB6);
+                    Bitmap original = BitmapFactory.decodeResource(getResources(), R.drawable.sb6);
                     Bitmap rotatedBitmap = Bitmap.createBitmap(original, 0, 0, original.getWidth(), original.getHeight(), matrix, true);
                     ImageView imgRotate = (ImageView) findViewById(R.id.MapaSala);
                     imgRotate.setImageBitmap(rotatedBitmap);
@@ -257,7 +257,7 @@ public class MenuSala extends AppCompatActivity implements View.OnClickListener
                 {
                     Matrix matrix = new Matrix();
                     matrix.postRotate(90.0f);
-                    Bitmap original = BitmapFactory.decodeResource(getResources(), R.drawable.sB7);
+                    Bitmap original = BitmapFactory.decodeResource(getResources(), R.drawable.sb7);
                     Bitmap rotatedBitmap = Bitmap.createBitmap(original, 0, 0, original.getWidth(), original.getHeight(), matrix, true);
                     ImageView imgRotate = (ImageView) findViewById(R.id.MapaSala);
                     imgRotate.setImageBitmap(rotatedBitmap);
@@ -267,7 +267,7 @@ public class MenuSala extends AppCompatActivity implements View.OnClickListener
                 {
                     Matrix matrix = new Matrix();
                     matrix.postRotate(90.0f);
-                    Bitmap original = BitmapFactory.decodeResource(getResources(), R.drawable.sB8);
+                    Bitmap original = BitmapFactory.decodeResource(getResources(), R.drawable.sb8);
                     Bitmap rotatedBitmap = Bitmap.createBitmap(original, 0, 0, original.getWidth(), original.getHeight(), matrix, true);
                     ImageView imgRotate = (ImageView) findViewById(R.id.MapaSala);
                     imgRotate.setImageBitmap(rotatedBitmap);
@@ -277,7 +277,7 @@ public class MenuSala extends AppCompatActivity implements View.OnClickListener
                 {
                     Matrix matrix = new Matrix();
                     matrix.postRotate(90.0f);
-                    Bitmap original = BitmapFactory.decodeResource(getResources(), R.drawable.sB9);
+                    Bitmap original = BitmapFactory.decodeResource(getResources(), R.drawable.sb9);
                     Bitmap rotatedBitmap = Bitmap.createBitmap(original, 0, 0, original.getWidth(), original.getHeight(), matrix, true);
                     ImageView imgRotate = (ImageView) findViewById(R.id.MapaSala);
                     imgRotate.setImageBitmap(rotatedBitmap);
@@ -287,7 +287,7 @@ public class MenuSala extends AppCompatActivity implements View.OnClickListener
                 {
                     Matrix matrix = new Matrix();
                     matrix.postRotate(90.0f);
-                    Bitmap original = BitmapFactory.decodeResource(getResources(), R.drawable.sB10);
+                    Bitmap original = BitmapFactory.decodeResource(getResources(), R.drawable.sb10);
                     Bitmap rotatedBitmap = Bitmap.createBitmap(original, 0, 0, original.getWidth(), original.getHeight(), matrix, true);
                     ImageView imgRotate = (ImageView) findViewById(R.id.MapaSala);
                     imgRotate.setImageBitmap(rotatedBitmap);
@@ -297,7 +297,7 @@ public class MenuSala extends AppCompatActivity implements View.OnClickListener
                 {
                     Matrix matrix = new Matrix();
                     matrix.postRotate(90.0f);
-                    Bitmap original = BitmapFactory.decodeResource(getResources(), R.drawable.sB11);
+                    Bitmap original = BitmapFactory.decodeResource(getResources(), R.drawable.sb11);
                     Bitmap rotatedBitmap = Bitmap.createBitmap(original, 0, 0, original.getWidth(), original.getHeight(), matrix, true);
                     ImageView imgRotate = (ImageView) findViewById(R.id.MapaSala);
                     imgRotate.setImageBitmap(rotatedBitmap);
@@ -307,7 +307,7 @@ public class MenuSala extends AppCompatActivity implements View.OnClickListener
                 {
                     Matrix matrix = new Matrix();
                     matrix.postRotate(90.0f);
-                    Bitmap original = BitmapFactory.decodeResource(getResources(), R.drawable.sB12);
+                    Bitmap original = BitmapFactory.decodeResource(getResources(), R.drawable.sb12);
                     Bitmap rotatedBitmap = Bitmap.createBitmap(original, 0, 0, original.getWidth(), original.getHeight(), matrix, true);
                     ImageView imgRotate = (ImageView) findViewById(R.id.MapaSala);
                     imgRotate.setImageBitmap(rotatedBitmap);
@@ -317,7 +317,7 @@ public class MenuSala extends AppCompatActivity implements View.OnClickListener
                 {
                     Matrix matrix = new Matrix();
                     matrix.postRotate(90.0f);
-                    Bitmap original = BitmapFactory.decodeResource(getResources(), R.drawable.sB13);
+                    Bitmap original = BitmapFactory.decodeResource(getResources(), R.drawable.sb13);
                     Bitmap rotatedBitmap = Bitmap.createBitmap(original, 0, 0, original.getWidth(), original.getHeight(), matrix, true);
                     ImageView imgRotate = (ImageView) findViewById(R.id.MapaSala);
                     imgRotate.setImageBitmap(rotatedBitmap);
@@ -327,7 +327,7 @@ public class MenuSala extends AppCompatActivity implements View.OnClickListener
                 {
                     Matrix matrix = new Matrix();
                     matrix.postRotate(90.0f);
-                    Bitmap original = BitmapFactory.decodeResource(getResources(), R.drawable.LbPG01);
+                    Bitmap original = BitmapFactory.decodeResource(getResources(), R.drawable.lbpg01);
                     Bitmap rotatedBitmap = Bitmap.createBitmap(original, 0, 0, original.getWidth(), original.getHeight(), matrix, true);
                     ImageView imgRotate = (ImageView) findViewById(R.id.MapaSala);
                     imgRotate.setImageBitmap(rotatedBitmap);
@@ -337,7 +337,7 @@ public class MenuSala extends AppCompatActivity implements View.OnClickListener
                 {
                     Matrix matrix = new Matrix();
                     matrix.postRotate(90.0f);
-                    Bitmap original = BitmapFactory.decodeResource(getResources(), R.drawable.LbTC3);
+                    Bitmap original = BitmapFactory.decodeResource(getResources(), R.drawable.lbtc3);
                     Bitmap rotatedBitmap = Bitmap.createBitmap(original, 0, 0, original.getWidth(), original.getHeight(), matrix, true);
                     ImageView imgRotate = (ImageView) findViewById(R.id.MapaSala);
                     imgRotate.setImageBitmap(rotatedBitmap);
@@ -347,7 +347,7 @@ public class MenuSala extends AppCompatActivity implements View.OnClickListener
                 {
                     Matrix matrix = new Matrix();
                     matrix.postRotate(90.0f);
-                    Bitmap original = BitmapFactory.decodeResource(getResources(), R.drawable.sC1);
+                    Bitmap original = BitmapFactory.decodeResource(getResources(), R.drawable.sc1);
                     Bitmap rotatedBitmap = Bitmap.createBitmap(original, 0, 0, original.getWidth(), original.getHeight(), matrix, true);
                     ImageView imgRotate = (ImageView) findViewById(R.id.MapaSala);
                     imgRotate.setImageBitmap(rotatedBitmap);
@@ -357,7 +357,7 @@ public class MenuSala extends AppCompatActivity implements View.OnClickListener
                 {
                     Matrix matrix = new Matrix();
                     matrix.postRotate(90.0f);
-                    Bitmap original = BitmapFactory.decodeResource(getResources(), R.drawable.sC2);
+                    Bitmap original = BitmapFactory.decodeResource(getResources(), R.drawable.sc2);
                     Bitmap rotatedBitmap = Bitmap.createBitmap(original, 0, 0, original.getWidth(), original.getHeight(), matrix, true);
                     ImageView imgRotate = (ImageView) findViewById(R.id.MapaSala);
                     imgRotate.setImageBitmap(rotatedBitmap);
@@ -367,7 +367,7 @@ public class MenuSala extends AppCompatActivity implements View.OnClickListener
                 {
                     Matrix matrix = new Matrix();
                     matrix.postRotate(90.0f);
-                    Bitmap original = BitmapFactory.decodeResource(getResources(), R.drawable.sC3);
+                    Bitmap original = BitmapFactory.decodeResource(getResources(), R.drawable.sc3);
                     Bitmap rotatedBitmap = Bitmap.createBitmap(original, 0, 0, original.getWidth(), original.getHeight(), matrix, true);
                     ImageView imgRotate = (ImageView) findViewById(R.id.MapaSala);
                     imgRotate.setImageBitmap(rotatedBitmap);
@@ -377,7 +377,7 @@ public class MenuSala extends AppCompatActivity implements View.OnClickListener
                 {
                     Matrix matrix = new Matrix();
                     matrix.postRotate(90.0f);
-                    Bitmap original = BitmapFactory.decodeResource(getResources(), R.drawable.sC4);
+                    Bitmap original = BitmapFactory.decodeResource(getResources(), R.drawable.sc4);
                     Bitmap rotatedBitmap = Bitmap.createBitmap(original, 0, 0, original.getWidth(), original.getHeight(), matrix, true);
                     ImageView imgRotate = (ImageView) findViewById(R.id.MapaSala);
                     imgRotate.setImageBitmap(rotatedBitmap);
@@ -387,7 +387,7 @@ public class MenuSala extends AppCompatActivity implements View.OnClickListener
                 {
                     Matrix matrix = new Matrix();
                     matrix.postRotate(90.0f);
-                    Bitmap original = BitmapFactory.decodeResource(getResources(), R.drawable.sC5);
+                    Bitmap original = BitmapFactory.decodeResource(getResources(), R.drawable.sc5);
                     Bitmap rotatedBitmap = Bitmap.createBitmap(original, 0, 0, original.getWidth(), original.getHeight(), matrix, true);
                     ImageView imgRotate = (ImageView) findViewById(R.id.MapaSala);
                     imgRotate.setImageBitmap(rotatedBitmap);
@@ -397,7 +397,7 @@ public class MenuSala extends AppCompatActivity implements View.OnClickListener
                 {
                     Matrix matrix = new Matrix();
                     matrix.postRotate(90.0f);
-                    Bitmap original = BitmapFactory.decodeResource(getResources(), R.drawable.sC6);
+                    Bitmap original = BitmapFactory.decodeResource(getResources(), R.drawable.sc6);
                     Bitmap rotatedBitmap = Bitmap.createBitmap(original, 0, 0, original.getWidth(), original.getHeight(), matrix, true);
                     ImageView imgRotate = (ImageView) findViewById(R.id.MapaSala);
                     imgRotate.setImageBitmap(rotatedBitmap);
@@ -407,7 +407,7 @@ public class MenuSala extends AppCompatActivity implements View.OnClickListener
                 {
                     Matrix matrix = new Matrix();
                     matrix.postRotate(90.0f);
-                    Bitmap original = BitmapFactory.decodeResource(getResources(), R.drawable.sC7);
+                    Bitmap original = BitmapFactory.decodeResource(getResources(), R.drawable.sc7);
                     Bitmap rotatedBitmap = Bitmap.createBitmap(original, 0, 0, original.getWidth(), original.getHeight(), matrix, true);
                     ImageView imgRotate = (ImageView) findViewById(R.id.MapaSala);
                     imgRotate.setImageBitmap(rotatedBitmap);
@@ -417,7 +417,7 @@ public class MenuSala extends AppCompatActivity implements View.OnClickListener
                 {
                     Matrix matrix = new Matrix();
                     matrix.postRotate(90.0f);
-                    Bitmap original = BitmapFactory.decodeResource(getResources(), R.drawable.sC8);
+                    Bitmap original = BitmapFactory.decodeResource(getResources(), R.drawable.sc8);
                     Bitmap rotatedBitmap = Bitmap.createBitmap(original, 0, 0, original.getWidth(), original.getHeight(), matrix, true);
                     ImageView imgRotate = (ImageView) findViewById(R.id.MapaSala);
                     imgRotate.setImageBitmap(rotatedBitmap);
@@ -427,7 +427,7 @@ public class MenuSala extends AppCompatActivity implements View.OnClickListener
                 {
                     Matrix matrix = new Matrix();
                     matrix.postRotate(90.0f);
-                    Bitmap original = BitmapFactory.decodeResource(getResources(), R.drawable.sC9);
+                    Bitmap original = BitmapFactory.decodeResource(getResources(), R.drawable.sc9);
                     Bitmap rotatedBitmap = Bitmap.createBitmap(original, 0, 0, original.getWidth(), original.getHeight(), matrix, true);
                     ImageView imgRotate = (ImageView) findViewById(R.id.MapaSala);
                     imgRotate.setImageBitmap(rotatedBitmap);
@@ -437,7 +437,7 @@ public class MenuSala extends AppCompatActivity implements View.OnClickListener
                 {
                     Matrix matrix = new Matrix();
                     matrix.postRotate(90.0f);
-                    Bitmap original = BitmapFactory.decodeResource(getResources(), R.drawable.sC10);
+                    Bitmap original = BitmapFactory.decodeResource(getResources(), R.drawable.sc10);
                     Bitmap rotatedBitmap = Bitmap.createBitmap(original, 0, 0, original.getWidth(), original.getHeight(), matrix, true);
                     ImageView imgRotate = (ImageView) findViewById(R.id.MapaSala);
                     imgRotate.setImageBitmap(rotatedBitmap);
@@ -447,7 +447,7 @@ public class MenuSala extends AppCompatActivity implements View.OnClickListener
                 {
                     Matrix matrix = new Matrix();
                     matrix.postRotate(90.0f);
-                    Bitmap original = BitmapFactory.decodeResource(getResources(), R.drawable.sC11);
+                    Bitmap original = BitmapFactory.decodeResource(getResources(), R.drawable.sc11);
                     Bitmap rotatedBitmap = Bitmap.createBitmap(original, 0, 0, original.getWidth(), original.getHeight(), matrix, true);
                     ImageView imgRotate = (ImageView) findViewById(R.id.MapaSala);
                     imgRotate.setImageBitmap(rotatedBitmap);
@@ -457,7 +457,7 @@ public class MenuSala extends AppCompatActivity implements View.OnClickListener
                 {
                     Matrix matrix = new Matrix();
                     matrix.postRotate(90.0f);
-                    Bitmap original = BitmapFactory.decodeResource(getResources(), R.drawable.sC12);
+                    Bitmap original = BitmapFactory.decodeResource(getResources(), R.drawable.sc12);
                     Bitmap rotatedBitmap = Bitmap.createBitmap(original, 0, 0, original.getWidth(), original.getHeight(), matrix, true);
                     ImageView imgRotate = (ImageView) findViewById(R.id.MapaSala);
                     imgRotate.setImageBitmap(rotatedBitmap);
@@ -467,7 +467,7 @@ public class MenuSala extends AppCompatActivity implements View.OnClickListener
                 {
                     Matrix matrix = new Matrix();
                     matrix.postRotate(90.0f);
-                    Bitmap original = BitmapFactory.decodeResource(getResources(), R.drawable.sC13);
+                    Bitmap original = BitmapFactory.decodeResource(getResources(), R.drawable.sc13);
                     Bitmap rotatedBitmap = Bitmap.createBitmap(original, 0, 0, original.getWidth(), original.getHeight(), matrix, true);
                     ImageView imgRotate = (ImageView) findViewById(R.id.MapaSala);
                     imgRotate.setImageBitmap(rotatedBitmap);
@@ -477,7 +477,7 @@ public class MenuSala extends AppCompatActivity implements View.OnClickListener
                 {
                     Matrix matrix = new Matrix();
                     matrix.postRotate(90.0f);
-                    Bitmap original = BitmapFactory.decodeResource(getResources(), R.drawable.sD1);
+                    Bitmap original = BitmapFactory.decodeResource(getResources(), R.drawable.sd1);
                     Bitmap rotatedBitmap = Bitmap.createBitmap(original, 0, 0, original.getWidth(), original.getHeight(), matrix, true);
                     ImageView imgRotate = (ImageView) findViewById(R.id.MapaSala);
                     imgRotate.setImageBitmap(rotatedBitmap);
@@ -487,7 +487,7 @@ public class MenuSala extends AppCompatActivity implements View.OnClickListener
                 {
                     Matrix matrix = new Matrix();
                     matrix.postRotate(90.0f);
-                    Bitmap original = BitmapFactory.decodeResource(getResources(), R.drawable.sF1);
+                    Bitmap original = BitmapFactory.decodeResource(getResources(), R.drawable.sf1);
                     Bitmap rotatedBitmap = Bitmap.createBitmap(original, 0, 0, original.getWidth(), original.getHeight(), matrix, true);
                     ImageView imgRotate = (ImageView) findViewById(R.id.MapaSala);
                     imgRotate.setImageBitmap(rotatedBitmap);
