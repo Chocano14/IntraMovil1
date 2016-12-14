@@ -67,7 +67,7 @@ public class MenuSala extends AppCompatActivity implements View.OnClickListener
                 {
                     Matrix matrix = new Matrix();
                     matrix.postRotate(90.0f);
-                    Bitmap original = BitmapFactory.decodeResource(getResources(), R.drawable.piso33);
+                    Bitmap original = BitmapFactory.decodeResource(getResources(), R.drawable.piso4);
                     Bitmap rotatedBitmap = Bitmap.createBitmap(original, 0, 0, original.getWidth(), original.getHeight(), matrix, true);
                     ImageView imgRotate = (ImageView) findViewById(R.id.MapaSala);
                     imgRotate.setImageBitmap(rotatedBitmap);

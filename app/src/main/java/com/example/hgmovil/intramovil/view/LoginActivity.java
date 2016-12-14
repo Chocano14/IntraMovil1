@@ -45,7 +45,8 @@ public class LoginActivity extends Activity {
     //   startActivity(new Intent(this,Register.class));
     //}
 
-    public void main_login(View v){
+    public void main_login(View v )
+    {
         Rut = rut.getText().toString();
         Contraseña = contraseña.getText().toString();
         BackGround b = new BackGround();
@@ -74,7 +75,7 @@ public class LoginActivity extends Activity {
             int tmp;
 
             try {
-                URL url = new URL("http://www.intramovil.hol.es/login.php");
+                URL url = new URL("http://www.hgmovil.cl/intramovil/login.php");
                 String urlParams = "name="+rut1+"&password="+contraseña1;
                 HttpURLConnection httpURLConnection = (HttpURLConnection) url.openConnection();
                 httpURLConnection.setDoOutput(true);
@@ -128,9 +129,6 @@ public class LoginActivity extends Activity {
                     startActivity(i);
                 }
 
-
-                    //CORREO= user_data.getString("correo");
-                    //CARRERA_ID= user_data.getString("carrera_id");
                 } catch (JSONException e) {
                     e.printStackTrace();
                 Toast.makeText(ctx, "Rut y contraseña incorrectos ", Toast.LENGTH_LONG).show();
