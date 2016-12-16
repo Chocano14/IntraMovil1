@@ -52,11 +52,11 @@ public class MenuAlarma extends AppCompatActivity
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.menu_alarma);
-        textoAlar= (EditText) findViewById(R.id.txtTxAlar);
+        //textoAlar= (EditText) findViewById(R.id.txtTxAlar);
         fechaAlar= (EditText) findViewById(R.id.txtFechaAlar);
-        horaAlarm= (EditText) findViewById(R.id.txtHoraAlar);
-        btnAlarma= (Button) findViewById(R.id.btnCAlarma);
-        btnHoras= (Button) findViewById(R.id.btnHora);
+        //horaAlarm= (EditText) findViewById(R.id.txtHoraAlar);
+        //btnAlarma= (Button) findViewById(R.id.btnCAlarma);
+        //btnHoras= (Button) findViewById(R.id.btnHora);
         Calendar calendario = Calendar.getInstance();
         año = calendario.get(Calendar.YEAR);
         añoac = calendario.get(Calendar.YEAR);
@@ -64,12 +64,12 @@ public class MenuAlarma extends AppCompatActivity
         diaac = calendario.get(Calendar.DAY_OF_MONTH);
         mes = calendario.get(Calendar.MONTH);
 
-        dia = calendario.get(Calendar.DAY_OF_MONTH);
+        //dia = calendario.get(Calendar.DAY_OF_MONTH);
 
 
 
-        mostraFecha();
-        SelectFecha = new DatePickerDialog.OnDateSetListener() {
+       // mostraFecha();
+        /*SelectFecha = new DatePickerDialog.OnDateSetListener() {
             @Override
             public void onDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
                 año = year;
@@ -78,7 +78,7 @@ public class MenuAlarma extends AppCompatActivity
                 mostraFecha();
 
             }
-        };
+        };*/
 
 
     };

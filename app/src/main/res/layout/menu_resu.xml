@@ -11,23 +11,13 @@
     android:background="@android:color/background_light"
     >
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Resumen Academico"
-        android:id="@+id/textView6"
-        android:textColor="#000000"
-        android:textSize="25dp"
-        android:layout_alignParentTop="true"
-        android:layout_alignStart="@+id/btnResum" />
-
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Ver"
         android:id="@+id/btnResum"
         android:layout_marginTop="35dp"
-        android:background="@android:color/holo_orange_dark"
+        android:background="#3077f1"
         android:textColor="#ffffff"
         android:textSize="20dp"
         android:layout_marginRight="120dp"
@@ -44,7 +34,7 @@
         android:layout_alignParentStart="true"
         android:layout_marginTop="30dp"
         android:layout_alignParentEnd="true"
-        android:background="#f77613"
+        android:background="#3077f1"
         android:textColor="#ffffff"
         android:textAlignment="center"
         android:visibility="invisible" />
@@ -54,7 +44,7 @@
         android:layout_height="wrap_content"
         android:text="New Text"
         android:id="@+id/Asignatura1"
-        android:background="#f77613"
+        android:background="#3077f1"
         android:layout_marginTop="40dp"
         android:layout_below="@+id/Asignatura"
         android:layout_alignParentStart="true"
@@ -71,7 +61,7 @@
         android:layout_alignParentStart="true"
         android:layout_marginTop="40dp"
         android:layout_alignParentEnd="true"
-        android:background="#f77613"
+        android:background="#3077f1"
         android:textColor="#ffffff"
         android:visibility="invisible"
         android:textAlignment="center" />
@@ -85,7 +75,7 @@
         android:layout_below="@+id/Asignatura2"
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
-        android:background="#f77613"
+        android:background="#3077f1"
         android:textColor="#ffffff"
         android:textAlignment="center"
         android:visibility="invisible" />
@@ -99,7 +89,7 @@
         android:layout_alignParentStart="true"
         android:layout_marginTop="40dp"
         android:layout_alignParentEnd="true"
-        android:background="#f77613"
+        android:background="#3077f1"
         android:textColor="#ffffff"
         android:textAlignment="center"
         android:visibility="invisible" />
@@ -113,7 +103,7 @@
         android:layout_alignParentStart="true"
         android:layout_marginTop="40dp"
         android:layout_alignParentEnd="true"
-        android:background="#f77613"
+        android:background="#3077f1"
         android:textColor="#ffffff"
         android:textAlignment="center"
         android:visibility="invisible" />
@@ -127,7 +117,7 @@
         android:layout_alignParentStart="true"
         android:layout_marginTop="40dp"
         android:layout_alignParentEnd="true"
-        android:background="#f77613"
+        android:background="#3077f1"
         android:textColor="#ffffff"
         android:textAlignment="center"
         android:visibility="invisible" />
@@ -490,5 +480,17 @@
         android:id="@+id/txtSitu6"
         android:layout_below="@+id/txt7Situ"
         android:layout_alignEnd="@+id/txt7Situ" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Resumen Academico"
+        android:id="@+id/textView6"
+        android:textColor="@android:color/holo_blue_dark"
+        android:textSize="25dp"
+        android:textStyle="normal|bold|italic"
+        android:textAllCaps="true"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
 
 </RelativeLayout>

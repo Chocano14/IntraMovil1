@@ -57,13 +57,13 @@ public class MenuSala extends AppCompatActivity implements View.OnClickListener
         SQLiteDatabase db = helper.getReadableDatabase();
         String ss = spn.getSelectedItem().toString();
         helper.openDataBase();
-        Cursor c = db.rawQuery("SELECT piso FROM sala WHERE Nombre='" +ss + "';", null);
+        Cursor c = db.rawQuery("SELECT Nombre FROM sala WHERE Nombre='" +ss + "';", null);
         try
         {
             if (c.moveToFirst())
             {
                 String pi = c.getString(0);
-                if (pi.equals("3"))
+                if (pi.equals("Sala A1"))
                 {
                     Matrix matrix = new Matrix();
                     matrix.postRotate(90.0f);
@@ -73,7 +73,7 @@ public class MenuSala extends AppCompatActivity implements View.OnClickListener
                     imgRotate.setImageBitmap(rotatedBitmap);
                     imgRotate.setVisibility(View.VISIBLE);
                 }
-                if (pi.equals("3"))
+                if (pi.equals("Sala A2"))
                 {
                     Matrix matrix = new Matrix();
                     matrix.postRotate(90.0f);
@@ -83,7 +83,7 @@ public class MenuSala extends AppCompatActivity implements View.OnClickListener
                     imgRotate.setImageBitmap(rotatedBitmap);
                     imgRotate.setVisibility(View.VISIBLE);
                 }
-                if (pi.equals("3"))
+                if (pi.equals("Sala A3"))
                 {
                     Matrix matrix = new Matrix();
                     matrix.postRotate(90.0f);
@@ -93,7 +93,7 @@ public class MenuSala extends AppCompatActivity implements View.OnClickListener
                     imgRotate.setImageBitmap(rotatedBitmap);
                     imgRotate.setVisibility(View.VISIBLE);
                 }
-                if (pi.equals("3"))
+                if (pi.equals("Sala A4"))
                 {
                     Matrix matrix = new Matrix();
                     matrix.postRotate(90.0f);
@@ -103,7 +103,7 @@ public class MenuSala extends AppCompatActivity implements View.OnClickListener
                     imgRotate.setImageBitmap(rotatedBitmap);
                     imgRotate.setVisibility(View.VISIBLE);
                 }
-                if (pi.equals("3"))
+                if (pi.equals("Sala A5"))
                 {
                     Matrix matrix = new Matrix();
                     matrix.postRotate(90.0f);
@@ -113,7 +113,7 @@ public class MenuSala extends AppCompatActivity implements View.OnClickListener
                     imgRotate.setImageBitmap(rotatedBitmap);
                     imgRotate.setVisibility(View.VISIBLE);
                 }
-                if (pi.equals("3"))
+                if (pi.equals("Sala A6"))
                 {
                     Matrix matrix = new Matrix();
                     matrix.postRotate(90.0f);
@@ -123,7 +123,7 @@ public class MenuSala extends AppCompatActivity implements View.OnClickListener
                     imgRotate.setImageBitmap(rotatedBitmap);
                     imgRotate.setVisibility(View.VISIBLE);
                 }
-                if (pi.equals("3"))
+                if (pi.equals("Sala A7"))
                 {
                     Matrix matrix = new Matrix();
                     matrix.postRotate(90.0f);
@@ -133,7 +133,7 @@ public class MenuSala extends AppCompatActivity implements View.OnClickListener
                     imgRotate.setImageBitmap(rotatedBitmap);
                     imgRotate.setVisibility(View.VISIBLE);
                 }
-                if (pi.equals("3"))
+                if (pi.equals("Sala A8"))
                 {
                     Matrix matrix = new Matrix();
                     matrix.postRotate(90.0f);
@@ -143,7 +143,7 @@ public class MenuSala extends AppCompatActivity implements View.OnClickListener
                     imgRotate.setImageBitmap(rotatedBitmap);
                     imgRotate.setVisibility(View.VISIBLE);
                 }
-                if (pi.equals("3"))
+                if (pi.equals("Sala A9"))
                 {
                     Matrix matrix = new Matrix();
                     matrix.postRotate(90.0f);
@@ -153,7 +153,7 @@ public class MenuSala extends AppCompatActivity implements View.OnClickListener
                     imgRotate.setImageBitmap(rotatedBitmap);
                     imgRotate.setVisibility(View.VISIBLE);
                 }
-                if (pi.equals("3"))
+                if (pi.equals("Sala A10"))
                 {
                     Matrix matrix = new Matrix();
                     matrix.postRotate(90.0f);
@@ -163,7 +163,7 @@ public class MenuSala extends AppCompatActivity implements View.OnClickListener
                     imgRotate.setImageBitmap(rotatedBitmap);
                     imgRotate.setVisibility(View.VISIBLE);
                 }
-                if (pi.equals("3"))
+                if (pi.equals("Sala A11"))
                 {
                     Matrix matrix = new Matrix();
                     matrix.postRotate(90.0f);
@@ -173,7 +173,7 @@ public class MenuSala extends AppCompatActivity implements View.OnClickListener
                     imgRotate.setImageBitmap(rotatedBitmap);
                     imgRotate.setVisibility(View.VISIBLE);
                 }
-                if (pi.equals("3"))
+                if (pi.equals("Sala A12"))
                 {
                     Matrix matrix = new Matrix();
                     matrix.postRotate(90.0f);
@@ -183,7 +183,7 @@ public class MenuSala extends AppCompatActivity implements View.OnClickListener
                     imgRotate.setImageBitmap(rotatedBitmap);
                     imgRotate.setVisibility(View.VISIBLE);
                 }
-                if (pi.equals("3"))
+                if (pi.equals("Sala A13"))
                 {
                     Matrix matrix = new Matrix();
                     matrix.postRotate(90.0f);
@@ -193,7 +193,7 @@ public class MenuSala extends AppCompatActivity implements View.OnClickListener
                     imgRotate.setImageBitmap(rotatedBitmap);
                     imgRotate.setVisibility(View.VISIBLE);
                 }
-                if (pi.equals("4"))
+                if (pi.equals("Sala B1"))
                 {
                     Matrix matrix = new Matrix();
                     matrix.postRotate(90.0f);
@@ -203,7 +203,7 @@ public class MenuSala extends AppCompatActivity implements View.OnClickListener
                     imgRotate.setImageBitmap(rotatedBitmap);
                     imgRotate.setVisibility(View.VISIBLE);
                 }
-                if (pi.equals("4"))
+                if (pi.equals("Sala B2"))
                 {
                     Matrix matrix = new Matrix();
                     matrix.postRotate(90.0f);
@@ -213,7 +213,7 @@ public class MenuSala extends AppCompatActivity implements View.OnClickListener
                     imgRotate.setImageBitmap(rotatedBitmap);
                     imgRotate.setVisibility(View.VISIBLE);
                 }
-                if (pi.equals("4"))
+                if (pi.equals("Sala B3"))
                 {
                     Matrix matrix = new Matrix();
                     matrix.postRotate(90.0f);
@@ -223,7 +223,7 @@ public class MenuSala extends AppCompatActivity implements View.OnClickListener
                     imgRotate.setImageBitmap(rotatedBitmap);
                     imgRotate.setVisibility(View.VISIBLE);
                 }
-                if (pi.equals("4"))
+                if (pi.equals("Sala B4"))
                 {
                     Matrix matrix = new Matrix();
                     matrix.postRotate(90.0f);
@@ -233,7 +233,7 @@ public class MenuSala extends AppCompatActivity implements View.OnClickListener
                     imgRotate.setImageBitmap(rotatedBitmap);
                     imgRotate.setVisibility(View.VISIBLE);
                 }
-                if (pi.equals("4"))
+                if (pi.equals("Sala B5"))
                 {
                     Matrix matrix = new Matrix();
                     matrix.postRotate(90.0f);
@@ -243,7 +243,7 @@ public class MenuSala extends AppCompatActivity implements View.OnClickListener
                     imgRotate.setImageBitmap(rotatedBitmap);
                     imgRotate.setVisibility(View.VISIBLE);
                 }
-                if (pi.equals("4"))
+                if (pi.equals("Sala B6"))
                 {
                     Matrix matrix = new Matrix();
                     matrix.postRotate(90.0f);
@@ -253,7 +253,7 @@ public class MenuSala extends AppCompatActivity implements View.OnClickListener
                     imgRotate.setImageBitmap(rotatedBitmap);
                     imgRotate.setVisibility(View.VISIBLE);
                 }
-                if (pi.equals("4"))
+                if (pi.equals("Sala B7"))
                 {
                     Matrix matrix = new Matrix();
                     matrix.postRotate(90.0f);
@@ -263,7 +263,7 @@ public class MenuSala extends AppCompatActivity implements View.OnClickListener
                     imgRotate.setImageBitmap(rotatedBitmap);
                     imgRotate.setVisibility(View.VISIBLE);
                 }
-                if (pi.equals("4"))
+                if (pi.equals("Sala B8"))
                 {
                     Matrix matrix = new Matrix();
                     matrix.postRotate(90.0f);
@@ -273,7 +273,7 @@ public class MenuSala extends AppCompatActivity implements View.OnClickListener
                     imgRotate.setImageBitmap(rotatedBitmap);
                     imgRotate.setVisibility(View.VISIBLE);
                 }
-                if (pi.equals("4"))
+                if (pi.equals("Sala B9"))
                 {
                     Matrix matrix = new Matrix();
                     matrix.postRotate(90.0f);
@@ -283,7 +283,7 @@ public class MenuSala extends AppCompatActivity implements View.OnClickListener
                     imgRotate.setImageBitmap(rotatedBitmap);
                     imgRotate.setVisibility(View.VISIBLE);
                 }
-                if (pi.equals("4"))
+                if (pi.equals("Sala B10"))
                 {
                     Matrix matrix = new Matrix();
                     matrix.postRotate(90.0f);
@@ -293,7 +293,7 @@ public class MenuSala extends AppCompatActivity implements View.OnClickListener
                     imgRotate.setImageBitmap(rotatedBitmap);
                     imgRotate.setVisibility(View.VISIBLE);
                 }
-                if (pi.equals("4"))
+                if (pi.equals("Sala B11"))
                 {
                     Matrix matrix = new Matrix();
                     matrix.postRotate(90.0f);
@@ -303,7 +303,7 @@ public class MenuSala extends AppCompatActivity implements View.OnClickListener
                     imgRotate.setImageBitmap(rotatedBitmap);
                     imgRotate.setVisibility(View.VISIBLE);
                 }
-                if (pi.equals("4"))
+                if (pi.equals("Sala B12"))
                 {
                     Matrix matrix = new Matrix();
                     matrix.postRotate(90.0f);
@@ -313,7 +313,7 @@ public class MenuSala extends AppCompatActivity implements View.OnClickListener
                     imgRotate.setImageBitmap(rotatedBitmap);
                     imgRotate.setVisibility(View.VISIBLE);
                 }
-                if (pi.equals("4"))
+                if (pi.equals("Sala B13"))
                 {
                     Matrix matrix = new Matrix();
                     matrix.postRotate(90.0f);
@@ -323,7 +323,7 @@ public class MenuSala extends AppCompatActivity implements View.OnClickListener
                     imgRotate.setImageBitmap(rotatedBitmap);
                     imgRotate.setVisibility(View.VISIBLE);
                 }
-                if (pi.equals("4"))
+                if (pi.equals("Laboratorio PG01"))
                 {
                     Matrix matrix = new Matrix();
                     matrix.postRotate(90.0f);
@@ -333,7 +333,7 @@ public class MenuSala extends AppCompatActivity implements View.OnClickListener
                     imgRotate.setImageBitmap(rotatedBitmap);
                     imgRotate.setVisibility(View.VISIBLE);
                 }
-                if (pi.equals("4"))
+                if (pi.equals("Laboratorio TC3"))
                 {
                     Matrix matrix = new Matrix();
                     matrix.postRotate(90.0f);
@@ -343,7 +343,7 @@ public class MenuSala extends AppCompatActivity implements View.OnClickListener
                     imgRotate.setImageBitmap(rotatedBitmap);
                     imgRotate.setVisibility(View.VISIBLE);
                 }
-                if (pi.equals("5"))
+                if (pi.equals("Sala C1"))
                 {
                     Matrix matrix = new Matrix();
                     matrix.postRotate(90.0f);
@@ -353,7 +353,7 @@ public class MenuSala extends AppCompatActivity implements View.OnClickListener
                     imgRotate.setImageBitmap(rotatedBitmap);
                     imgRotate.setVisibility(View.VISIBLE);
                 }
-                if (pi.equals("5"))
+                if (pi.equals("Sala C2"))
                 {
                     Matrix matrix = new Matrix();
                     matrix.postRotate(90.0f);
@@ -363,7 +363,7 @@ public class MenuSala extends AppCompatActivity implements View.OnClickListener
                     imgRotate.setImageBitmap(rotatedBitmap);
                     imgRotate.setVisibility(View.VISIBLE);
                 }
-                if (pi.equals("5"))
+                if (pi.equals("Sala C4"))
                 {
                     Matrix matrix = new Matrix();
                     matrix.postRotate(90.0f);
@@ -373,7 +373,7 @@ public class MenuSala extends AppCompatActivity implements View.OnClickListener
                     imgRotate.setImageBitmap(rotatedBitmap);
                     imgRotate.setVisibility(View.VISIBLE);
                 }
-                if (pi.equals("5"))
+                if (pi.equals("Sala C4"))
                 {
                     Matrix matrix = new Matrix();
                     matrix.postRotate(90.0f);
@@ -383,7 +383,7 @@ public class MenuSala extends AppCompatActivity implements View.OnClickListener
                     imgRotate.setImageBitmap(rotatedBitmap);
                     imgRotate.setVisibility(View.VISIBLE);
                 }
-                if (pi.equals("5"))
+                if (pi.equals("Sala C5"))
                 {
                     Matrix matrix = new Matrix();
                     matrix.postRotate(90.0f);
@@ -393,7 +393,7 @@ public class MenuSala extends AppCompatActivity implements View.OnClickListener
                     imgRotate.setImageBitmap(rotatedBitmap);
                     imgRotate.setVisibility(View.VISIBLE);
                 }
-                if (pi.equals("5"))
+                if (pi.equals("Sala C6"))
                 {
                     Matrix matrix = new Matrix();
                     matrix.postRotate(90.0f);
@@ -403,7 +403,7 @@ public class MenuSala extends AppCompatActivity implements View.OnClickListener
                     imgRotate.setImageBitmap(rotatedBitmap);
                     imgRotate.setVisibility(View.VISIBLE);
                 }
-                if (pi.equals("5"))
+                if (pi.equals("Sala C7"))
                 {
                     Matrix matrix = new Matrix();
                     matrix.postRotate(90.0f);
@@ -413,7 +413,7 @@ public class MenuSala extends AppCompatActivity implements View.OnClickListener
                     imgRotate.setImageBitmap(rotatedBitmap);
                     imgRotate.setVisibility(View.VISIBLE);
                 }
-                if (pi.equals("5"))
+                if (pi.equals("Sala C8"))
                 {
                     Matrix matrix = new Matrix();
                     matrix.postRotate(90.0f);
@@ -423,7 +423,7 @@ public class MenuSala extends AppCompatActivity implements View.OnClickListener
                     imgRotate.setImageBitmap(rotatedBitmap);
                     imgRotate.setVisibility(View.VISIBLE);
                 }
-                if (pi.equals("5"))
+                if (pi.equals("Sala C9"))
                 {
                     Matrix matrix = new Matrix();
                     matrix.postRotate(90.0f);
@@ -433,7 +433,7 @@ public class MenuSala extends AppCompatActivity implements View.OnClickListener
                     imgRotate.setImageBitmap(rotatedBitmap);
                     imgRotate.setVisibility(View.VISIBLE);
                 }
-                if (pi.equals("5"))
+                if (pi.equals("Sala C10"))
                 {
                     Matrix matrix = new Matrix();
                     matrix.postRotate(90.0f);
@@ -443,7 +443,7 @@ public class MenuSala extends AppCompatActivity implements View.OnClickListener
                     imgRotate.setImageBitmap(rotatedBitmap);
                     imgRotate.setVisibility(View.VISIBLE);
                 }
-                if (pi.equals("5"))
+                if (pi.equals("Sala C11"))
                 {
                     Matrix matrix = new Matrix();
                     matrix.postRotate(90.0f);
@@ -453,7 +453,7 @@ public class MenuSala extends AppCompatActivity implements View.OnClickListener
                     imgRotate.setImageBitmap(rotatedBitmap);
                     imgRotate.setVisibility(View.VISIBLE);
                 }
-                if (pi.equals("5"))
+                if (pi.equals("Sala C12"))
                 {
                     Matrix matrix = new Matrix();
                     matrix.postRotate(90.0f);
@@ -463,7 +463,7 @@ public class MenuSala extends AppCompatActivity implements View.OnClickListener
                     imgRotate.setImageBitmap(rotatedBitmap);
                     imgRotate.setVisibility(View.VISIBLE);
                 }
-                if (pi.equals("5"))
+                if (pi.equals("Sala C13"))
                 {
                     Matrix matrix = new Matrix();
                     matrix.postRotate(90.0f);
@@ -473,7 +473,7 @@ public class MenuSala extends AppCompatActivity implements View.OnClickListener
                     imgRotate.setImageBitmap(rotatedBitmap);
                     imgRotate.setVisibility(View.VISIBLE);
                 }
-                if (pi.equals("5"))
+                if (pi.equals("Sala D1"))
                 {
                     Matrix matrix = new Matrix();
                     matrix.postRotate(90.0f);
@@ -483,7 +483,7 @@ public class MenuSala extends AppCompatActivity implements View.OnClickListener
                     imgRotate.setImageBitmap(rotatedBitmap);
                     imgRotate.setVisibility(View.VISIBLE);
                 }
-                if (pi.equals("5"))
+                if (pi.equals("Sala F1"))
                 {
                     Matrix matrix = new Matrix();
                     matrix.postRotate(90.0f);

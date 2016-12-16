@@ -10,7 +10,9 @@
 
     <ScrollView
         android:layout_width="fill_parent"
-        android:layout_height="fill_parent">
+        android:layout_height="fill_parent"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true">
         <RelativeLayout
 
         android:layout_width="match_parent"
@@ -19,7 +21,20 @@
         android:layout_alignParentTop="true"
         android:layout_alignParentStart="true"
             android:layout_height="wrap_content">
-        <TextView
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Notas"
+                android:id="@+id/textView20"
+                android:textSize="22dp"
+                android:textColor="@android:color/holo_blue_dark"
+                android:textStyle="bold"
+                android:layout_marginLeft="1dp"
+                android:layout_below="@+id/BtnNotas"
+                android:layout_alignStart="@+id/txtHora" />
+
+            <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceSmall"
@@ -42,104 +57,8 @@
             android:layout_alignLeft="@+id/BtnNotas"
             android:layout_alignStart="@+id/BtnNotas"
             android:background="@drawable/orario12" />
-        <ImageButton
-            android:layout_width="100dp"
-            android:layout_height="120dp"
-            android:id="@+id/BtnBusquet"
-            android:layout_gravity="center"
-            android:layout_alignParentTop="true"
-            android:layout_alignLeft="@+id/BtnHorario"
-            android:layout_alignStart="@+id/BtnHorario"
-            android:layout_marginTop="600dp"
-            android:background="@drawable/bsqueda2"
-            />
 
-        <ImageButton
-            android:layout_width="100dp"
-            android:layout_height="120dp"
-            android:id="@+id/BtnResAc"
-            android:layout_gravity="left|bottom"
-            android:layout_below="@+id/BtnHorario"
-            android:layout_alignLeft="@+id/BtnHorario"
-            android:layout_alignStart="@+id/BtnHorario"
-            android:layout_marginTop="40dp"
-            android:background="@drawable/acad2" />
-
-        <ImageButton
-            android:layout_width="100dp"
-            android:layout_height="120dp"
-            android:id="@+id/BtnPag"
-            android:layout_gravity="center_horizontal|bottom"
-            android:layout_alignTop="@+id/BtnHorario"
-            android:layout_alignLeft="@+id/BtnAsistencia"
-            android:layout_alignStart="@+id/BtnAsistencia"
-            android:background="@drawable/pgosd2" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Mis Notas"
-            android:id="@+id/txtNota"
-            android:textSize="25dp"
-            android:textColor="@android:color/holo_blue_dark"
-            android:textStyle="bold"
-            android:layout_marginTop="225dp"
-            android:layout_marginLeft="50dp"/>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Mi Asistencia"
-            android:id="@+id/txtAsist"
-            android:textSize="25dp"
-            android:textColor="@android:color/holo_blue_dark"
-            android:textStyle="bold"
-            android:layout_marginTop="225dp"
-            android:layout_marginLeft="225dp"/>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Mi Horario"
-            android:id="@+id/txtHora"
-            android:textSize="25dp"
-            android:textColor="@android:color/holo_blue_dark"
-            android:textStyle="bold"
-            android:layout_marginLeft="45dp"
-            android:layout_marginTop="385dp"/>
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Mis Pagos"
-            android:id="@+id/txtPago"
-            android:textSize="25dp"
-            android:textColor="@android:color/holo_blue_dark"
-            android:textStyle="bold"
-            android:layout_marginLeft="240dp"
-            android:layout_marginTop="385dp"/>
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text=" Resumen \nAcademico"
-            android:id="@+id/txtResAca"
-            android:textSize="25dp"
-            android:textColor="@android:color/holo_blue_dark"
-            android:textStyle="bold"
-            android:layout_marginLeft="45dp"
-            android:layout_marginTop="535dp"/>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Buscar \n  Sala"
-            android:id="@+id/txtBuscSal"
-            android:textSize="25dp"
-            android:textColor="@android:color/holo_blue_dark"
-            android:textStyle="bold"
-            android:layout_marginLeft="60dp"
-            android:layout_marginTop="700dp"/>
-
-        <TextView
+            <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceMedium"
@@ -149,75 +68,24 @@
             android:layout_below="@+id/textView"
             android:layout_centerHorizontal="true" />
 
-        <ImageButton
-            android:layout_width="100dp"
-            android:layout_height="120dp"
-            android:id="@+id/BtnAlam"
-            android:layout_gravity="right|center_vertical"
-            android:layout_marginRight="55dp"
-            android:background="@drawable/larmak2"
-            android:layout_alignTop="@+id/BtnResAc"
-            android:layout_alignStart="@+id/BtnPag" />
-
-        <ImageButton
-            android:layout_width="100dp"
-            android:layout_height="120dp"
-            android:id="@+id/BtnMateriales"
-            android:layout_gravity="right|bottom"
-            android:layout_marginTop="13dp"
-            android:background="@drawable/material"
-            android:layout_alignTop="@+id/BtnBusquet"
-            android:layout_alignStart="@+id/txtPago" />
-
-        <ImageButton
-            android:layout_width="100dp"
-            android:layout_height="120dp"
-            android:id="@+id/BtnNotas"
-            android:layout_gravity="top|left"
-            android:layout_marginTop="18dp"
-            android:background="@drawable/notas2"
-            android:layout_below="@+id/txtUser"
-            android:layout_alignStart="@+id/txtBuscSal" />
-
-        <ImageButton
-            android:layout_width="100dp"
-            android:layout_height="120dp"
-            android:id="@+id/BtnAsistencia"
-            android:layout_gravity="center_horizontal|top"
-            android:background="@drawable/asistencia12"
-            android:layout_alignTop="@+id/BtnNotas"
-            android:layout_alignStart="@+id/txtPago" />
-
-        <TextView
+            <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="      Mis \nMateriales"
             android:id="@+id/txtMate"
-            android:textSize="25dp"
+            android:textSize="22dp"
             android:textColor="@android:color/holo_blue_dark"
             android:textStyle="bold"
             android:layout_marginLeft="145dp"
             android:layout_below="@+id/BtnMateriales"
-            android:layout_alignEnd="@+id/txtAlarm" />
+            android:layout_alignEnd="@+id/txtResAca" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Alarmas"
-            android:id="@+id/txtAlarm"
-            android:textSize="25dp"
-            android:textColor="@android:color/holo_blue_dark"
-            android:textStyle="bold"
-            android:layout_marginLeft="260dp"
-            android:layout_below="@+id/BtnAlam"
-            android:layout_alignEnd="@+id/BtnMateriales" />
-
-        <Button
+            <Button
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
             android:text="Desconectarse"
             android:id="@+id/btnSalir"
-            android:background="@android:color/holo_orange_dark"
+            android:background="#3077f1"
             android:textColor="#ffffff"
             android:layout_marginLeft="100dp"
             android:layout_marginTop="27dp"
@@ -226,6 +94,147 @@
             android:layout_below="@+id/txtMate"
             android:layout_centerHorizontal="true" />
 
-    </RelativeLayout>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Alarmas"
+                android:id="@+id/txtAlarm"
+                android:textSize="22dp"
+                android:textColor="@android:color/holo_blue_dark"
+                android:textStyle="bold"
+                android:layout_marginLeft="260dp"
+                android:layout_below="@+id/BtnAlam"
+                android:layout_alignEnd="@+id/BtnBusquet" />
+
+            <ImageButton
+            android:layout_width="100dp"
+            android:layout_height="120dp"
+            android:id="@+id/BtnMateriales"
+
+            android:layout_marginTop="11dp"
+            android:background="@drawable/material"
+                android:layout_below="@+id/txtResAca"
+                android:layout_alignStart="@+id/BtnResAc" />
+
+            <ImageButton
+                android:layout_width="100dp"
+                android:layout_height="120dp"
+                android:id="@+id/BtnNotas"
+                android:layout_gravity="top|left"
+                android:layout_marginTop="21dp"
+                android:background="@drawable/notas2"
+                android:elevation="0dp"
+                android:layout_marginStart="37dp"
+                android:layout_below="@+id/txtUser"
+                android:layout_alignParentStart="true" />
+
+            <ImageButton
+            android:layout_width="100dp"
+            android:layout_height="120dp"
+            android:id="@+id/BtnAsistencia"
+            android:layout_gravity="center_horizontal|top"
+            android:background="@drawable/asistencia12"
+                android:layout_alignTop="@+id/BtnNotas"
+                android:layout_alignEnd="@+id/textView" />
+
+            <ImageButton
+                android:layout_width="100dp"
+                android:layout_height="120dp"
+                android:id="@+id/BtnResAc"
+                android:layout_gravity="left|bottom"
+                android:background="@drawable/acad2"
+                android:layout_alignTop="@+id/BtnAlam"
+                android:layout_alignStart="@+id/BtnPag" />
+
+            <TextView
+                android:layout_height="wrap_content"
+            android:text="Pagos"
+            android:id="@+id/txtPago"
+            android:textSize="22dp"
+            android:textColor="@android:color/holo_blue_dark"
+            android:textStyle="bold"
+            android:layout_marginLeft="240dp"
+                android:layout_width="wrap_content"
+                android:layout_below="@+id/BtnPag"
+                android:layout_alignEnd="@+id/btnSalir"
+                android:layout_marginEnd="13dp" />
+
+            <ImageButton
+                android:layout_width="100dp"
+                android:layout_height="120dp"
+                android:id="@+id/BtnAlam"
+
+                android:layout_marginRight="55dp"
+                android:background="@drawable/larmak2"
+                android:layout_below="@+id/txtHora"
+                android:layout_alignStart="@+id/BtnHorario" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Horario"
+                android:id="@+id/txtHora"
+                android:textSize="22dp"
+                android:textColor="@android:color/holo_blue_dark"
+                android:textStyle="bold"
+                android:layout_marginLeft="5dp"
+                android:layout_below="@+id/BtnHorario"
+                android:layout_alignStart="@+id/txtAlarm" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=" Resumen \nAcademico"
+                android:id="@+id/txtResAca"
+                android:textSize="22dp"
+                android:textColor="@android:color/holo_blue_dark"
+                android:textStyle="bold"
+                android:layout_marginLeft="45dp"
+                android:layout_below="@+id/BtnResAc"
+                android:layout_alignEnd="@+id/BtnResAc" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Asistencia"
+                android:id="@+id/txtAsistencia"
+                android:textSize="22dp"
+                android:textColor="@android:color/holo_blue_dark"
+                android:textStyle="bold"
+                android:layout_marginLeft="1dp"
+                android:layout_below="@+id/BtnAsistencia"
+                android:layout_alignStart="@+id/BtnAsistencia" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Buscar Sala"
+                android:id="@+id/txtSalas"
+                android:textSize="22dp"
+                android:textColor="@android:color/holo_blue_dark"
+                android:textStyle="bold"
+                android:layout_marginLeft="1dp"
+                android:layout_above="@+id/btnSalir"
+                android:layout_alignStart="@+id/textView" />
+
+            <ImageButton
+            android:layout_width="100dp"
+            android:layout_height="120dp"
+            android:id="@+id/BtnPag"
+            android:layout_gravity="center_horizontal|bottom"
+                android:background="@drawable/pgosd2"
+                android:layout_alignTop="@+id/BtnHorario"
+                android:layout_alignStart="@+id/txtAsistencia" />
+
+            <ImageButton
+                android:layout_width="100dp"
+                android:layout_height="120dp"
+                android:id="@+id/BtnBusquet"
+                android:layout_gravity="center"
+                android:background="@drawable/bsqueda2"
+                android:layout_above="@+id/txtMate"
+                android:layout_alignStart="@+id/txtSalas" />
+
+        </RelativeLayout>
     </ScrollView>
 </RelativeLayout>
