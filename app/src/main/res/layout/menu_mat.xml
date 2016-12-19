@@ -30,16 +30,6 @@
         android:layout_below="@+id/textView11"
         android:layout_alignEnd="@+id/textView11" />
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Ver"
-        android:id="@+id/btnMat"
-        android:layout_below="@+id/textView11"
-        android:layout_alignParentEnd="true"
-        android:background="#3077f1"
-        android:textColor="#ffffff"/>
-
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -48,5 +38,15 @@
         android:layout_below="@+id/spnMat"
         android:layout_alignParentStart="true"
         android:layout_marginTop="108dp" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Ver"
+        android:id="@+id/btnMat"
+        android:background="#3077f1"
+        android:textColor="#ffffff"
+        android:layout_below="@+id/textView11"
+        android:layout_toEndOf="@+id/spnMat" />
 
 </RelativeLayout>

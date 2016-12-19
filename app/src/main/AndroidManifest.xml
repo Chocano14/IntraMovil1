@@ -44,7 +44,7 @@
             android:name=".view.MenuHorario"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".view.MenuAlarma"
+            android:name=".view.MenuAlarma2"
             android:screenOrientation="portrait" />
         android:screenOrientation="portrait">
         <activity

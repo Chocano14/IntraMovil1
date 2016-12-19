@@ -1,8 +1,10 @@
 package com.example.hgmovil.intramovil.view;
 
+import android.content.ContentValues;
 import android.content.DialogInterface;
 import android.content.Intent;
-        import android.os.Bundle;
+import android.database.sqlite.SQLiteDatabase;
+import android.os.Bundle;
 import android.os.Handler;
 import android.provider.ContactsContract;
 import android.support.v7.app.AlertDialog;
@@ -16,6 +18,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.hgmovil.intramovil.R;
+import com.example.hgmovil.intramovil.sqlite.BDIntraMovil;
 
 /**
  * Created by pablo on 27-04-2016.
@@ -44,6 +47,18 @@ public class Menu extends AppCompatActivity
         setContentView(R.layout.menu);
         BtnNot = (ImageButton) findViewById(R.id.BtnNotas);
         nom = getIntent().getStringExtra("Nomb");
+        BDIntraMovil helper = new BDIntraMovil(this);
+        SQLiteDatabase db = helper.getReadableDatabase();
+        helper.openDataBase();
+        ContentValues nuevoRegistro = new ContentValues();
+        nuevoRegistro.put("Rut", "18578099-6");
+        nuevoRegistro.put("Nombre","usuariopru");
+        nuevoRegistro.put("Contraseña","usuariopru");
+        nuevoRegistro.put("Correo","usuariopru");
+        nuevoRegistro.put("Carrera_Id","1");
+
+//Insertamos el registro en la base de datos
+        db.insert("alumno", null, nuevoRegistro);
 
         TextView tv = (TextView)findViewById(R.id.txtUser);
         tv.setText(nom);
@@ -100,7 +115,7 @@ public class Menu extends AppCompatActivity
         BtnAlarm.setOnClickListener(new View.OnClickListener()
         {
             public void onClick(View v) {
-                Intent formnuevo4 = new Intent(Menu.this, MenuAlarma.class);
+                Intent formnuevo4 = new Intent(Menu.this, MenuAlarma2.class);
                 startActivity(formnuevo4);
             }
         });
