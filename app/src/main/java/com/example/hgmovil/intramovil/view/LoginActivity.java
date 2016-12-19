@@ -2,8 +2,10 @@ package com.example.hgmovil.intramovil.view;
 
 import android.app.Activity;
 import android.app.ProgressDialog;
+import android.content.ContentValues;
 import android.content.Context;
 import android.content.Intent;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.View;
@@ -11,6 +13,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.example.hgmovil.intramovil.R;
+import com.example.hgmovil.intramovil.sqlite.BDIntraMovil;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -127,6 +130,7 @@ public class LoginActivity extends Activity {
                     i.putExtra("Nomb", NOMBRE);
                     i.putExtra("Rutt", RUT);
                     startActivity(i);
+
                 }
 
                 } catch (JSONException e) {

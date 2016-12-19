@@ -19,6 +19,7 @@ import android.widget.Toast;
 
 import com.example.hgmovil.intramovil.R;
 import com.example.hgmovil.intramovil.sqlite.BDIntraMovil;
+import com.example.hgmovil.intramovil.sqlite.UsuariosSQLiteHelper;
 
 /**
  * Created by pablo on 27-04-2016.
@@ -37,6 +38,7 @@ public class Menu extends AppCompatActivity
     final String TAG = this.getClass().getName();
     private boolean twice = false;
     private String nom;
+    private SQLiteDatabase db;
 
 
     @Override
@@ -47,18 +49,11 @@ public class Menu extends AppCompatActivity
         setContentView(R.layout.menu);
         BtnNot = (ImageButton) findViewById(R.id.BtnNotas);
         nom = getIntent().getStringExtra("Nomb");
-        BDIntraMovil helper = new BDIntraMovil(this);
-        SQLiteDatabase db = helper.getReadableDatabase();
-        helper.openDataBase();
-        ContentValues nuevoRegistro = new ContentValues();
-        nuevoRegistro.put("Rut", "18578099-6");
-        nuevoRegistro.put("Nombre","usuariopru");
-        nuevoRegistro.put("Contraseña","usuariopru");
-        nuevoRegistro.put("Correo","usuariopru");
-        nuevoRegistro.put("Carrera_Id","1");
+        UsuariosSQLiteHelper usdbh =
+                new UsuariosSQLiteHelper(this, "intrabd.sqlite", null, 1);
 
-//Insertamos el registro en la base de datos
-        db.insert("alumno", null, nuevoRegistro);
+        db = usdbh.getWritableDatabase();
+
 
         TextView tv = (TextView)findViewById(R.id.txtUser);
         tv.setText(nom);
@@ -69,6 +64,18 @@ public class Menu extends AppCompatActivity
             public void onClick(View v) {
                 Intent menunotas = new Intent(Menu.this, MenuNot.class);
                 startActivity(menunotas);
+                BDIntraMovil helper = new BDIntraMovil(Menu.this);
+                SQLiteDatabase db = helper.getReadableDatabase();
+                helper.openDataBase();
+                ContentValues nuevoRegistro = new ContentValues();
+                nuevoRegistro.put("Rut", "18578099-6");
+                nuevoRegistro.put("Nombre","usuariopru");
+                nuevoRegistro.put("Contraseña","usuariopru");
+                nuevoRegistro.put("Correo","usuariopru");
+                nuevoRegistro.put("Carrera_Id","1");
+
+//Insertamos el registro en la base de datos
+                db.insert("alumno", null, nuevoRegistro);
                 PasarvarMenunot();
             }
         });
