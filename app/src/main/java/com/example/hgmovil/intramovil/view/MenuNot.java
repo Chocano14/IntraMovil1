@@ -24,7 +24,7 @@ public class MenuNot extends AppCompatActivity implements View.OnClickListener
 {
     private Button btn;
     private Spinner spn;
-    public TextView Nota,Nota1,Nota2,Nota3,Nota4,Nota5,Nota6;
+    public TextView Nota,Nota1,Nota2,Nota3,Nota4,Nota5,Nota6,nomn;
     private TextView Ponderacion,Ponderacion1,Ponderacion2,Ponderacion3,Ponderacion4,Ponderacion5,Ponderacion6;
     private TextView Fecha,Fecha1,Fecha2,Fecha3,Fecha4,Fecha5,Fecha6;
     private String ry, nm;
@@ -40,6 +40,7 @@ public class MenuNot extends AppCompatActivity implements View.OnClickListener
 
         btn = (Button) findViewById(R.id.btn);
         spn = (Spinner) findViewById(R.id.spnAsig);
+        nomn = (TextView) findViewById(R.id.txtcasi);
 
         //listNot = (ListView)findViewById(R.id.lv);
 
@@ -85,6 +86,17 @@ public class MenuNot extends AppCompatActivity implements View.OnClickListener
     {
         cargar();
         Toast.makeText(getApplicationContext(), "Operación realizada...", Toast.LENGTH_SHORT).show();
+        BDIntraMovil helper = new BDIntraMovil(this);
+        SQLiteDatabase db = helper.getReadableDatabase();
+        String ss = spn.getSelectedItem().toString();
+        helper.openDataBase();
+        Cursor c = db.rawQuery("SELECT Nombre FROM alumno;", null);
+        if(c.moveToFirst())
+        {
+            String probar = c.getString(0);
+            nomn.setText(probar);
+
+        }
 
     }
     public void cargar()
