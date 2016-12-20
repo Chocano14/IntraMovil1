@@ -24,7 +24,7 @@ public class BDIntraMovil extends SQLiteOpenHelper
 
     private static final int DB_SCHEME_VERSION = 1;
     private static String DB_PATH = "/data/data/com.example.hgmovil.intramovil/databases/";
-    private static String DB_NAME = "intrabd.sqlite";
+    private static String DB_NAME = "Intra.db";
     protected SQLiteDatabase db;
     private final Context context;
 

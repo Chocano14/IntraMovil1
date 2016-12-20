@@ -113,6 +113,9 @@ public class LoginActivity extends Activity {
             try {
                     JSONObject root = new JSONObject(s);
                     JSONObject user_data = root.getJSONObject("user_data");
+                {
+
+                }
                     NOMBRE= user_data.getString("nombre");
                     RUT= user_data.getString("rut");
                     CONTRASEÑA= user_data.getString("contraseña");

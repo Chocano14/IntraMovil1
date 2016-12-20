@@ -50,7 +50,7 @@ public class Menu extends AppCompatActivity
         BtnNot = (ImageButton) findViewById(R.id.BtnNotas);
         nom = getIntent().getStringExtra("Nomb");
         UsuariosSQLiteHelper usdbh =
-                new UsuariosSQLiteHelper(this, "intrabd.sqlite", null, 1);
+                new UsuariosSQLiteHelper(this, "Intra.db", null, 1);
 
         db = usdbh.getWritableDatabase();
 
@@ -64,18 +64,6 @@ public class Menu extends AppCompatActivity
             public void onClick(View v) {
                 Intent menunotas = new Intent(Menu.this, MenuNot.class);
                 startActivity(menunotas);
-                BDIntraMovil helper = new BDIntraMovil(Menu.this);
-                SQLiteDatabase db = helper.getReadableDatabase();
-                helper.openDataBase();
-                ContentValues nuevoRegistro = new ContentValues();
-                nuevoRegistro.put("Rut", "18578099-6");
-                nuevoRegistro.put("Nombre","usuariopru");
-                nuevoRegistro.put("Contraseña","usuariopru");
-                nuevoRegistro.put("Correo","usuariopru");
-                nuevoRegistro.put("Carrera_Id","1");
-
-//Insertamos el registro en la base de datos
-                db.insert("alumno", null, nuevoRegistro);
                 PasarvarMenunot();
             }
         });
