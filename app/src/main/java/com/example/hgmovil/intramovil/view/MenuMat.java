@@ -72,7 +72,11 @@ public class MenuMat extends AppCompatActivity implements View.OnClickListener
     public void onClick(View v)
     {
         //cargarMat();
+        String asignaturaSelec = spnMat1.getSelectedItem().toString();
+        //TotalHoras();
 
+        BackGround22 totales = new BackGround22();
+        totales.execute(asignaturaSelec);
         Toast.makeText(getApplicationContext(), "Operación realizada...", Toast.LENGTH_SHORT).show();
     }
 
@@ -98,6 +102,69 @@ public class MenuMat extends AppCompatActivity implements View.OnClickListener
                     + "<a href=" + mat + ">Ejercicio</a>"));
             url.setMovementMethod(LinkMovementMethod.getInstance());
 
+        }
+    }
+    class BackGround22 extends AsyncTask<String, String, String>
+    {
+
+        @Override
+        protected String doInBackground(String... params) {
+            String rut1 = params[0];
+            String data="";
+            int tmp;
+
+            try {
+                URL url = new URL("http://www.hgmovil.cl/intramovil/mat.php");
+                String urlParams = "name="+rut1;
+                HttpURLConnection httpURLConnection = (HttpURLConnection) url.openConnection();
+                httpURLConnection.setDoOutput(true);
+                OutputStream os = httpURLConnection.getOutputStream();
+                os.write(urlParams.getBytes());
+                os.flush();
+                os.close();
+
+                InputStream is = httpURLConnection.getInputStream();
+                while((tmp=is.read())!=-1){
+                    data+= (char)tmp;
+                }
+
+                is.close();
+                httpURLConnection.disconnect();
+
+                return data;
+            } catch (MalformedURLException e) {
+                e.printStackTrace();
+                return "Exception: "+e.getMessage();
+            } catch (IOException e) {
+                e.printStackTrace();
+                return "Exception: "+e.getMessage();
+            }
+        }
+        @Override
+        protected void onPostExecute(String s)
+        {
+
+            try {
+
+                JSONObject root = new JSONObject(s);
+                JSONArray user_data1 = root.getJSONArray("lista");
+                String noms = user_data1.getJSONObject(0).getString("uuu");
+
+                    url.setText(Html.fromHtml("Guia de "
+
+                            + "<a href=" + noms + ">Ejercicio</a>"));
+                    url.setMovementMethod(LinkMovementMethod.getInstance());
+
+
+
+            } catch (JSONException e) {
+                e.printStackTrace();
+
+            }
+            catch (Exception f)
+            {
+                f.printStackTrace();
+            }
         }
     }
     @Override

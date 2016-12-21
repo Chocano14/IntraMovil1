@@ -1,5 +1,7 @@
 package com.example.hgmovil.intramovil.view;
 
+import android.app.ProgressDialog;
+import android.content.Context;
 import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
@@ -25,6 +27,7 @@ import java.io.OutputStream;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 
 public class MenuResu extends AppCompatActivity implements View.OnClickListener {
@@ -36,7 +39,12 @@ public class MenuResu extends AppCompatActivity implements View.OnClickListener 
     private TextView txtA1,txtA2,txtA3,txtA4,txtA5,txtA6,txtA7;
     private TextView txtP1,txtP2,txtP3,txtP4,txtP5,txtP6,txtP7;
     private TextView txtS1,txtS2,txtS3,txtS4,txtS5,txtS6,txtS7;
+    private TextView tS1,tS2,tS3,tS4,tS5,tS6,tS7;
+    public Double tota;
     private String ry, nm;
+    ProgressDialog pdialog1 = null;
+    Context context1 = null;
+
 
 
     @Override
@@ -70,6 +78,16 @@ public class MenuResu extends AppCompatActivity implements View.OnClickListener 
         txtS5=(TextView)findViewById(R.id.txt5Situ);
         txtS6=(TextView)findViewById(R.id.txt6Situ);
         txtS7=(TextView)findViewById(R.id.txt7Situ);
+
+        tS1=(TextView)findViewById(R.id.textView1);
+        tS2=(TextView)findViewById(R.id.textView19);
+        tS3=(TextView)findViewById(R.id.textView21);
+        tS4=(TextView)findViewById(R.id.textView22);
+        tS5=(TextView)findViewById(R.id.textView23);
+        tS6=(TextView)findViewById(R.id.textView24);
+        tS7=(TextView)findViewById(R.id.textView27);
+
+
 
 
 
@@ -176,36 +194,50 @@ public class MenuResu extends AppCompatActivity implements View.OnClickListener 
 
 
                 String Asig = user_data1.getJSONObject(0).getString("asignatura");
+                String hora = user_data1.getJSONObject(0).getString("horas");
+                Asis.setText(hora+ "HRS"+"/");
                 Asignatura.setText(Asig);
                 Asignatura.setVisibility(View.VISIBLE);
                 txtA1.setVisibility(View.VISIBLE);
 
                 String Asig1 =user_data1.getJSONObject(1).getString("asignatura");
+                String hora1 = user_data1.getJSONObject(1).getString("horas");
+                Asis1.setText(hora1+ "HRS"+"/");
                 Asignatura1.setText(Asig1);
                 Asignatura1.setVisibility(View.VISIBLE);
                 txtA2.setVisibility(View.VISIBLE);
 
                 String Asig2 = user_data1.getJSONObject(2).getString("asignatura");
+                String hora2 = user_data1.getJSONObject(2).getString("horas");
+                Asis2.setText(hora2+ "HRS"+"/");
                 Asignatura2.setText(Asig2);
                 Asignatura2.setVisibility(View.VISIBLE);
                 txtA3.setVisibility(View.VISIBLE);
 
                 String Asig3 = user_data1.getJSONObject(3).getString("asignatura");
+                String hora3 = user_data1.getJSONObject(3).getString("horas");
+                Asis3.setText(hora3+ "HRS"+"/");
                 Asignatura3.setText(Asig3);
                 Asignatura3.setVisibility(View.VISIBLE);
                 txtA4.setVisibility(View.VISIBLE);
 
                 String Asig4 = user_data1.getJSONObject(4).getString("asignatura");
+                String hora4 = user_data1.getJSONObject(4).getString("horas");
+                Asis4.setText(hora4+ "HRS"+"/");
                 Asignatura4.setText(Asig4);
                 Asignatura4.setVisibility(View.VISIBLE);
                 txtA5.setVisibility(View.VISIBLE);
 
                 String Asig5 = user_data1.getJSONObject(5).getString("asignatura");
+                String hora5 = user_data1.getJSONObject(5).getString("horas");
+                Asis5.setText(hora5+ "HRS"+"/");
                 Asignatura5.setText(Asig5);
                 Asignatura5.setVisibility(View.VISIBLE);
                 txtA6.setVisibility(View.VISIBLE);
 
                 String Asig6 = user_data1.getJSONObject(6).getString("asignatura");
+                String hora6 = user_data1.getJSONObject(6).getString("horas");
+                Asis6.setText(hora6+ "HRS"+"/");
                 Asignatura6.setText(Asig6);
                 Asignatura6.setVisibility(View.VISIBLE);
                 txtA7.setVisibility(View.VISIBLE);
@@ -273,8 +305,9 @@ public class MenuResu extends AppCompatActivity implements View.OnClickListener 
                 JSONArray user_data1 = root.getJSONArray("lista");
 
 
-                String Nota = user_data1.getJSONObject(0).getString("promedio");;
+                String Nota = user_data1.getJSONObject(0).getString("promedio");
                 Promedio.setText(Nota);
+
                 Promedio.setVisibility(View.VISIBLE);
                 txtP1.setVisibility(View.VISIBLE);
                 double contendor=Double.parseDouble(Nota.trim());
@@ -283,6 +316,8 @@ public class MenuResu extends AppCompatActivity implements View.OnClickListener 
                     Situacion.setText("Sin Riesgo");
                     txtS1.setVisibility(View.VISIBLE);
                 }else{Situacion.setText("Riesgo");txtS1.setVisibility(View.VISIBLE);}
+
+
 
                 String Nota1 = user_data1.getJSONObject(1).getString("promedio");
                 Promedio1.setText(Nota1);
@@ -295,6 +330,8 @@ public class MenuResu extends AppCompatActivity implements View.OnClickListener 
                     txtS2.setVisibility(View.VISIBLE);
                 }else{Situacion1.setText("Riesgo");txtS2.setVisibility(View.VISIBLE);}
 
+
+
                 String Nota2 = user_data1.getJSONObject(2).getString("promedio");
                 Promedio2.setText(Nota2);
                 Promedio2.setVisibility(View.VISIBLE);
@@ -305,6 +342,8 @@ public class MenuResu extends AppCompatActivity implements View.OnClickListener 
                     Situacion2.setText("Sin Riesgo");
                     txtS3.setVisibility(View.VISIBLE);
                 }else{Situacion2.setText("Riesgo");txtS3.setVisibility(View.VISIBLE);}
+
+
 
                 String Nota3 = user_data1.getJSONObject(3).getString("promedio");
                 Promedio3.setText(Nota3);
@@ -349,6 +388,7 @@ public class MenuResu extends AppCompatActivity implements View.OnClickListener 
                     Situacion6.setText("Sin Riesgo");
                     txtS7.setVisibility(View.VISIBLE);
                 }else{Situacion6.setText("Riesgo");txtS7.setVisibility(View.VISIBLE);}
+
 
             } catch (JSONException e)
             {
@@ -407,30 +447,26 @@ public class MenuResu extends AppCompatActivity implements View.OnClickListener 
             {
                 JSONObject root = new JSONObject(s);
                 JSONArray user_data1 = root.getJSONArray("lista");
+                String to1 = user_data1.getJSONObject(0).getString("prome");
+                tS1.setText(to1+ "HRS");
 
-                String promeRam = user_data1.getJSONObject(0).getString("prome");
-                String prome = user_data1.getJSONObject(1).getString("prome");
-                if(prome.equals("0"))
-                {
-                    prome = "0";
-                }
-                Asis.setText(prome + "HRS" + "/" + promeRam + "HRS");
-                String promeRam1 = user_data1.getJSONObject(2).getString("prome");
-                String prome1 = user_data1.getJSONObject(3).getString("prome");
-                if(prome1.equals("0"))
-                {
-                    prome1 = "0";
-                }
-                Asis1.setText(prome1 + "HRS" + "/" + promeRam1 + "HRS");
+                String to2 = user_data1.getJSONObject(1).getString("prome");
+                tS2.setText(to2+ "HRS");
 
-                Asis.setText(prome + "HRS" + "/" + promeRam + "HRS");
-                String promeRam2 = user_data1.getJSONObject(4).getString("prome");
-                String prome3 = user_data1.getJSONObject(5).getString("prome");
-                if(prome1.equals("0"))
-                {
-                    prome1 = "0";
-                }
-                Asis2.setText(prome1 + "HRS" + "/" + promeRam1 + "HRS");
+                String to3 = user_data1.getJSONObject(2).getString("prome");
+                tS3.setText(to3+ "HRS");
+
+                String to4 = user_data1.getJSONObject(3).getString("prome");
+                tS4.setText(to4+ "HRS");
+
+                String to5 = user_data1.getJSONObject(4).getString("prome");
+                tS5.setText(to5+ "HRS");
+
+                String to6 = user_data1.getJSONObject(5).getString("prome");
+                tS6.setText(to6+ "HRS");
+
+                String to7 = user_data1.getJSONObject(6).getString("prome");
+                tS7.setText(to7+ "HRS");
 
 
 

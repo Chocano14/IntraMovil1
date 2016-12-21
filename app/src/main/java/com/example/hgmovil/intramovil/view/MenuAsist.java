@@ -78,6 +78,8 @@ public class MenuAsist extends AppCompatActivity implements View.OnClickListener
         //HorasAsis();
 
         //porcentajecom();
+        
+        totalhAsig.setText("");totalhAsistidas.setText("");porcentaje.setText("");
         Toast.makeText(getApplicationContext(), "Operación realizada...", Toast.LENGTH_SHORT).show();
 
     }

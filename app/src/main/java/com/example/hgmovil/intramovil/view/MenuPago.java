@@ -1,5 +1,7 @@
 package com.example.hgmovil.intramovil.view;
 
+import android.app.ProgressDialog;
+import android.content.Context;
 import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
@@ -91,11 +93,13 @@ public class MenuPago extends AppCompatActivity implements View.OnClickListener
         //CargarPago();
         BackGroundNota jj = new BackGroundNota();
         jj.execute(rutPago);
+
         est1.setText("");est2.setText("");est3.setText("");est4.setText("");est5.setText("");est6.setText("");est7.setText("");est8.setText("");
         fech1.setText("");fech2.setText("");fech3.setText("");fech4.setText("");fech5.setText("");fech6.setText("");fech7.setText("");fech8.setText("");
         con1.setText("");con2.setText("");con3.setText("");con4.setText("");con5.setText("");con6.setText("");con7.setText("");con8.setText("");
         mon1.setText("");mon2.setText("");mon3.setText("");mon4.setText("");mon5.setText("");mon6.setText("");mon7.setText("");mon8.setText("");
         Toast.makeText(getApplicationContext(), "Operación realizada...", Toast.LENGTH_SHORT).show();
+
     }
 
     public void CargarPago()
@@ -350,6 +354,7 @@ public class MenuPago extends AppCompatActivity implements View.OnClickListener
                                     fech8.setText(fecha8);
                                     con8.setText(conce8);
                                     mon8.setText("$" + monto8);
+
 
 
 
