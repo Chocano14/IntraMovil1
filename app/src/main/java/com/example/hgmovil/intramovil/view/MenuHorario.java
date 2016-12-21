@@ -3,6 +3,7 @@ package com.example.hgmovil.intramovil.view;
 import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -17,6 +18,16 @@ import android.widget.Toast;
 import com.example.hgmovil.intramovil.R;
 import com.example.hgmovil.intramovil.sqlite.BDIntraMovil;
 
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
+import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.util.ArrayList;
 
 public class MenuHorario extends AppCompatActivity implements View.OnClickListener
@@ -87,8 +98,15 @@ public class MenuHorario extends AppCompatActivity implements View.OnClickListen
     @Override
     public void onClick(View v)
     {
+        String diaSelec = spnHora.getSelectedItem().toString();
+        BackGroundhorario xx = new BackGroundhorario();
+        xx.execute(ry,diaSelec);
+        asig1.setText("");asig2.setText("");asig3.setText("");asig4.setText("");asig5.setText("");asig6.setText("");asig7.setText("");asig8.setText("");
+        sala1.setText("");sala2.setText("");sala3.setText("");sala4.setText("");sala5.setText("");sala6.setText("");sala7.setText("");sala8.setText("");
+        hora1.setText("");hora2.setText("");hora3.setText("");hora4.setText("");hora5.setText("");hora6.setText("");hora7.setText("");hora8.setText("");
+        grid1.setVisibility(View.INVISIBLE);grid2.setVisibility(View.INVISIBLE);grid3.setVisibility(View.INVISIBLE);grid4.setVisibility(View.INVISIBLE);grid5.setVisibility(View.INVISIBLE);grid6.setVisibility(View.INVISIBLE);grid7.setVisibility(View.INVISIBLE);grid8.setVisibility(View.INVISIBLE);
         Toast.makeText(getApplicationContext(), "Operación realizada...", Toast.LENGTH_SHORT).show();
-        cargarHorario();
+        //cargarHorario();
     }
     public void cargarHorario()
     {
@@ -234,5 +252,146 @@ public class MenuHorario extends AppCompatActivity implements View.OnClickListen
         i.putExtra("Nomb", nm);
         i.putExtra("Rutt", ry);
         startActivity(i);
+    }
+    class BackGroundhorario extends AsyncTask<String, String, String>
+    {
+
+        @Override
+        protected String doInBackground(String... params) {
+            String dia = params[1];
+            String rut1 = params[0];
+            String data="";
+            int tmp;
+
+            try {
+                URL url = new URL("http://www.hgmovil.cl/intramovil/horario.php");
+                String urlParams = "dia="+dia+"&rut="+rut1;
+                HttpURLConnection httpURLConnection = (HttpURLConnection) url.openConnection();
+                httpURLConnection.setDoOutput(true);
+                OutputStream os = httpURLConnection.getOutputStream();
+                os.write(urlParams.getBytes());
+                os.flush();
+                os.close();
+
+                InputStream is = httpURLConnection.getInputStream();
+                while((tmp=is.read())!=-1){
+                    data+= (char)tmp;
+                }
+
+                is.close();
+                httpURLConnection.disconnect();
+
+                return data;
+            } catch (MalformedURLException e) {
+                e.printStackTrace();
+                return "Exception: "+e.getMessage();
+            } catch (IOException e) {
+                e.printStackTrace();
+                return "Exception: "+e.getMessage();
+            }
+        }
+        @Override
+        protected void onPostExecute(String s)
+        {
+
+            try {
+
+                JSONObject root = new JSONObject(s);
+                JSONArray user_data1 = root.getJSONArray("lista");
+
+                String asigna1 = user_data1.getJSONObject(0).getString("asignatura");
+                String sal1 = user_data1.getJSONObject(0).getString("sala");
+                String hi1 = user_data1.getJSONObject(0).getString("inicio");
+                String hf1 = user_data1.getJSONObject(0).getString("fin");
+                asig1.setText(asigna1);
+                sala1.setText("Sala: "+sal1);
+                hora1.setText(hi1+"-"+hf1+" HRS");
+                grid1.setVisibility(View.VISIBLE);
+
+                    String asigna2 =user_data1.getJSONObject(1).getString("asignatura");
+                    String sal2 = user_data1.getJSONObject(1).getString("sala");
+                    String hi2 = user_data1.getJSONObject(1).getString("inicio");;
+                    String hf2 = user_data1.getJSONObject(1).getString("fin");
+                    asig2.setText(asigna2);
+                    sala2.setText("Sala: "+sal2);
+                    hora2.setText(hi2+"-"+hf2+" HRS");
+                    grid2.setVisibility(View.VISIBLE);
+
+                        String asigna3 = user_data1.getJSONObject(2).getString("asignatura");
+                        String sal3 = user_data1.getJSONObject(2).getString("sala");
+                        String hi3 = user_data1.getJSONObject(2).getString("inicio");
+                        String hf3 = user_data1.getJSONObject(2).getString("fin");
+                        asig3.setText(asigna3);
+                        sala3.setText("Sala: "+sal3);
+                        hora3.setText(hi3+"-"+hf3+" HRS");
+                        grid3.setVisibility(View.VISIBLE);
+
+                            String asigna4 = user_data1.getJSONObject(3).getString("asignatura");
+                            String sal4 = user_data1.getJSONObject(3).getString("sala");
+                            String hi4 = user_data1.getJSONObject(3).getString("inicio");
+                            String hf4 = user_data1.getJSONObject(3).getString("fin");
+                            asig4.setText(asigna4);
+                            sala4.setText("Sala: "+sal4);
+                            hora4.setText(hi4+"-"+hf4+" HRS");
+                            grid4.setVisibility(View.VISIBLE);
+
+                                String asigna5 = user_data1.getJSONObject(4).getString("asignatura");
+                                String sal5 = user_data1.getJSONObject(4).getString("sala");
+                                String hi5 = user_data1.getJSONObject(4).getString("inicio");
+                                String hf5 = user_data1.getJSONObject(4).getString("fin");
+                                asig5.setText(asigna5);
+                                sala5.setText("Sala: "+sal5);
+                                hora5.setText(hi5+"-"+hf5+" HRS");
+                                grid5.setVisibility(View.VISIBLE);
+
+                                    String asigna6 = user_data1.getJSONObject(5).getString("asignatura");
+                                    String sal6 = user_data1.getJSONObject(5).getString("sala");
+                                    String hi6 = user_data1.getJSONObject(5).getString("inicio");
+                                    String hf6 = user_data1.getJSONObject(5).getString("fin");
+                                    asig6.setText(asigna6);
+                                    sala6.setText("Sala: "+sal6);
+                                    hora6.setText(hi6+"-"+hf6+" HRS");
+                                    grid6.setVisibility(View.VISIBLE);
+
+                                        String asigna7 = user_data1.getJSONObject(6).getString("asignatura");
+                                        String sal7 = user_data1.getJSONObject(6).getString("sala");
+                                        String hi7 = user_data1.getJSONObject(6).getString("inicio");
+                                        String hf7 = user_data1.getJSONObject(6).getString("fin");
+                                        asig7.setText(asigna7);
+                                        sala7.setText("Sala: "+sal7);
+                                        hora7.setText(hi7+"-"+hf7+" HRS");
+                                        grid7.setVisibility(View.VISIBLE);
+
+                                            String asigna8 = user_data1.getJSONObject(7).getString("asignatura");
+                                            String sal8 = user_data1.getJSONObject(7).getString("sala");
+                                            String hi8 = user_data1.getJSONObject(7).getString("inicio");
+                                            String hf8 = user_data1.getJSONObject(7).getString("fin");
+                                            asig8.setText(asigna8);
+                                            sala8.setText("Sala: "+sal8);
+                                            hora8.setText(hi8+"-"+hf8+" HRS");
+                                            grid8.setVisibility(View.VISIBLE);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            } catch (JSONException e) {
+                e.printStackTrace();
+
+            }
+            catch (Exception f)
+            {
+                f.printStackTrace();
+            }
+        }
     }
 }

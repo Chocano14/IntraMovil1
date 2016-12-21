@@ -45,15 +45,8 @@
         android:id="@+id/txtPon"
         android:layout_below="@+id/textView4"
         android:layout_centerHorizontal="true"
-        android:textColor="#000000" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/txtFecha"
-        android:layout_below="@+id/textView4"
-        android:layout_alignEnd="@+id/textView4"
-        android:textColor="#000000" />
+        android:textColor="#000000"
+        android:textSize="12sp" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -69,15 +62,8 @@
         android:id="@+id/txtPon1"
         android:layout_below="@+id/txtPon"
         android:layout_centerHorizontal="true"
-        android:textColor="#000000" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/txtFecha1"
-        android:layout_below="@+id/txtFecha"
-        android:layout_alignStart="@+id/txtFecha"
-        android:textColor="#000000" />
+        android:textColor="#000000"
+        android:textSize="12sp" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -93,15 +79,8 @@
         android:id="@+id/txtPon2"
         android:layout_alignTop="@+id/txtNota2"
         android:layout_centerHorizontal="true"
-        android:textColor="#000000" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/txtFecha2"
-        android:layout_alignTop="@+id/txtPon2"
-        android:layout_alignEnd="@+id/textView4"
-        android:textColor="#000000" />
+        android:textColor="#000000"
+        android:textSize="12sp" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -117,15 +96,17 @@
         android:id="@+id/txtPon3"
         android:layout_below="@+id/txtPon2"
         android:layout_centerHorizontal="true"
-        android:textColor="#000000" />
+        android:textColor="#000000"
+        android:textSize="12sp" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/txtFecha3"
         android:layout_below="@+id/txtFecha2"
-        android:layout_alignStart="@+id/txtFecha2"
-        android:textColor="#000000" />
+        android:textColor="#000000"
+        android:textSize="12sp"
+        android:layout_alignStart="@+id/txtFecha2" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -133,7 +114,8 @@
         android:id="@+id/txtNota4"
         android:layout_below="@+id/txtNota3"
         android:layout_alignParentStart="true"
-        android:textColor="#000000" />
+        android:textColor="#000000"
+        android:textSize="14sp" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -141,15 +123,17 @@
         android:id="@+id/txtPon4"
         android:layout_below="@+id/txtPon3"
         android:layout_centerHorizontal="true"
-        android:textColor="#000000" />
+        android:textColor="#000000"
+        android:textSize="12sp" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/txtFecha4"
         android:layout_below="@+id/txtFecha3"
-        android:layout_alignStart="@+id/txtFecha3"
-        android:textColor="#000000" />
+        android:textColor="#000000"
+        android:textSize="12sp"
+        android:layout_alignStart="@+id/txtFecha3" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -165,15 +149,8 @@
         android:id="@+id/txtPon5"
         android:layout_below="@+id/txtPon4"
         android:layout_centerHorizontal="true"
-        android:textColor="#000000" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/txtFecha5"
-        android:layout_below="@+id/txtFecha4"
-        android:layout_alignStart="@+id/txtFecha4"
-        android:textColor="#000000" />
+        android:textColor="#000000"
+        android:textSize="12sp" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -189,27 +166,8 @@
         android:id="@+id/txtPon6"
         android:layout_below="@+id/txtPon5"
         android:layout_centerHorizontal="true"
-        android:textColor="#000000" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/txtFecha6"
-        android:layout_below="@+id/txtFecha5"
-        android:layout_alignStart="@+id/txtFecha5"
-        android:textColor="#000000" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Fecha"
-        android:id="@+id/textView4"
-        android:textColor="@android:color/holo_blue_dark"
-        android:textStyle="bold"
-        android:layout_marginEnd="16dp"
-        android:layout_alignBaseline="@+id/textView3"
-        android:layout_alignBottom="@+id/textView3"
-        android:layout_alignParentEnd="true" />
+        android:textColor="#000000"
+        android:textSize="12sp" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -249,5 +207,63 @@
         android:layout_alignBaseline="@+id/textView2"
         android:layout_alignBottom="@+id/textView2"
         android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/txtFecha5"
+        android:textColor="#000000"
+        android:textSize="12sp"
+        android:layout_below="@+id/txtFecha4"
+        android:layout_alignStart="@+id/txtFecha4" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/txtFecha2"
+        android:textColor="#000000"
+        android:textSize="12sp"
+        android:layout_below="@+id/txtFecha1"
+        android:layout_alignStart="@+id/txtFecha1" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/txtFecha6"
+        android:textColor="#000000"
+        android:textSize="12sp"
+        android:layout_below="@+id/txtFecha5"
+        android:layout_alignStart="@+id/txtFecha5"
+        android:layout_alignEnd="@+id/txtFecha5" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Fecha"
+        android:id="@+id/textView4"
+        android:textColor="@android:color/holo_blue_dark"
+        android:textStyle="bold"
+        android:layout_alignBaseline="@+id/textView3"
+        android:layout_alignBottom="@+id/textView3"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="11dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/txtFecha"
+        android:textColor="#000000"
+        android:textSize="12sp"
+        android:layout_alignBottom="@+id/txtPon"
+        android:layout_alignParentEnd="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/txtFecha1"
+        android:textColor="#000000"
+        android:textSize="12sp"
+        android:layout_below="@+id/txtFecha"
+        android:layout_alignParentEnd="true" />
 
 </RelativeLayout>

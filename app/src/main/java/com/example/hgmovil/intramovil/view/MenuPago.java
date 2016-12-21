@@ -3,6 +3,7 @@ package com.example.hgmovil.intramovil.view;
 import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -14,6 +15,18 @@ import android.widget.Toast;
 
 import com.example.hgmovil.intramovil.R;
 import com.example.hgmovil.intramovil.sqlite.BDIntraMovil;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
+import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
+import java.net.URL;
+import java.util.ArrayList;
 
 public class MenuPago extends AppCompatActivity implements View.OnClickListener
 {
@@ -75,7 +88,13 @@ public class MenuPago extends AppCompatActivity implements View.OnClickListener
     @Override
     public void onClick(View v)
     {
-        CargarPago();
+        //CargarPago();
+        BackGroundNota jj = new BackGroundNota();
+        jj.execute(rutPago);
+        est1.setText("");est2.setText("");est3.setText("");est4.setText("");est5.setText("");est6.setText("");est7.setText("");est8.setText("");
+        fech1.setText("");fech2.setText("");fech3.setText("");fech4.setText("");fech5.setText("");fech6.setText("");fech7.setText("");fech8.setText("");
+        con1.setText("");con2.setText("");con3.setText("");con4.setText("");con5.setText("");con6.setText("");con7.setText("");con8.setText("");
+        mon1.setText("");mon2.setText("");mon3.setText("");mon4.setText("");mon5.setText("");mon6.setText("");mon7.setText("");mon8.setText("");
         Toast.makeText(getApplicationContext(), "Operación realizada...", Toast.LENGTH_SHORT).show();
     }
 
@@ -84,7 +103,7 @@ public class MenuPago extends AppCompatActivity implements View.OnClickListener
         BDIntraMovil helper = new BDIntraMovil(this);
         SQLiteDatabase db = helper.getReadableDatabase();
         helper.openDataBase();
-        Cursor c = db.rawQuery("SELECT  estado, fechavenc, concepto, monto FROM pago as pg JOIN alumno as al ON pg.Alumno_Rut = al.Rut WHERE al.Rut='"+rutPago+"';", null);
+        Cursor c = db.rawQuery("SELECT  estado, fechavenc, concepto, monto FROM pago as pg JOIN alumno as al ON pg.Alumno_Rut = al.Rut WHERE al.Rut='\"+rutPago+\"';", null);
         est1.setText("");est2.setText("");est3.setText("");est4.setText("");est5.setText("");est6.setText("");est7.setText("");est8.setText("");
         fech1.setText("");fech2.setText("");fech3.setText("");fech4.setText("");fech5.setText("");fech6.setText("");fech7.setText("");fech8.setText("");
         con1.setText("");con2.setText("");con3.setText("");con4.setText("");con5.setText("");con6.setText("");con7.setText("");con8.setText("");
@@ -201,6 +220,150 @@ public class MenuPago extends AppCompatActivity implements View.OnClickListener
             helper.close();
         }
     }
+    class BackGroundNota extends AsyncTask<String, String, String>
+    {
+
+        @Override
+        protected String doInBackground(String... params) {
+            String rut1 = params[0];
+            String data="";
+            int tmp;
+
+            try {
+                URL url = new URL("http://www.hgmovil.cl/intramovil/pagos.php");
+                String urlParams = "rut="+rut1;
+                HttpURLConnection httpURLConnection = (HttpURLConnection) url.openConnection();
+                httpURLConnection.setDoOutput(true);
+                OutputStream os = httpURLConnection.getOutputStream();
+                os.write(urlParams.getBytes());
+                os.flush();
+                os.close();
+
+                InputStream is = httpURLConnection.getInputStream();
+                while((tmp=is.read())!=-1){
+                    data+= (char)tmp;
+                }
+
+                is.close();
+                httpURLConnection.disconnect();
+
+                return data;
+            } catch (MalformedURLException e) {
+                e.printStackTrace();
+                return "Exception: "+e.getMessage();
+            } catch (IOException e) {
+                e.printStackTrace();
+                return "Exception: "+e.getMessage();
+            }
+        }
+        @Override
+        protected void onPostExecute(String s)
+        {
+
+            try {
+
+                JSONObject root = new JSONObject(s);
+                JSONArray user_data1 = root.getJSONArray("lista");
+
+                String estado1 = user_data1.getJSONObject(0).getString("estado");
+                String fecha1 = user_data1.getJSONObject(0).getString("fecha");
+                String conce1 = user_data1.getJSONObject(0).getString("concepto");
+                String monto1 = user_data1.getJSONObject(0).getString("monto");
+
+                est1.setText(estado1);
+                fech1.setText(fecha1);
+                con1.setText(conce1);
+                mon1.setText("$"+monto1);
+
+
+                    String estado2 = user_data1.getJSONObject(1).getString("estado");
+                    String fecha2 = user_data1.getJSONObject(1).getString("fecha");
+                    String conce2 = user_data1.getJSONObject(1).getString("concepto");
+                    String monto2 = user_data1.getJSONObject(1).getString("monto");
+
+                    est2.setText(estado2);
+                    fech2.setText(fecha2);
+                    con2.setText(conce2);
+                    mon2.setText("$"+monto2);
+
+
+                        String estado3 = user_data1.getJSONObject(2).getString("estado");
+                        String fecha3 = user_data1.getJSONObject(2).getString("fecha");
+                        String conce3 = user_data1.getJSONObject(2).getString("concepto");
+                        String monto3 = user_data1.getJSONObject(2).getString("monto");
+
+                        est3.setText(estado3);
+                        fech3.setText(fecha3);
+                        con3.setText(conce3);
+                        mon3.setText("$"+monto3);
+
+                        String estado4 = user_data1.getJSONObject(3).getString("estado");
+                            String fecha4 = user_data1.getJSONObject(3).getString("fecha");
+                            String conce4 = user_data1.getJSONObject(3).getString("concepto");
+                            String monto4 = user_data1.getJSONObject(3).getString("monto");
+
+                            est4.setText(estado4);
+                            fech4.setText(fecha4);
+                            con4.setText(conce4);
+                            mon4.setText("$"+monto4);
+
+
+                                String estado5 = user_data1.getJSONObject(4).getString("estado");
+                                String fecha5 = user_data1.getJSONObject(4).getString("fecha");
+                                String conce5 = user_data1.getJSONObject(4).getString("concepto");
+                                String monto5 = user_data1.getJSONObject(4).getString("monto");
+
+                                est5.setText(estado5);
+                                fech5.setText(fecha5);
+                                con5.setText(conce5);
+                                mon5.setText("$"+monto5);
+
+
+                                    String estado6 = user_data1.getJSONObject(5).getString("estado");
+                                    String fecha6 =user_data1.getJSONObject(5).getString("fecha");
+                                    String conce6 = user_data1.getJSONObject(5).getString("concepto");
+                                    String monto6 = user_data1.getJSONObject(5).getString("monto");
+
+                                    est6.setText(estado6);
+                                    fech6.setText(fecha6);
+                                    con6.setText(conce6);
+                                    mon6.setText("$" + monto6);
+
+
+                                    String estado7 = user_data1.getJSONObject(6).getString("estado");
+                                    String fecha7 = user_data1.getJSONObject(6).getString("fecha");
+                                    String conce7 = user_data1.getJSONObject(6).getString("concepto");
+                                    String monto7 = user_data1.getJSONObject(6).getString("monto");
+
+                                    est7.setText(estado7);
+                                    fech7.setText(fecha7);
+                                    con7.setText(conce7);
+                                    mon7.setText("$" + monto7);
+
+
+                                    String estado8 = user_data1.getJSONObject(7).getString("estado");
+                                    String fecha8 = user_data1.getJSONObject(7).getString("fecha");
+                                    String conce8 = user_data1.getJSONObject(7).getString("concepto");
+                                    String monto8 = user_data1.getJSONObject(7).getString("monto");
+
+                                    est8.setText(estado8);
+                                    fech8.setText(fecha8);
+                                    con8.setText(conce8);
+                                    mon8.setText("$" + monto8);
+
+
+
+            } catch (JSONException e) {
+                e.printStackTrace();
+
+            }
+            catch (Exception f)
+            {
+                f.printStackTrace();
+            }
+        }
+    }
+
     @Override
     public void onBackPressed()
     {

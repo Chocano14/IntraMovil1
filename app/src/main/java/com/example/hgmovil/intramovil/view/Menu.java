@@ -49,10 +49,6 @@ public class Menu extends AppCompatActivity
         setContentView(R.layout.menu);
         BtnNot = (ImageButton) findViewById(R.id.BtnNotas);
         nom = getIntent().getStringExtra("Nomb");
-        UsuariosSQLiteHelper usdbh =
-                new UsuariosSQLiteHelper(this, "Intra.db", null, 1);
-
-        db = usdbh.getWritableDatabase();
 
 
         TextView tv = (TextView)findViewById(R.id.txtUser);

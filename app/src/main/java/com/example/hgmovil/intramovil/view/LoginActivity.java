@@ -111,14 +111,14 @@ public class LoginActivity extends Activity {
             String RUT=null,CONTRASEÑA=null;
             pdialog.dismiss();
             try {
-                    JSONObject root = new JSONObject(s);
-                    JSONObject user_data = root.getJSONObject("user_data");
+                JSONObject root = new JSONObject(s);
+                JSONObject user_data = root.getJSONObject("user_data");
                 {
 
                 }
-                    NOMBRE= user_data.getString("nombre");
-                    RUT= user_data.getString("rut");
-                    CONTRASEÑA= user_data.getString("contraseña");
+                NOMBRE= user_data.getString("nombre");
+                RUT= user_data.getString("rut");
+                CONTRASEÑA= user_data.getString("contraseña");
 
                 if(RUT.equals("")||CONTRASEÑA.equals("")||RUT.equals(null)||CONTRASEÑA.equals(null))
                 {
@@ -136,10 +136,10 @@ public class LoginActivity extends Activity {
 
                 }
 
-                } catch (JSONException e) {
-                    e.printStackTrace();
+            } catch (JSONException e) {
+                e.printStackTrace();
                 Toast.makeText(ctx, "Rut y contraseña incorrectos ", Toast.LENGTH_LONG).show();
-                }
+            }
 
 
 
@@ -151,4 +151,3 @@ public class LoginActivity extends Activity {
     }
 
 }
-

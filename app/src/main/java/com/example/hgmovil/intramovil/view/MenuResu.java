@@ -3,15 +3,29 @@ package com.example.hgmovil.intramovil.view;
 import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.hgmovil.intramovil.R;
 import com.example.hgmovil.intramovil.sqlite.BDIntraMovil;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
+import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
+import java.net.URL;
+import java.util.ArrayList;
 
 public class MenuResu extends AppCompatActivity implements View.OnClickListener {
     private Button btn;
@@ -101,8 +115,341 @@ public class MenuResu extends AppCompatActivity implements View.OnClickListener 
 
     public void onClick(View v)
     {
-        Promedioramo();
+        //Promedioramo();
+        BackGroundresumen bb = new BackGroundresumen();
+        BackGroundpromedio vv = new BackGroundpromedio();
+        BackGroundhoras nn = new BackGroundhoras();
+        bb.execute(ry);
+        vv.execute(ry);
+        nn.execute(ry);
+
+
         Toast.makeText(getApplicationContext(), "Operación realizada...", Toast.LENGTH_SHORT).show();
+
+    }
+
+    class BackGroundresumen extends AsyncTask<String, String, String>
+    {
+
+        @Override
+        protected String doInBackground(String... params) {
+            String rut1 = params[0];
+            String data="";
+            int tmp;
+
+            try {
+                URL url = new URL("http://www.hgmovil.cl/intramovil/resumen.php");
+                String urlParams = "rut="+rut1;
+                HttpURLConnection httpURLConnection = (HttpURLConnection) url.openConnection();
+                httpURLConnection.setDoOutput(true);
+                OutputStream os = httpURLConnection.getOutputStream();
+                os.write(urlParams.getBytes());
+                os.flush();
+                os.close();
+
+                InputStream is = httpURLConnection.getInputStream();
+                while((tmp=is.read())!=-1){
+                    data+= (char)tmp;
+                }
+
+                is.close();
+                httpURLConnection.disconnect();
+
+                return data;
+            } catch (MalformedURLException e) {
+                e.printStackTrace();
+                return "Exception: "+e.getMessage();
+            } catch (IOException e) {
+                e.printStackTrace();
+                return "Exception: "+e.getMessage();
+            }
+        }
+        @Override
+        protected void onPostExecute(String s)
+        {
+
+            try
+            {
+                JSONObject root = new JSONObject(s);
+                JSONArray user_data1 = root.getJSONArray("lista");
+
+
+
+                String Asig = user_data1.getJSONObject(0).getString("asignatura");
+                Asignatura.setText(Asig);
+                Asignatura.setVisibility(View.VISIBLE);
+                txtA1.setVisibility(View.VISIBLE);
+
+                String Asig1 =user_data1.getJSONObject(1).getString("asignatura");
+                Asignatura1.setText(Asig1);
+                Asignatura1.setVisibility(View.VISIBLE);
+                txtA2.setVisibility(View.VISIBLE);
+
+                String Asig2 = user_data1.getJSONObject(2).getString("asignatura");
+                Asignatura2.setText(Asig2);
+                Asignatura2.setVisibility(View.VISIBLE);
+                txtA3.setVisibility(View.VISIBLE);
+
+                String Asig3 = user_data1.getJSONObject(3).getString("asignatura");
+                Asignatura3.setText(Asig3);
+                Asignatura3.setVisibility(View.VISIBLE);
+                txtA4.setVisibility(View.VISIBLE);
+
+                String Asig4 = user_data1.getJSONObject(4).getString("asignatura");
+                Asignatura4.setText(Asig4);
+                Asignatura4.setVisibility(View.VISIBLE);
+                txtA5.setVisibility(View.VISIBLE);
+
+                String Asig5 = user_data1.getJSONObject(5).getString("asignatura");
+                Asignatura5.setText(Asig5);
+                Asignatura5.setVisibility(View.VISIBLE);
+                txtA6.setVisibility(View.VISIBLE);
+
+                String Asig6 = user_data1.getJSONObject(6).getString("asignatura");
+                Asignatura6.setText(Asig6);
+                Asignatura6.setVisibility(View.VISIBLE);
+                txtA7.setVisibility(View.VISIBLE);
+
+
+
+
+
+            } catch (JSONException e)
+            {
+                e.printStackTrace();
+
+            }
+            catch (Exception f)
+            {
+                f.printStackTrace();
+            }
+        }
+
+
+    }
+    class BackGroundpromedio extends AsyncTask<String, String, String>
+    {
+
+        @Override
+        protected String doInBackground(String... params) {
+            String rut1 = params[0];
+            String data="";
+            int tmp;
+
+            try {
+                URL url = new URL("http://www.hgmovil.cl/intramovil/promedioresu.php");
+                String urlParams = "rut="+rut1;
+                HttpURLConnection httpURLConnection = (HttpURLConnection) url.openConnection();
+                httpURLConnection.setDoOutput(true);
+                OutputStream os = httpURLConnection.getOutputStream();
+                os.write(urlParams.getBytes());
+                os.flush();
+                os.close();
+
+                InputStream is = httpURLConnection.getInputStream();
+                while((tmp=is.read())!=-1){
+                    data+= (char)tmp;
+                }
+
+                is.close();
+                httpURLConnection.disconnect();
+
+                return data;
+            } catch (MalformedURLException e) {
+                e.printStackTrace();
+                return "Exception: "+e.getMessage();
+            } catch (IOException e) {
+                e.printStackTrace();
+                return "Exception: "+e.getMessage();
+            }
+        }
+        @Override
+        protected void onPostExecute(String s)
+        {
+
+            try
+            {
+                JSONObject root = new JSONObject(s);
+                JSONArray user_data1 = root.getJSONArray("lista");
+
+
+                String Nota = user_data1.getJSONObject(0).getString("promedio");;
+                Promedio.setText(Nota);
+                Promedio.setVisibility(View.VISIBLE);
+                txtP1.setVisibility(View.VISIBLE);
+                double contendor=Double.parseDouble(Nota.trim());
+                if(contendor>4.0)
+                {
+                    Situacion.setText("Sin Riesgo");
+                    txtS1.setVisibility(View.VISIBLE);
+                }else{Situacion.setText("Riesgo");txtS1.setVisibility(View.VISIBLE);}
+
+                String Nota1 = user_data1.getJSONObject(1).getString("promedio");
+                Promedio1.setText(Nota1);
+                Promedio1.setVisibility(View.VISIBLE);
+                txtP2.setVisibility(View.VISIBLE);
+                double contendor1=Double.parseDouble(Nota1.trim());
+                if(contendor1>4.0)
+                {
+                    Situacion1.setText("Sin Riesgo");
+                    txtS2.setVisibility(View.VISIBLE);
+                }else{Situacion1.setText("Riesgo");txtS2.setVisibility(View.VISIBLE);}
+
+                String Nota2 = user_data1.getJSONObject(2).getString("promedio");
+                Promedio2.setText(Nota2);
+                Promedio2.setVisibility(View.VISIBLE);
+                txtP3.setVisibility(View.VISIBLE);
+                double contendor2=Double.parseDouble(Nota2.trim());
+                if(contendor2>4.0)
+                {
+                    Situacion2.setText("Sin Riesgo");
+                    txtS3.setVisibility(View.VISIBLE);
+                }else{Situacion2.setText("Riesgo");txtS3.setVisibility(View.VISIBLE);}
+
+                String Nota3 = user_data1.getJSONObject(3).getString("promedio");
+                Promedio3.setText(Nota3);
+                Promedio3.setVisibility(View.VISIBLE);
+                txtP4.setVisibility(View.VISIBLE);
+                double contendor3=Double.parseDouble(Nota3.trim());
+                if(contendor3>4.0)
+                {
+                    Situacion3.setText("Sin Riesgo");
+                    txtS4.setVisibility(View.VISIBLE);
+                }else{Situacion3.setText("Riesgo");txtS4.setVisibility(View.VISIBLE);}
+
+                String Nota4 = user_data1.getJSONObject(4).getString("promedio");
+                Promedio4.setText(Nota4);
+                Promedio4.setVisibility(View.VISIBLE);
+                txtP5.setVisibility(View.VISIBLE);
+                double contendor4=Double.parseDouble(Nota4.trim());
+                if(contendor4>4.0)
+                {
+                    Situacion4.setText("Sin Riesgo");
+                    txtS5.setVisibility(View.VISIBLE);
+                }else{Situacion4.setText("Riesgo");txtS5.setVisibility(View.VISIBLE);}
+
+                String Nota5 = user_data1.getJSONObject(5).getString("promedio");
+                Promedio5.setText(Nota5);
+                Promedio5.setVisibility(View.VISIBLE);
+                txtP6.setVisibility(View.VISIBLE);
+                double contendor5=Double.parseDouble(Nota4.trim());
+                if(contendor5>4.0)
+                {
+                    Situacion5.setText("Sin Riesgo");
+                    txtS6.setVisibility(View.VISIBLE);
+                }else{Situacion5.setText("Riesgo");txtS6.setVisibility(View.VISIBLE);}
+
+                String Nota6 = user_data1.getJSONObject(6).getString("promedio");
+                Promedio6.setText(Nota6);
+                Promedio6.setVisibility(View.VISIBLE);
+                txtP7.setVisibility(View.VISIBLE);
+                double contendor6=Double.parseDouble(Nota4.trim());
+                if(contendor6>4.0)
+                {
+                    Situacion6.setText("Sin Riesgo");
+                    txtS7.setVisibility(View.VISIBLE);
+                }else{Situacion6.setText("Riesgo");txtS7.setVisibility(View.VISIBLE);}
+
+            } catch (JSONException e)
+            {
+                e.printStackTrace();
+
+            }
+            catch (Exception f)
+            {
+                f.printStackTrace();
+            }
+        }
+
+
+    }
+    class BackGroundhoras extends AsyncTask<String, String, String>
+    {
+
+        @Override
+        protected String doInBackground(String... params) {
+            String rut1 = params[0];
+            String data="";
+            int tmp;
+
+            try {
+                URL url = new URL("http://www.hgmovil.cl/intramovil/asistenciatotal.php");
+                String urlParams = "rut="+rut1;
+                HttpURLConnection httpURLConnection = (HttpURLConnection) url.openConnection();
+                httpURLConnection.setDoOutput(true);
+                OutputStream os = httpURLConnection.getOutputStream();
+                os.write(urlParams.getBytes());
+                os.flush();
+                os.close();
+
+                InputStream is = httpURLConnection.getInputStream();
+                while((tmp=is.read())!=-1){
+                    data+= (char)tmp;
+                }
+
+                is.close();
+                httpURLConnection.disconnect();
+
+                return data;
+            } catch (MalformedURLException e) {
+                e.printStackTrace();
+                return "Exception: "+e.getMessage();
+            } catch (IOException e) {
+                e.printStackTrace();
+                return "Exception: "+e.getMessage();
+            }
+        }
+        @Override
+        protected void onPostExecute(String s)
+        {
+
+            try
+            {
+                JSONObject root = new JSONObject(s);
+                JSONArray user_data1 = root.getJSONArray("lista");
+
+                String promeRam = user_data1.getJSONObject(0).getString("prome");
+                String prome = user_data1.getJSONObject(1).getString("prome");
+                if(prome.equals("0"))
+                {
+                    prome = "0";
+                }
+                Asis.setText(prome + "HRS" + "/" + promeRam + "HRS");
+                String promeRam1 = user_data1.getJSONObject(2).getString("prome");
+                String prome1 = user_data1.getJSONObject(3).getString("prome");
+                if(prome1.equals("0"))
+                {
+                    prome1 = "0";
+                }
+                Asis1.setText(prome1 + "HRS" + "/" + promeRam1 + "HRS");
+
+                Asis.setText(prome + "HRS" + "/" + promeRam + "HRS");
+                String promeRam2 = user_data1.getJSONObject(4).getString("prome");
+                String prome3 = user_data1.getJSONObject(5).getString("prome");
+                if(prome1.equals("0"))
+                {
+                    prome1 = "0";
+                }
+                Asis2.setText(prome1 + "HRS" + "/" + promeRam1 + "HRS");
+
+
+
+
+
+
+
+
+            } catch (JSONException e)
+            {
+                e.printStackTrace();
+
+            }
+            catch (Exception f)
+            {
+                f.printStackTrace();
+            }
+        }
+
 
     }
 
