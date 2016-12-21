@@ -200,6 +200,8 @@ public class MenuResu extends AppCompatActivity implements View.OnClickListener 
                 Asignatura.setVisibility(View.VISIBLE);
                 txtA1.setVisibility(View.VISIBLE);
 
+
+
                 String Asig1 =user_data1.getJSONObject(1).getString("asignatura");
                 String hora1 = user_data1.getJSONObject(1).getString("horas");
                 Asis1.setText(hora1+ "HRS"+"/");
@@ -306,11 +308,17 @@ public class MenuResu extends AppCompatActivity implements View.OnClickListener 
 
 
                 String Nota = user_data1.getJSONObject(0).getString("promedio");
-                Promedio.setText(Nota);
+
+
+                DecimalFormat df1 = new DecimalFormat("#.#");
+
 
                 Promedio.setVisibility(View.VISIBLE);
                 txtP1.setVisibility(View.VISIBLE);
                 double contendor=Double.parseDouble(Nota.trim());
+                String bb1 = df1.format(contendor);
+                String mm1= String.valueOf(bb1);
+                Promedio.setText(mm1);
                 if(contendor>4.0)
                 {
                     Situacion.setText("Sin Riesgo");
@@ -320,10 +328,16 @@ public class MenuResu extends AppCompatActivity implements View.OnClickListener 
 
 
                 String Nota1 = user_data1.getJSONObject(1).getString("promedio");
-                Promedio1.setText(Nota1);
+
                 Promedio1.setVisibility(View.VISIBLE);
                 txtP2.setVisibility(View.VISIBLE);
                 double contendor1=Double.parseDouble(Nota1.trim());
+                DecimalFormat df = new DecimalFormat("#.#");
+                String bb = df.format(contendor1);
+                String mm= String.valueOf(bb);
+                Promedio1.setText(mm);
+
+
                 if(contendor1>4.0)
                 {
                     Situacion1.setText("Sin Riesgo");
@@ -333,10 +347,15 @@ public class MenuResu extends AppCompatActivity implements View.OnClickListener 
 
 
                 String Nota2 = user_data1.getJSONObject(2).getString("promedio");
-                Promedio2.setText(Nota2);
+
                 Promedio2.setVisibility(View.VISIBLE);
                 txtP3.setVisibility(View.VISIBLE);
                 double contendor2=Double.parseDouble(Nota2.trim());
+                DecimalFormat df2 = new DecimalFormat("#.#");
+                String bb2 = df2.format(contendor2);
+                String mm2= String.valueOf(bb2);
+                Promedio2.setText(mm2);
+
                 if(contendor2>4.0)
                 {
                     Situacion2.setText("Sin Riesgo");
@@ -346,10 +365,14 @@ public class MenuResu extends AppCompatActivity implements View.OnClickListener 
 
 
                 String Nota3 = user_data1.getJSONObject(3).getString("promedio");
-                Promedio3.setText(Nota3);
+
                 Promedio3.setVisibility(View.VISIBLE);
                 txtP4.setVisibility(View.VISIBLE);
                 double contendor3=Double.parseDouble(Nota3.trim());
+                DecimalFormat df3 = new DecimalFormat("#.#");
+                String bb3 = df3.format(contendor3);
+                String mm3= String.valueOf(bb3);
+                Promedio3.setText(mm3);
                 if(contendor3>4.0)
                 {
                     Situacion3.setText("Sin Riesgo");
@@ -361,6 +384,10 @@ public class MenuResu extends AppCompatActivity implements View.OnClickListener 
                 Promedio4.setVisibility(View.VISIBLE);
                 txtP5.setVisibility(View.VISIBLE);
                 double contendor4=Double.parseDouble(Nota4.trim());
+                DecimalFormat df4 = new DecimalFormat("#.#");
+                String bb4 = df4.format(contendor1);
+                String mm4= String.valueOf(bb4);
+                Promedio4.setText(mm4);
                 if(contendor4>4.0)
                 {
                     Situacion4.setText("Sin Riesgo");
@@ -372,6 +399,10 @@ public class MenuResu extends AppCompatActivity implements View.OnClickListener 
                 Promedio5.setVisibility(View.VISIBLE);
                 txtP6.setVisibility(View.VISIBLE);
                 double contendor5=Double.parseDouble(Nota4.trim());
+                DecimalFormat df5 = new DecimalFormat("#.#");
+                String bb5 = df5.format(contendor1);
+                String mm5= String.valueOf(bb5);
+                Promedio5.setText(mm5);
                 if(contendor5>4.0)
                 {
                     Situacion5.setText("Sin Riesgo");
@@ -383,6 +414,10 @@ public class MenuResu extends AppCompatActivity implements View.OnClickListener 
                 Promedio6.setVisibility(View.VISIBLE);
                 txtP7.setVisibility(View.VISIBLE);
                 double contendor6=Double.parseDouble(Nota4.trim());
+                DecimalFormat df6 = new DecimalFormat("#.#");
+                String bb6 = df6.format(contendor1);
+                String mm6= String.valueOf(bb6);
+                Promedio6.setText(mm6);
                 if(contendor6>4.0)
                 {
                     Situacion6.setText("Sin Riesgo");
